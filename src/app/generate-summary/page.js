@@ -5,13 +5,14 @@ import "./page.css";
 export default function SummariseEndPoint() {
   const [prompt, setPrompt] = useState("");
   const [promptResponse, setPromptResponse] = useState("");
-  const [errorMessage, setErrorMessage] = useState("")
+  const [errorMessage, setErrorMessage] = useState("");
   const [risks, setRisks] = useState("");
   const [promptSubmitted, setPromptSubmitted] = useState(false);
   const [showResponseContainer, setShowResponseContainer] = useState(false);
 
   async function sendPrompt(e) {
     e.preventDefault();
+    setPromptSubmitted(true);
     try {
       const response = await fetch("/api/summary", {
         method: "POST",
@@ -28,6 +29,7 @@ export default function SummariseEndPoint() {
         "Looks like something went wrong, please try again in a bit."
       );
     }
+    setPromptSubmitted(false);
   }
   return (
     <div className="full-width-container">
@@ -57,12 +59,7 @@ export default function SummariseEndPoint() {
                     setPrompt(e.target.value);
                   }}
                 ></textarea>
-                <button
-                  type="submit"
-                  onClick={() => {
-                    setPromptSubmitted(true);
-                  }}
-                >
+                <button type="submit">
                   {promptSubmitted && (
                     <img
                       src="https://media.tenor.com/On7kvXhzml4AAAAj/loading-gif.gif"

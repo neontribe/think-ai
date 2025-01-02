@@ -13,6 +13,7 @@ export default function SummariseEndPoint() {
 
   async function sendPrompt(e) {
     e.preventDefault();
+    setPromptSubmitted(true);
     try {
       const response = await fetch("/api/image", {
         method: "POST",
@@ -29,6 +30,7 @@ export default function SummariseEndPoint() {
         "Looks like something went wrong, please try again in a bit."
       );
     }
+    setPromptSubmitted(false);
   }
   return (
     <div className="full-width-container">
@@ -56,12 +58,7 @@ export default function SummariseEndPoint() {
                     setPrompt(e.target.value);
                   }}
                 ></textarea>
-                <button
-                  type="submit"
-                  onClick={() => {
-                    setPromptSubmitted(true);
-                  }}
-                >
+                <button type="submit">
                   {promptSubmitted && (
                     <img
                       src="https://media.tenor.com/On7kvXhzml4AAAAj/loading-gif.gif"
@@ -89,7 +86,6 @@ export default function SummariseEndPoint() {
                     </svg>
                   )}
                 </button>
-
               </div>
               {errorMessage && <p className="error-message">{errorMessage}</p>}
             </form>
