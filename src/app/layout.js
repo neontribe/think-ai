@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata = {
   title: "Think AI",
-  description: "A platform that helps young people explore AI, and understand how to use it critically and safetly.",
+  description: "A platform that helps young people explore AI, and understand how to use it critically and safely.",
 };
 
 export default function RootLayout({ children }) {
