@@ -20,6 +20,16 @@ body:has(.options-container) {
 h1 {
   font-size: 65px;
 }
+h2 {
+  font-size: 25px;
+  margin-bottom:0.5rem;
+}
+
+h3 {
+  font-size:18px;
+
+}
+
 
 body:has(.options-container) h1 {
   color: white;
