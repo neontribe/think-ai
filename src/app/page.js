@@ -8,10 +8,7 @@ export default function Home() {
           <span>Welcome to</span> <span>Think AI</span>{" "}
         </h1>
         <p>
-          To use Think AI, simply type in any prompt—whether it’s a question, a
-          creative idea, or a practical task. The more details you include, the
-          better the AI can tailor its response to your needs. Once you’re
-          ready, press the Submit button to see how Think AI can help bring your prompt to life!
+        To use Think AI, simply type in any prompt, whether it’s a question, a creative idea, or a practical task. The more details you include, the better the AI can tailor its response to your needs. Once you’re ready, press the Submit button to see how Think AI can help bring your prompt to life, while also encouraging you to think critically about the reliability and safety of the results it provides.
         </p>
         <h2>AI can...</h2>
         <div className="options-container">

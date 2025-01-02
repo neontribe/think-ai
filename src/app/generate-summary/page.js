@@ -38,11 +38,11 @@ export default function SummariseEndPoint() {
         {!showResponseContainer && (
           <>
             <p>
-              Take any piece of text—like a story, article, or speech—and sum it
+              Take any piece of text, like a story, article, or speech, and sum it
               up into a short, clear explanation. Think of it like telling a
               friend what it’s about without all the extra details. Here’s an
               example: &quot;Summarise the plot of Macbeth in a sentence or
-              two.&quot;It doesn’t have to be perfect—just focus on the key
+              two.&quot; It doesn’t have to be perfect—just focus on the key
               points. Try it now with any topic that interests you!
             </p>
             <form onSubmit={sendPrompt}>
