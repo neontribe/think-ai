@@ -21,7 +21,7 @@ export async function POST(request) {
       messages: [
         {
           role: "developer",
-          content: `Can you give me 3 potential risks of this response you generated using the openai api image generation endpoint when it comes to safeguarding and risks associated with AI specific to the answer to ${prompt}. Please make the answer specific to the prompt that has been given. Make sure to always Include the new line character at the end of every point apart from the last in order to distinguish between my points so i can extract each point into a list element in html and don't give me any other copy apart from those points. Please ensure there are no added spaces when not needed.Please ensure there are no added spaces when not needed. I don't want any number or dash before each point just start the point. `,
+          content: `Can you give me 3 potential risks associated with the use of the OpenAI API image generation endpoint, specifically focusing on safeguarding and AI-related risks tied to the answer generated from the following prompt: ${prompt}? Please ensure the response is tailored to this specific prompt. Each risk should be clearly outlined, with a new line character separating each point, except for the last one, so I can easily extract them into an HTML list. Avoid adding extra spaces where unnecessary. I don't want any number or dash before each point just start the point.`,
         },
       ],
       model: "gpt-4o",
