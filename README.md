@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Think AI is a platform where young people can input prompts for tasks like image generation and text summarization. It uses the OpenAI API to generate responses and informs users of potential risks and reliability.
 
 ## Getting Started
 
-First, run the development server:
+To run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
 ```
+## OpenAI
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+An OpenAI API key is required. If you don’t have one, log in to OpenAI and create a key here: https://platform.openai.com/settings/organization/api-keys. Add it to your .env file with OPENAI_API_KEY = "".
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+OpenAI is a pay-as-you-go service. If the API isn’t working, check your usage here: https://platform.openai.com/settings/organization/usage.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Endpoints
 
-## Learn More
+This project uses two OpenAI endpoints:
 
-To learn more about Next.js, take a look at the following resources:
+- Image generation: [docs](https://platform.openai.com/docs/guides/images) (code: src/app/api/image)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Text generation: [docs](https://platform.openai.com/docs/guides/text-generation) (code: src/app/api/summary/route.js)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+When successful, you’ll see a log like:
+POST /api/summary 200 in 7484ms
 
-## Deploy on Vercel
+## Hosting
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Hosted on Vercel: https://think-ai-opal.vercel.app
