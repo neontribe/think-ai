@@ -48,7 +48,7 @@ export default function Chat({ apiEndpoint, modelType }) {
               castle floating above the clouds at sunset, with birds flying
               around it.&quot;
             </p>
-        
+
             <form onSubmit={sendPrompt}>
             {modelType === "image-generation" && (
               <select
@@ -76,6 +76,7 @@ export default function Chat({ apiEndpoint, modelType }) {
                 <button type="submit">
                   {promptSubmitted && (
                     <img
+                      alt="awaiting response"
                       src="https://media.tenor.com/On7kvXhzml4AAAAj/loading-gif.gif"
                       width={20}
                       height={20}
@@ -111,10 +112,10 @@ export default function Chat({ apiEndpoint, modelType }) {
           <>
             <p>Your prompt: {prompt}</p>
             {promptResponse && modelType === "image-generation" && (
-              <img className="ai-image" src={promptResponse} />
+              <img alt="requested asset" className="ai-image" src={promptResponse} />
             )}
 
-            {promptResponse && modelType == "summary" && (
+            {promptResponse && modelType === "summary" && (
               <p>{promptResponse}</p>
             )}
 
