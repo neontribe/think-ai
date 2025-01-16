@@ -39,18 +39,24 @@ export default function Chat({ apiEndpoint, modelType }) {
   return (
     <div className="full-width-container">
       <div className="container">
-        <h1>{modelType === "image-generation" ? 'Generate an image' : 'Summarise some Content'}</h1>
+        <h1>{modelType === "image-generation" ? 'Generate an image' : 'Summarise some content'}</h1>
         {!showResponseContainer && (
           <>
           { modelType === "image-generation" ?
-            <p>
-              Come up with a creative idea for an image and describe it in detail. Here’s an example:
-              &quot;Create an image of a glowing castle floating above the clouds at sunset, with birds flying around it.&quot;
-            </p>
+            <div>
+              <p>
+                Come up with a creative idea for an image and describe it in detail. Here’s an example:
+              </p>
+              <p>
+                &quot;Create an image of a glowing castle floating above the clouds at sunset, with birds flying around it.&quot;
+              </p>
+            </div>
             :
-            <p>
-              Enter some text from an article that you would like summarised.
-            </p>
+            <div>
+              <p>
+                Enter some text from an article that you would like summarised. The text should be a few paragraphs long.
+              </p>
+            </div>
           }
 
             <form onSubmit={sendPrompt}>
@@ -114,14 +120,19 @@ export default function Chat({ apiEndpoint, modelType }) {
         )}
         {showResponseContainer && (
           <>
-            <p>Your prompt: {prompt}</p>
-            {promptResponse && modelType === "image-generation" && (
-              <img alt="requested asset" className="ai-image" src={promptResponse} />
-            )}
+            <h2>Your prompt:</h2>
+            <p> {prompt} </p>
 
-            {promptResponse && modelType === "summary" && (
-              <p>{promptResponse}</p>
-            )}
+            <h2>The response:</h2>
+            <p>
+              {promptResponse && modelType === "image-generation" && (
+                <img alt="requested asset" className="ai-image" src={promptResponse} />
+              )}
+
+              {promptResponse && modelType === "summary" && (
+                <p>{promptResponse}</p>
+              )}
+            </p>
 
             <h2>But...</h2>
             <ol>
