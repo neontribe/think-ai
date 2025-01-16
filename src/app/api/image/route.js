@@ -32,6 +32,6 @@ export async function POST(request) {
 
     return Response.json({ promptResponseContent, splitRiskPoints });
   } catch (e) {
-    return Response.status(500);
+    throw Error (e.message);
   }
 }
