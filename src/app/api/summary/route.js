@@ -13,7 +13,7 @@ export async function POST(request) {
       messages: [
         {
           role: "user",
-          content: `Can you answer this request: ${prompt}. I don't want any new line characters.`,
+          content: `Can you summarise this text: ${prompt}. Return a paragraph without line characters or bullet points.`,
         },
       ],
       model: "gpt-4o",
