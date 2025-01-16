@@ -39,15 +39,19 @@ export default function Chat({ apiEndpoint, modelType }) {
   return (
     <div className="full-width-container">
       <div className="container">
-        <h1>Generate an image</h1>
+        <h1>{modelType === "image-generation" ? 'Generate an image' : 'Summarise some Content'}</h1>
         {!showResponseContainer && (
           <>
+          { modelType === "image-generation" ?
             <p>
-              Come up with a creative idea for an image and describe it in
-              detail. Here’s an example: &quot;Create an image of a glowing
-              castle floating above the clouds at sunset, with birds flying
-              around it.&quot;
+              Come up with a creative idea for an image and describe it in detail. Here’s an example:
+              &quot;Create an image of a glowing castle floating above the clouds at sunset, with birds flying around it.&quot;
             </p>
+            :
+            <p>
+              Enter some text from an article that you would like summarised.
+            </p>
+          }
 
             <form onSubmit={sendPrompt}>
             {modelType === "image-generation" && (
