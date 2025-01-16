@@ -29,7 +29,6 @@ export default function Chat({ apiEndpoint, modelType }) {
       setRisks(splitRiskPoints);
       setShowResponseContainer(true);
     } catch (e) {
-      console.error(e);
       setErrorMessage(
         "Looks like something went wrong, please try again in a bit."
       );

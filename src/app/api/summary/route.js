@@ -9,8 +9,7 @@ export async function POST(request) {
     if (!prompt) {
       throw Error("No prompt provided");
     }
-      console.log(openai.chat.completions);
-      const promptResponse = await openai.chat.completions.create({
+    const promptResponse = await openai.chat.completions.create({
       messages: [
         {
           role: "user",
@@ -19,7 +18,7 @@ export async function POST(request) {
       ],
       model: "gpt-4o",
     });
-      console.log("pr", promptResponse);
+
     const promptResponseContent = promptResponse.choices[0].message.content;
 
     const responseRisks = await openai.chat.completions.create({
