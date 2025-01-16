@@ -35,6 +35,7 @@ export default function Chat({ apiEndpoint, modelType }) {
     }
     setPromptSubmitted(false);
   }
+
   return (
     <div className="full-width-container">
       <div className="container">
