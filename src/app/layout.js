@@ -1,4 +1,5 @@
-import './page.css'
+// import './page.css';
+import './globals.css'
 import Link from "next/link";
 
 export const metadata = {

@@ -1,4 +1,6 @@
 import "./page.css";
+import Link from "next/link";
+import OffsiteLinkButtons from './components/OffsiteLinkButton';
 
 export default function Home() {
   return (
@@ -19,6 +21,10 @@ export default function Home() {
           <a href="/generate-image">
             <h3>Generate an image</h3>
           </a>
+          <a href="https://www.google.co.uk/?client=safari&channel=mac_bm">
+          <h3>Google button</h3>
+          </a>
+          <OffsiteLinkButtons href="trial link button">Trial</OffsiteLinkButtons>
         </div>
       </div>
     </div>
