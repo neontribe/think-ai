@@ -19,7 +19,7 @@ export default function Home() {
           <a href="/generate-image">
             <h3>Generate an image</h3>
           </a>
-          <OffsiteLinkButton href="https://www.google.com">Trial</OffsiteLinkButton>
+          <OffsiteLinkButton href="https://www.google.co.uk/?client=safari&channel=mac_bm">Go to external site</OffsiteLinkButton>
         </div>
       </div>
     </div>
