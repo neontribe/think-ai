@@ -1,5 +1,5 @@
-import "./page.css";
-import OffsiteLinkButtons from './components/OffsiteLinkButton';
+
+import OffsiteLinkButtons from './components/OffsiteLinkButton.jsx';
 
 export default function Home() {
   return (
