@@ -6,6 +6,7 @@ export const metadata = {
   description: "A platform that helps young people explore AI, and understand how to use it critically and safely.",
 };
 
+/* creates the default root layout */
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
