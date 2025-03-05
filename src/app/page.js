@@ -1,3 +1,4 @@
+import ArrowButton from './components/ ArrowButton.jsx';
 import OffsiteLinkButton from './components/OffsiteLinkButton.jsx';
 import ToggleButton from './components/ToggleButton.jsx';
 
@@ -28,6 +29,7 @@ export default function Home() {
           <OffsiteLinkButton href="https://www.google.co.uk/?client=safari&channel=mac_bm" variant="learnMore" className="mt-4 ml-4">Video</OffsiteLinkButton>
           <OffsiteLinkButton href="https://www.google.co.uk/?client=safari&channel=mac_bm" variant="findOut" className="mt-4 ml-4">Find Out</OffsiteLinkButton>
         </div>
+        <ArrowButton direction="right" />
         <div className='flex items-center space-x-2'>
           <ToggleButton
           labelLeft='Use in a group'
