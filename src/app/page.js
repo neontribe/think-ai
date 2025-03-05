@@ -1,4 +1,4 @@
-import "./page.css";
+import OffsiteLinkButton from './components/OffsiteLinkButton.jsx';
 
 export default function Home() {
   return (
@@ -19,6 +19,13 @@ export default function Home() {
           <a href="/generate-image">
             <h3>Generate an image</h3>
           </a>
+          {/* Hidden description for screen readers */}
+          <p id='offsite-link-description' className='sr-only'>
+            This link opens in a new tab.
+          </p>
+          <OffsiteLinkButton href="https://www.google.co.uk/?client=safari&channel=mac_bm" variant="default" className="mt-4">Scribbr</OffsiteLinkButton>
+          <OffsiteLinkButton href="https://www.google.co.uk/?client=safari&channel=mac_bm" variant="learnMore" className="mt-4 ml-4">Video</OffsiteLinkButton>
+          <OffsiteLinkButton href="https://www.google.co.uk/?client=safari&channel=mac_bm" variant="findOut" className="mt-4 ml-4">Find Out</OffsiteLinkButton>
         </div>
       </div>
     </div>

@@ -105,8 +105,8 @@ export default function Chat({ apiEndpoint, modelType }) {
                     >
                       <path
                         stroke="currentColor"
-                        strokeLineCap="round"
-                        strokeLineJoin="round"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                         strokeWidth="2"
                         d="m9 5 7 7-7 7"
                       />
