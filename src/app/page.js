@@ -1,4 +1,5 @@
 import OffsiteLinkButton from './components/OffsiteLinkButton.jsx';
+import ToggleButton from './components/ToggleButton.jsx';
 
 export default function Home() {
   return (
@@ -26,6 +27,10 @@ export default function Home() {
           <OffsiteLinkButton href="https://www.google.co.uk/?client=safari&channel=mac_bm" variant="default" className="mt-4">Scribbr</OffsiteLinkButton>
           <OffsiteLinkButton href="https://www.google.co.uk/?client=safari&channel=mac_bm" variant="learnMore" className="mt-4 ml-4">Video</OffsiteLinkButton>
           <OffsiteLinkButton href="https://www.google.co.uk/?client=safari&channel=mac_bm" variant="findOut" className="mt-4 ml-4">Find Out</OffsiteLinkButton>
+        </div>
+        <div>
+          <h1 className='text-white text-xl mb-4'>Toggle Demo</h1>
+          <ToggleButton labelLeft='Individual' labelRight='Group'/>'
         </div>
       </div>
     </div>
