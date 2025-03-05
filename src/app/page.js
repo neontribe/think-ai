@@ -28,8 +28,11 @@ export default function Home() {
           <OffsiteLinkButton href="https://www.google.co.uk/?client=safari&channel=mac_bm" variant="learnMore" className="mt-4 ml-4">Video</OffsiteLinkButton>
           <OffsiteLinkButton href="https://www.google.co.uk/?client=safari&channel=mac_bm" variant="findOut" className="mt-4 ml-4">Find Out</OffsiteLinkButton>
         </div>
-        <div className='flex items-center sapce-x-1'>
-          <ToggleButton/>
+        <div className='flex items-center space-x-2'>
+          <ToggleButton
+          labelLeft='Use in a group'
+          labelRight='It's just me
+          ariaLabel='Toggle between group and individual mode'/>
         </div>
       </div>
     </div>
