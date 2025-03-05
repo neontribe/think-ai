@@ -7,18 +7,14 @@ const ToggleButton = ({initialState = false,
     onChange, disable= false,
     ariaLabel = "Toggle switch",
     labelLeft= "Individual",
-    labelRight= "Group"
+    labelRight= "Group",
+    disabled= false
 }) => {
     const [isChecked, setIsChecked] = useState(initialState);
 
     const handleToggle = () => {
-        if(!disable) {
-            setIsChecked(isChecked);
-            if(onChange) {
-                onChange(isChecked)
-            }
-        }
-    };
+        setIsChecked(!isChecked)
+    }
 
     // const handleKeyDown = (e) => {
     //     if(e.key === 'Enter' || e.key === ' ') {
@@ -43,6 +39,7 @@ const ToggleButton = ({initialState = false,
             onChange={handleToggle}
             role="switch"
             aria-checked={isChecked}
+            aria-disabled={disable}
             />
             <div className={`w-12 h-6 rounded-full border-2 border-[#66E1F1] p-1 transition-all duration-300 ${isChecked ? "bg-[#1B0080]" : "bg-transparent"}`}>
                 <div className={`w-4 h-4 bg-[#66E1F1] rounded-full transition-all duration-300 ${isChecked ? "translate-x-6" : "translate-x-0"}`}></div>
