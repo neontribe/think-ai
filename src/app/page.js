@@ -19,9 +19,9 @@ export default function Home() {
           <a href="/generate-image">
             <h3>Generate an image</h3>
           </a>
-          <OffsiteLinkButton href="https://www.google.co.uk/?client=safari&channel=mac_bm" label="Scribbr" variant="default" className="mt-4">Go to external site</OffsiteLinkButton>
-          <OffsiteLinkButton href="https://www.google.co.uk/?client=safari&channel=mac_bm"label="Video" variant="learnMore" className="mt-4 ml-4">Go to external site</OffsiteLinkButton>
-          <OffsiteLinkButton href="https://www.google.co.uk/?client=safari&channel=mac_bm" label="Find Out" variant="findOut" className="mt-4 ml-4">Go to external site</OffsiteLinkButton>
+          <OffsiteLinkButton href="https://www.google.co.uk/?client=safari&channel=mac_bm" variant="default" className="mt-4">Scribbr</OffsiteLinkButton>
+          <OffsiteLinkButton href="https://www.google.co.uk/?client=safari&channel=mac_bm" variant="learnMore" className="mt-4 ml-4">GVideo</OffsiteLinkButton>
+          <OffsiteLinkButton href="https://www.google.co.uk/?client=safari&channel=mac_bm" variant="findOut" className="mt-4 ml-4">Find Out</OffsiteLinkButton>
         </div>
       </div>
     </div>

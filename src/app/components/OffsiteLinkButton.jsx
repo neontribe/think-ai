@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const  OffsiteLinkButton = ({ href, label, variant = "learnMore", children, onClick, className = "" }) => {
+const  OffsiteLinkButton = ({ href, variant = "learnMore", children, className = "" }) => {
     const buttonStyles = {
         default: "bg-[#63E2F1] text-[#1B0080] px-6 py-3 w-[171px] h-[48px] text-lg",
         findOut: "bg-[#63E2F1] text-[#1C1806] px-6 py-3 w-[179px] h-[80px] text-lg",
@@ -14,10 +14,9 @@ const  OffsiteLinkButton = ({ href, label, variant = "learnMore", children, onCl
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        onClick={onClick}
         className={`inline-flex items-center justify-center font-bold rounded-full transition durantion-300 hover:bg-[#9747FF] hover:text-white hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-offset-2 ${buttonStyles[variant]} ${className}`}
         >
-            {label}
+            {children}
         </a>
     );
 };
