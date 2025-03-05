@@ -3,30 +3,44 @@
 import React from 'react';
 import { useState } from "react";
 
-const ToggleButton = ({}) => {
-    const [isChecked, setIsChecked] = useState(false);
+const ToggleButton = ({initialState = false,
+    onChange, disable= false,
+    ariaLabel = "Toggle switch",
+    labelLeft= "Individual",
+    labelRight= "Group"
+}) => {
+    const [isChecked, setIsChecked] = useState(initialState);
 
     const handleToggle = () => {
-        setIsChecked(!isChecked);
-    }
-
-    const handleKeyDown = (e) => {
-        if(e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            handleToggle();
+        if(!disable) {
+            setIsChecked(isChecked);
+            if(onChange) {
+                onChange(isChecked)
+            }
         }
     };
 
+    // const handleKeyDown = (e) => {
+    //     if(e.key === 'Enter' || e.key === ' ') {
+    //         e.preventDefault();
+    //         handleToggle();
+    //     }
+    // };
+
     return (
+        <div className="flex items-center space-x-4"> 
+              {/* Left Label */}
+            <span className={`text-blue text-lg font-medium ${isChecked ? "text-gray-400" : "text-blue"}`}>
+             Use in a group
+            </span>
     
         
-         <label className="flex items-center cursor-pointer">
+         <label className={`relative inline-flex items-center cursor-pointer`}> 
             <input
             type="checkbox"
             className="hidden"
             checked={isChecked}
             onChange={handleToggle}
-            onKeyDown={handleKeyDown}
             role="switch"
             aria-checked={isChecked}
             />
@@ -35,6 +49,12 @@ const ToggleButton = ({}) => {
             </div>
 
          </label>
+         {/* Right Label */}
+         <span className={`text-blue text-lg font-medium ${isChecked ? "text-gray-400" : "text-blue"}`}>
+                It's just me
+            </span>
+
+        </div>
     );
 
 };
