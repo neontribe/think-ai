@@ -3,51 +3,60 @@
 import React from 'react';
 import { useState } from "react";
 
-const ToggleButton = ({initialState = false,
-    onChange, disable= false,
+const ToggleButton = ({
+    initialState = false,
+    onChange,
     ariaLabel = "Toggle switch",
     labelLeft= "Individual",
     labelRight= "Group",
-    disabled= false
 }) => {
     const [isChecked, setIsChecked] = useState(initialState);
 
     const handleToggle = () => {
-        setIsChecked(!isChecked)
+        setIsChecked((prev) => !prev);
+    if(onChange) onChange (!isChecked);
     }
 
-    // const handleKeyDown = (e) => {
-    //     if(e.key === 'Enter' || e.key === ' ') {
-    //         e.preventDefault();
-    //         handleToggle();
-    //     }
-    // };
+    const handleKeyDown = (e) => {
+        if(e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            handleToggle();
+        }
+    };
+
+    
 
     return (
         <div className="flex items-center space-x-4"> 
               {/* Left Label */}
-            <span className={`text-blue text-lg font-medium ${isChecked ? "text-gray-400" : "text-blue"}`}>
-             Use in a group
+            <span id="toggle-left-label" className={`text-blue text-lg font-medium mr-1`}>
+             {labelLeft}
             </span>
     
         
-         <label className={`relative inline-flex items-center cursor-pointer`}> 
-            <input
+         <label className={`relative inline-flex items-center cursor-pointer`}
+         htmlFor='toggle-checkbox'> 
+         </label>
+         <input
             type="checkbox"
-            className="hidden"
+            className="sr-only"
             checked={isChecked}
             onChange={handleToggle}
+            aria-labelledby="toggle-left-label  toggle-right-label"
+            aria-label="Toggle switch"
             role="switch"
             aria-checked={isChecked}
-            aria-disabled={disable}
+            onKeyDown={handleKeyDown}
             />
-            <div className={`w-12 h-6 rounded-full border-2 border-[#66E1F1] p-1 transition-all duration-300 ${isChecked ? "bg-[#1B0080]" : "bg-transparent"}`}>
-                <div className={`w-4 h-4 bg-[#66E1F1] rounded-full transition-all duration-300 ${isChecked ? "translate-x-6" : "translate-x-0"}`}></div>
-            </div>
 
-         </label>
+            <div onClick={handleToggle}>
+
+            <div className={`w-12 h-6 bg-[##1B0080] rounded-full border-2 border-[#66E1F1] p-1 py-[2px] transition-all duration-300 ${isChecked ? "bg-[#1B0080]" : "bg-[#1B0080]"}`}>
+                <div className={`w-4 h-4 bg-[#66E1F1] bg-[#1B0080] rounded-full transition-all duration-300 ${isChecked ? "translate-x-6" : "translate-x-0"}`}></div>
+            </div>
+            </div>
          {/* Right Label */}
-         <span className={`text-blue text-lg font-medium ${isChecked ? "text-gray-400" : "text-blue"}`}>
+         <span id= "toggle-right-label" className={`text-blue text-lg font-medium ml-1`}>
                 It's just me
             </span>
 
