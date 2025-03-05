@@ -10,9 +10,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
-        <header>
-          <Link href="/" className="logo">Think AI</Link>
+      <body className="font-mono bg-blue-700 text-gray-100">
+        <header className="p-2">
+          <Link href="/" className="text-3xl">Think AI</Link>
         </header>
         {children}
       </body>

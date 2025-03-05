@@ -11,8 +11,8 @@ export default function Query() {
       <div>What makes a good prompt?</div>
       <div>What to be aware of?</div>
     </div>
-    <input type="text" defaultValue="Describe an image" />
-    <button type="button" onClick={() => router.push('/process/response')}>
+    <textarea id="query" name="query" className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-[#9747FF] focus:ring-[#9747FF]" defaultValue="ring-[#9747FF]"/>
+    <button className="bg-[#63E2F1] text-[#1B0080] px-6 py-3 w-[171px] h-[48px] text-lg inline-flex items-center justify-center font-bold rounded-full transition durantion-300 hover:bg-[#9747FF] hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#9747FF]" type="button" onClick={() => router.push('/process/response')}>
       Create!
     </button>
   </>);
