@@ -1,4 +1,7 @@
+// server side component
+
 import './globals.css'
+import {GlobalStateProvider} from "@/app/contexts/GlobalStateProvider";
 import Link from "next/link";
 
 export const metadata = {
@@ -11,10 +14,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="font-mono bg-blue-700 text-gray-100">
-        <header className="p-2">
-          <Link href="/" className="text-3xl">Think AI</Link>
-        </header>
-        {children}
+        <GlobalStateProvider>
+          <header className="p-2">
+            <Link href="/" className="text-3xl">Think AI</Link>
+          </header>
+          {children}
+        </GlobalStateProvider>
       </body>
     </html>
   );
