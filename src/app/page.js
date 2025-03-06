@@ -1,4 +1,6 @@
+import ArrowButton from './components/ArrowButton.jsx';
 import OffsiteLinkButton from './components/OffsiteLinkButton.jsx';
+import ToggleButton from './components/ToggleButton.jsx';
 
 export default function Home() {
   return (
@@ -20,12 +22,22 @@ export default function Home() {
             <h3>Generate an image</h3>
           </a>
           {/* Hidden description for screen readers */}
-          <p id='offsite-link-description' className='sr-only'>
+          <p id="offsite-link-description" className="sr-only">
             This link opens in a new tab.
           </p>
           <OffsiteLinkButton href="https://www.google.co.uk/?client=safari&channel=mac_bm" variant="default" className="mt-4">Scribbr</OffsiteLinkButton>
           <OffsiteLinkButton href="https://www.google.co.uk/?client=safari&channel=mac_bm" variant="learnMore" className="mt-4 ml-4">Video</OffsiteLinkButton>
           <OffsiteLinkButton href="https://www.google.co.uk/?client=safari&channel=mac_bm" variant="findOut" className="mt-4 ml-4">Find Out</OffsiteLinkButton>
+        </div>
+        <ArrowButton direction="right" />
+        <ArrowButton direction="left" />
+        <ArrowButton direction="up" />
+        <ArrowButton direction="down" />
+        <div className="flex items-center space-x-2">
+          <ToggleButton
+          labelLeft="Use in a group"
+          labelRight="It's just me"
+          ariaLabel="Toggle between group and individual mode"/>
         </div>
       </div>
     </div>
