@@ -3,6 +3,7 @@
 import Link from "next/link";
 import ArrowButton from "@/app/components/ArrowButton";
 import ToggleButton from "@/app/components/ToggleButton";
+import ResponseCarousel from "./components/ResponseCarousel";
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
           labelRight="It's just me"
           ariaLabel="Toggle between group and individual mode"/>
       </div>
+      <ResponseCarousel />
     </div>
   );
 }
