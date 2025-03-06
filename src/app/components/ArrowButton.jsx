@@ -1,14 +1,12 @@
-import React from 'react';
+import React from "react";
 
 const ArrowButton = ({ href = "", direction = "", children, onClick, className = "", ariaLabel}) => {
     const rotationMap = {
         up: "rotate-0",
         down: "rotate-180",
-        left: 'rotate-270',
-        right: 'rotate-90',
+        left: "rotate-270",
+        right: "rotate-90",
     };
-
-    console.log("ArrowButton direction:", direction, rotationMap[direction]);
 
     return (
             <button
@@ -17,7 +15,7 @@ const ArrowButton = ({ href = "", direction = "", children, onClick, className =
             rel="noopener noreferrer"
             className={`w-12 h-12 flex items-center justify-center rounded-full bg-[#3F4ADF] transition-transform hover:scale-110 focus:ring-2 focus:ring-white ${className} arial-label={Arrow pointing ${direction}`}
             aria-label={ariaLabel || children}
-            aria-describedby=''
+            aria-describedby=""
             tabIndex="0"
             >
                 <svg xmlns="http://www.w3.org/2000/svg" 

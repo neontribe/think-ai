@@ -1,6 +1,6 @@
-'use client'
+"use client"
 
-import React from 'react';
+import React from "react";
 import { useState } from "react";
 
 const ToggleButton = ({
@@ -17,13 +17,11 @@ const ToggleButton = ({
     };
 
     const handleKeyDown = (e) => {
-        if(e.key === 'Enter' || e.key === ' ') {
+        if(e.key === "Enter" || e.key === " ") {
             e.preventDefault();
             handleToggle();
         }
     };
-
-    
 
     return (
         <div className="flex items-center space-x-4"> 
@@ -58,7 +56,7 @@ const ToggleButton = ({
             </div>
          {/* Right Label */}
          <span id= "toggle-right-label" className={`text-blue text-lg font-medium ml-1`}>
-                It's just me
+            {labelRight}
             </span>
 
         </div>
