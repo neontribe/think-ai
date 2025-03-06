@@ -30,6 +30,9 @@ export default function Home() {
           <OffsiteLinkButton href="https://www.google.co.uk/?client=safari&channel=mac_bm" variant="findOut" className="mt-4 ml-4">Find Out</OffsiteLinkButton>
         </div>
         <ArrowButton direction="right" />
+        <ArrowButton direction="left" />
+        <ArrowButton direction="up" />
+        <ArrowButton direction="down" />
         <div className='flex items-center space-x-2'>
           <ToggleButton
           labelLeft='Use in a group'
