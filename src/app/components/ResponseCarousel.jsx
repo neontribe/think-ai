@@ -1,9 +1,9 @@
-"use clinet"
+"use client"
 
 import React, { useState } from "react";
 
 const ResponseCarousel = ({ slideData}) => {
-    const[currentSlide, setCurrentSlide] = useState(0);
+    const [currentSlide, setCurrentSlide] = useState();
 
 
     return (
