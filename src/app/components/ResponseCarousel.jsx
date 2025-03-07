@@ -30,7 +30,7 @@ const prevSlide = () => {
     if (newIndex < 0) {
         newIndex = slideData.length -1;
     } 
-    return updateSlide[newIndex]
+    return updateSlide(newIndex)
 }
 
 
@@ -40,7 +40,7 @@ const nextSlide = () => {
     if (newIndex == slideData.length) {
         newIndex = 0;
     } 
-    return updateSlide[newIndex]
+    return updateSlide(newIndex)
 }
     
 
