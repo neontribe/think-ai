@@ -3,45 +3,28 @@
 import React, { useState } from "react";
 import ArrowButton from "./ArrowButton";
 
-const ResponseCarousel = () => {
-    const slideData = [
-        {
-            number: "1.",
-            paragraph: "This is the first slide.is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages "
-        },
-        {
-            number: "2.",
-            paragraph: "This is the second slide. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages"
-        },
-    ];
-
-   
+const ResponseCarousel = ({slideData = [] }) => {
     const [currentIndex, setCurrentIndex] = useState(0)
-    console.log("current index:", currentIndex);
 
     const updateSlide = (newIndex) => {
-        console.log( `Initial currentIndex : ${currentIndex}`)
         setCurrentIndex(newIndex);
     };
     
-const prevSlide = () => {
-    let newIndex = currentIndex-1;
-    console.log("previous")
-    if (newIndex < 0) {
-        newIndex = slideData.length -1;
-    } 
-    return updateSlide(newIndex)
-}
-
-
-const nextSlide = () => {
-    let newIndex = currentIndex+1;
-    console.log("next")
-    if (newIndex == slideData.length) {
-        newIndex = 0;
-    } 
-    return updateSlide(newIndex)
-}
+    const prevSlide = () => {
+        let newIndex = currentIndex-1;
+        if (newIndex < 0) {
+            newIndex = slideData.length -1;
+        }
+        return updateSlide(newIndex)
+    }
+    
+    const nextSlide = () => {
+        let newIndex = currentIndex+1;
+        if (newIndex == slideData.length) {
+            newIndex = 0;
+        }
+        return updateSlide(newIndex)
+    }
     
 
 
