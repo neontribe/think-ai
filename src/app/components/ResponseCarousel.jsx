@@ -4,8 +4,6 @@ import React, { useState } from "react";
 import ArrowButton from "./ArrowButton";
 
 const ResponseCarousel = () => {
-    const [currentSlide, setCurrentSlide] = useState();
-
     const slideData = [
         {
             number: "1.",
@@ -17,13 +15,34 @@ const ResponseCarousel = () => {
         },
     ];
 
-    const nextSlide = () => {
-        setCurrentSlide((prev) => (prev -1 + slideData.length) % slideData.lenght);
-    };
+   
+    const [currentIndex, setCurrentIndex] = useState(0)
+    console.log("current index:", currentIndex);
 
-    const prevSlide = () => {
-        setCurrentSlide((prev) => (prev -1 + slideData.lenght) % slideData.lengh);
-    }
+    const updateSlide = (newIndex) => {
+        console.log( `Initial currentIndex : ${currentIndex}`)
+        setCurrentIndex(newIndex);
+    };
+    
+const prevSlide = () => {
+    let newIndex = currentIndex-1;
+    console.log("previous")
+    if (newIndex < 0) {
+        newIndex = slideData.length -1;
+    } 
+    return updateSlide[newIndex]
+}
+
+
+const nextSlide = () => {
+    let newIndex = currentIndex+1;
+    console.log("next")
+    if (newIndex == slideData.length) {
+        newIndex = 0;
+    } 
+    return updateSlide[newIndex]
+}
+    
 
 
     return (
@@ -32,10 +51,14 @@ const ResponseCarousel = () => {
         <div className="relative w-full max-w-4xl h-72 md:h-80 lg:h-[28rem] bg-[#291498] rounded-3xl overflow-hidden mx-auto">
             {/* slider container */}
             <div className="relative w-full h-full flex">
-                {slideData.map((slide, index) => (
-                    <div
+                {slideData.map((slide, index) => {
+                    const isActive = index === currentIndex;
+                    return (
+                    
+                    <div 
                         key={index}
-                        className={`absolute inset-0 flex items-center justify-center text-white z-10 transition-opacity duration-500 ${index === currentSlide ? "opacity-100" : "opacity-0"}`}
+                        className={`absolute  bg-green inset-0 flex items-center justify-center text-white transition-opacity duration-500 
+                            ${isActive ? "opacity-100 z-10" : "opacity-0 z-0"}`}
                     >
                         {/* slide content */}
                         <div className="p-8 bg-blue-700/80 rounded-3xl max-w-[90%] flex">
@@ -45,7 +68,8 @@ const ResponseCarousel = () => {
                             </div>
                         </div>
                     </div>
-                ))}
+                    )
+                    })}
                 <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex items-center justify-between w-full max-w-[90%] bg-red-500 px-4 z-20">
                     <ArrowButton direction="left" onClick={nextSlide}  ariaLabel="Next slide"/>
                     <ArrowButton direction="right" onClick={prevSlide} arialLabel="Previous slide"/>
