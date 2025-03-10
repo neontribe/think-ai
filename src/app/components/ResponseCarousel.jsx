@@ -62,8 +62,10 @@ const ResponseCarousel = () => {
                         )
                         })}
                     <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex items-center justify-between w-full max-w-[90%] px-4 z-20">
-                        <ArrowButton direction="left" onClick={nextSlide}  ariaLabel="Next slide"/>
-                        <ArrowButton direction="right" onClick={prevSlide} arialLabel="Previous slide"/>
+                        <ArrowButton direction="left" onClick={nextSlide}  ariaLabel="Next slide"
+                        className={currentIndex === 0 ? "hidden" : ""}/>
+                        <ArrowButton direction="right" onClick={prevSlide} arialLabel="Previous slide"
+                        className={currentIndex === slideData.length -1 ? "hidden" : ""}/>
                     </div>
                 </div>
             </div>
