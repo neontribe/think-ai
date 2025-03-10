@@ -3,14 +3,8 @@
 import React, { useState } from "react";
 import ArrowButton from "./ArrowButton";
 
-const ResponseCarousel = () => {
-    const slideData = [ 
-        {number: "1", paragraph: "This is a placeholder slide number one. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries."},
-        {number: "2", paragraph: "This is a placeholder slide number two. There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. "},
-        {number: "3", paragraph: "This is a placeholder slide number three. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)."},
-        
-    ]
-    const [localSlides] = useState(slideData.length > 0 ? slideData : defaultSlides);
+const ResponseCarousel = ({slideData = []}) => {
+    const [localSlides] = useState(slideData);
     const [currentIndex, setCurrentIndex] = useState(0)
 
     const updateSlide = (newIndex) => {
@@ -44,7 +38,6 @@ const ResponseCarousel = () => {
                 >
                     {localSlides.map((slide, index) => {
                         return (
-                        
                             <div 
                             key={index}
                             className="absolute inset-0 flex items-center justify-center text-white transition-transform duration-700 ease-in-out"
@@ -61,11 +54,15 @@ const ResponseCarousel = () => {
                         </div>
                         )
                         })}
+
+                        
                     <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex items-center justify-between w-full max-w-[90%] px-4 z-20">
-                        <ArrowButton direction="left" onClick={nextSlide}  ariaLabel="Next slide"
-                        className={currentIndex === 0 ? "hidden" : ""}/>
-                        <ArrowButton direction="right" onClick={prevSlide} arialLabel="Previous slide"
-                        className={currentIndex === slideData.length -1 ? "hidden" : ""}/>
+                    <div className={currentIndex === 0 ? "hidden" : ""}>
+                    <ArrowButton direction="left" onClick={nextSlide} ariaLabel="Next slide"/>
+                    </div>
+                    <div className={currentIndex !== 0 ? "hidden" : "felx-grow"}></div>
+                    <ArrowButton direction="right" onClick={prevSlide} arialLabel="Previous slide"
+                    className={currentIndex === slideData.length -1 ? "hidden" : ""}/>
                     </div>
                 </div>
             </div>
@@ -75,3 +72,6 @@ const ResponseCarousel = () => {
     };
     
     export default ResponseCarousel;
+
+
+ 
