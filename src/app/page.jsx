@@ -33,6 +33,8 @@ export default function Home() {
         <p className="text-3xl">THE QUICK BROWN FOX JUMPED OVER THE LAZY DOG</p>
         <p className="text-2xl">01234567890.:,;(&#34;*!?&#39;)</p>
         <p className="text-2xl">the quick brown fox jumped over the lazy dog</p>
+        <p className="text-2xl font-semibold">the quick brown fox jumped over the lazy dog</p>
+        <p className="text-2xl font-bold">the quick brown fox jumped over the lazy dog</p>
         <p className="">the quick brown fox jumped over the lazy dog</p>
         <p className="italic">the quick brown fox jumped over the lazy dog</p>
         <p className="italic">01234567890.:,;(&#34;*!?&#39;)</p>
