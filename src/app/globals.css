@@ -1,1 +1,19 @@
 @import "tailwindcss";
+
+@theme {
+    /* custom breakpoints screen */
+    --breakpoint-*: initial;
+    --breakpoint-phone: 24.375rem;
+    --breakpoint-md: 48rem;
+    --breakpoint-3xl: 120rem;
+    /* typography */
+    --font-primary: "Poppins", sans-serif;
+  }
+
+
+
+
+
+  body {
+    background-color:  #291498;
+  }
