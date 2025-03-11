@@ -19,8 +19,8 @@ export const metadata = {
 /* creates the default root layout */
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={poppins.className}>
-      <body className="bg-blue-700 text-gray-100">
+    <html lang="en">
+      <body className={`bg-blue-700 text-gray-100 ${poppins.className}`}>
         <GlobalStateProvider>
           <header className="p-2">
             <Link href="/" className="text-3xl">Think AI</Link>
