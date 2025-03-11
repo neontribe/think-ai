@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 const ContentBox = ({
     children, 
-    width = "w-full",
+    width = "w-[530px]",
     height = "h-[466px]",
 }) => {
     return (
@@ -16,3 +16,4 @@ const ContentBox = ({
 }
 
 export default ContentBox;
+
