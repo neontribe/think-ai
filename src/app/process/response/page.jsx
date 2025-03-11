@@ -15,9 +15,9 @@ const Response = () => {
       Find Out
     </button>
     {/* whole screen size */}
-    <div class="bg-gray-400 flex justyfy-center items-center min-h-screen">
+    <div className="bg-gray-400 flex justyfy-center items-center min-h-screen">
       
-      <div class=" container mx-auto w-[1150px] h-[466px] bg-gray-700 flex flex-col md:flex-row">
+      <div className=" container mx-auto w-[1150px] h-[466px] bg-gray-700 flex flex-col md:flex-row">
         <div className="w-full md:w-1/2 h-full bg-blue-500 text-white flex flex-col items-center justify-center md:order-1 3xl:order-2">
           <h1>Column 1</h1>
         </div>
@@ -26,21 +26,6 @@ const Response = () => {
         </div>
         
       </div>
-
-
-      {/* <div class="bg-gray-400 flex justyfy-center items-center min-h-screen">
-        
-        <div className= "w-[1150px] h-[466px] bg-gray-700 flex flex-col md:flex-row">
-          
-          <div className=" w-full md:w-1/2 h-full bg-blue-500 text-white flex flex-col items-center justify-center md:order-2 order-1">
-          <h1>Column 2</h1>
-          </div>
-          
-          <div className="w-full md:w-1/2 h-full bg-green-700 text-white flex flex-col items-center justify-center md:order-1 order-2">
-          <h1>Column 1</h1>
-          </div>
-        </div>
-      </div> */}
       
 
     </div>
