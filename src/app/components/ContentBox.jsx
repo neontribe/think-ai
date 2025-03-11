@@ -4,11 +4,11 @@ import { useEffect } from "react";
 
 const ContentBox = ({
     children, 
-    width,
-    height,
+    width = "w-full",
+    height = "h-[466px]",
 }) => {
     return (
-        <div className="">
+        <div className={`${width} ${height} bg-[#291498] text-white p-6 rounded-3xl shadow-lg`}>
             {children}
         </div>
 
