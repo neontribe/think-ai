@@ -3,14 +3,16 @@
 import React from "react";
 import Link from 'next/link';
 
-const Header = ({showNav = true}) => {
+const Header = ({hidelinks = false, ...props}) => {
+    
     return (
-        <header className="w-full bg-[#1C0080] text-white py-4 px-6 flex justify-between items-center">
+        <header {...props} className="w-full bg-[#1C0080] text-white py-4 px-6 flex justify-between items-center">
             <Link href="/">
             <h1 className="text-3xl font-semibold cursor-pointer">Real Talk <spam className="text-[#87E2D9]">AI</spam></h1>
             </Link>
+            
             {/* Link and button block - can be hidden via prop */}
-            {showNav && (
+            {!hidelinks && (
                 <div className="flex gap-8 items-center px-4 py-2">
                     <Link href="/our-team" className="text-lg underline">our team</Link>
                     <Link href="/group-leaders"> 

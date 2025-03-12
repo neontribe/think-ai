@@ -1,11 +1,11 @@
 'use client';
+import Header from "../components/Header";
 
 
 export default function GroupLeadersPage() {
     return (
-      <main>
-        <h1>TEAM Page</h1>
-      </main>
-     
-    );
+        <header hidelinks = {false}/>
+        
+       
+      );
   };
