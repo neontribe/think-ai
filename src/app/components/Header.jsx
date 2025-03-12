@@ -12,8 +12,8 @@ const Header = ({showNav = true}) => {
             {/* Link and button block - can be hidden via prop */}
             {showNav && (
                 <div className="flex gap-8 items-center px-4 py-2">
-                    <Link href="/" className="text-lg underline">our team</Link>
-                    <Link href="/"> 
+                    <Link href="/our-team" className="text-lg underline">our team</Link>
+                    <Link href="/group-leaders"> 
                     <button className="px-4 py-2 text-lg text-white bg-[#1C0080] border-2 border-[#65E1F1] rounded-full cursor-pointer">for group leaders</button>
                     </Link>
                 </div>
