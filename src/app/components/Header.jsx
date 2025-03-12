@@ -3,6 +3,7 @@
 import React from "react";
 import Link from 'next/link';
 
+
 const Header = ({hidelinks = false}) => {
     console.log("hidelinks value:", hidelinks);
     
@@ -10,8 +11,8 @@ const Header = ({hidelinks = false}) => {
         <header role="banner" className="w-full bg-[#1C0080] text-white py-4 px-6 flex justify-between items-center">
             <Link href="/" className="focus:outline-none focus:ring-2 focus:ring-[#65E1F1]">
             <h1 className="text-3xl font-semibold cursor-pointer" id="site-title">
-                <spam className="block md:inline">Real Talk</spam> 
-                <spam className="text-[#87E2D9] md:ml-2">AI</spam></h1>
+                <span className="block md:inline">Real Talk</span> 
+                <span className="text-[#87E2D9] md:ml-2">AI</span></h1>
             </Link>
             
             {/* Link and button block - can be hidden via prop */}
