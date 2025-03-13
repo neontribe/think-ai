@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import React, { useEffect } from "react";
+import RouteButton from './RouteButton';
 
 const Header = ({ hidelinks = false }) => {
     useEffect(() => {
@@ -21,9 +22,13 @@ const Header = ({ hidelinks = false }) => {
             {!hidelinks && (
                 <nav className="flex md:flex-row flex-col gap-2 md:gap-8 items-end" aria-label="Main navigation">
                     <Link href="/our-team" className="text-lg underline mb-2 md:mb-0 focus:outline-none focus:ring-[#65E1F1] rounded-md" aria-label="View our team">our team</Link>  
-                    <Link href="/group-leaders" className="w-full md:w-auto focus:outline-none focus:ring-2 focus:ring-[#65E1F1]" aria-label="resources for group leaders"> 
-                        <button className="px-4 py-2 text-lg text-white bg-[#1C0080] border-2 border-[#65E1F1] rounded-full cursor-pointer" type="button">for group leaders</button>
-                    </Link>    
+                    <RouteButton 
+                        href="/group-leaders" 
+                        className="w-full md:w-auto px-4 py-2 text-lg text-white bg-[#1C0080] border-2 border-[#65E1F1] rounded-full cursor-pointer"
+                        ariaLabel="Resources for group leaders"
+                    >
+                        For Group Leaders
+                    </RouteButton>  
                 </nav>
             )}
         </header>
