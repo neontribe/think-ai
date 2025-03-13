@@ -4,7 +4,7 @@ import './globals.css'
 import {GlobalStateProvider} from "@/app/contexts/GlobalStateProvider";
 import Link from "next/link";
 import { Poppins } from 'next/font/google';
-import Header from './components/Header';
+
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -23,7 +23,6 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`bg-blue-700 text-gray-100 ${poppins.className}`}>
         <GlobalStateProvider>
-          <Header/>
           
           {children}
         </GlobalStateProvider>

@@ -4,12 +4,14 @@ import Link from "next/link";
 import ArrowButton from "@/app/components/ArrowButton";
 import ToggleButton from "@/app/components/ToggleButton";
 import ResponseCarousel from "./components/ResponseCarousel";
+import Header from "./components/Header";
 
 
 
 export default function Home() {
   return (
     <div className="full-width-container">
+      <Header/>
       <div className="constrained-width-container">
         <h1>
           <span>Welcome to</span> <span>Think AI</span>

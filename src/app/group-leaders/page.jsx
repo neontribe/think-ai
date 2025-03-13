@@ -1,14 +1,17 @@
 'use client';
 
+import Header from "../components/Header";
+
 
 export default function GroupLeadersPage() {
-    return (
+  return (
+    <div>
+      <Header hidelinks={true} />
       <main>
         <h1>Group Leader Page</h1>
-      </main>
-     
-    );
-  };
+        </main>
+    </div>     
+  );
+};
 
-  
-  
+ 
