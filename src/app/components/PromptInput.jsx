@@ -9,6 +9,7 @@ export default function PromptInput({ apiEndpoint, suggestedText, onSubmit, mode
     const [errorMessage, setErrorMessage] = useState("");
     const [imageModel, setImageModel] = useState("dall-e-3");
     const [showResponseContainer, setShowResponseContainer] = useState(false);
+    const [risks, setRisks] = useState("");
 
 
     const handleSubmit = async (e) => {
@@ -30,8 +31,9 @@ export default function PromptInput({ apiEndpoint, suggestedText, onSubmit, mode
             throw new Error("Network reposnse was not ok");
         }
 
-        const data = await response.json();
-        onSubmit(data);
+        const { promptResponseContent, splitRiskPoints } = await response.json();
+        setPromptResponse(promptResponseContent);
+        setRisks(splitRiskPoints || []);
         setShowResponseContainer(true);
       } catch (errorMessage) {
         setErrorMessage(
@@ -48,7 +50,7 @@ export default function PromptInput({ apiEndpoint, suggestedText, onSubmit, mode
           </h1>
           {!showResponseContainer && (
             <>
-              {modelType === "image-generation" && (
+              {modelType === "image-generation" ? (
                 <select
                   className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   value={imageModel}
@@ -57,7 +59,7 @@ export default function PromptInput({ apiEndpoint, suggestedText, onSubmit, mode
                   <option value="dall-e-2">DALL·E 2</option>
                   <option value="dall-e-3">DALL·E 3</option>
                 </select>
-              )}
+              ) : null}
               <div className="relative">
                 <textarea
                   id="prompt"
@@ -75,10 +77,29 @@ export default function PromptInput({ apiEndpoint, suggestedText, onSubmit, mode
               </div>
             </>
           )}
+          {showResponseContainer && (
+            <div>
+              <h2>Your Prompt</h2>
+              <p>{prompt}</p>
+      
+              <h2>Response:</h2>
+              {modelType === "image-generation" && promptResponse && (
+                <img alt="Generated content" className="w-full rounded-lg shadow-md" src={promptResponse} />
+              )}
+            </div>
+          )}
           {errorMessage && <p className="text-red-500 text-sm text-center">{errorMessage}</p>}
         </div>
       );
-};
+}      
 
+
+// Add different instructions fori mage generation vs summary
+// Implement the summary logic
+
+// Complete the response display section
+// Complete risk section, complete "your prompt" and response section
+
+// Make the submit button functional and connet to API  -> 1- handleSubmit function to process form data; 2- connet API endpoints based on modelType
 
 
