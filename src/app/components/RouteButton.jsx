@@ -13,8 +13,9 @@ const RouteButton = ({ href, children, className = "", ariaLabel, onClick, varia
         <Link 
         href={href || '/fallback-path'}
         className={`route-button ${routeStyle[variant]} ${className}`}
-        aria-label={ariaLabel} 
-        type="button"
+        aria-label={ariaLabel || children}
+        aria-describedby='route-link-description'
+        tabIndex= "0" 
         onClick={onClick}
         {...props}
         >
