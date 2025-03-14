@@ -24,7 +24,7 @@ const Header = ({ hidelinks = false }) => {
                     <Link href="/our-team" className="text-lg underline mb-2 md:mb-0 hover:bg-[#3E1C96] focus:ring-2 focus:ring-[#65E1F1] rounded-md" aria-label="View our team">our team</Link>  
                     <RouteButton 
                         href="/group-leaders" 
-                        className="w-full md:w-auto px-4 py-2 text-lg text-white bg-[#1C0080] border-2 border-[#65E1F1] rounded-full cursor-pointer hover:bg-[#3E1C96] focus:ring-2 focus:ring-[#65E1F1]"
+                        variant="secondary"
                         ariaLabel="Resources for group leaders"
                     >
                         For Group Leaders
