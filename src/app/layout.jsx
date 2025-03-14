@@ -23,6 +23,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`bg-blue-700 text-gray-100 ${poppins.className}`}>
         <GlobalStateProvider>
+       
           
           {children}
         </GlobalStateProvider>
