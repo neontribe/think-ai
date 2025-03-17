@@ -1,6 +1,6 @@
 "use client";
 
-import PromptInput from "@/components/PromptInput";
+import PromptInput from "../components/PromptInput";
 
 export default function GenerateImageEndPoint() {
   const apiEndpoint = "api/image"; 
