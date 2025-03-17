@@ -116,6 +116,12 @@ export default function PromptInput({
           {/* Risk Mitigation Section */}
           {risks.length > 0 && (
             <>
+            <h2>But...</h2>
+              <ol>
+                {risks.map((risk, index) => (
+                  <li key={index}>{risk}</li>
+                ))}
+              </ol>
             </>
           )}
         </div>
@@ -124,8 +130,7 @@ export default function PromptInput({
   );
 }
 
-// Add different instructions for image generation vs summary
-// Implement the summary logic
+
 
 // Complete the response display section
 // Complete risk section, complete "your prompt" and response section
