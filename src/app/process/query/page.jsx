@@ -25,8 +25,14 @@ export default function Query() {
     <button className="bg-[#63E2F1] text-[#1B0080] px-6 py-3 w-[171px] h-[48px] text-lg inline-flex items-center justify-center font-bold rounded-full transition durantion-300 hover:bg-[#9747FF] hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#9747FF]" type="button" onClick={() => router.push('/process/response')}>
       Create!
     </button>
-    <PromptInput apiEndpoint="" suggestedText="Describe something ..."
-    onSubmit={() => {}}
-    />
-  </>);
+    {/* Prompt Input Component */}
+    <PromptInput
+          apiEndpoint="/api/image"
+          suggestedText="Describe something ..."
+          modelType="image-generation"
+          buttonText="Make Image" 
+          onSubmit={() => router.push("/process/response")}
+        />
+  </>
+  );
 }
