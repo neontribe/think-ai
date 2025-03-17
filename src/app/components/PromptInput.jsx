@@ -85,7 +85,7 @@ export default function PromptInput({
         {/* Submit Button */}
         <RouteButton
           type="button"
-          variant="secondary"
+          variant="primary"
           className="mt-4"
           disabled={promptSubmitted}
         >
@@ -132,11 +132,6 @@ export default function PromptInput({
 
 
 
-// Complete the response display section
-// Complete risk section, complete "your prompt" and response section
 
-// Make the submit button functional and connet to API  -> 
-// 1- handleSubmit function to process form data; 
-// 2- connet API endpoints based on modelType
 
 
