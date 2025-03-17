@@ -38,6 +38,15 @@ const CustomImage = ({
       >
         <Image {...imageProps} /> 
       </a>
+      {caption && (
+        <figcaption className="text-sm text-white font-bold mt-2">{caption}</figcaption>
+      )}
+
+      {overlayText && (
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-lg font-bold">
+          {overlayText}
+        </div>
+      )}
 
       
     </figure>
