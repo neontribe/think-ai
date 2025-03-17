@@ -5,8 +5,6 @@ import ArrowButton from "@/app/components/ArrowButton";
 import ToggleButton from "@/app/components/ToggleButton";
 import ResponseCarousel from "./components/ResponseCarousel";
 import Header from "./components/Header";
-import CustomImage from "./components/CustomImage";
-
 
 
 export default function Home() {
