@@ -1,6 +1,6 @@
 'use client'
- import React from 'react'
-import Image from 'next/image'
+import React from 'react';
+import Image from 'next/image';
 
 const CustomImage = ({
   src,
@@ -16,24 +16,27 @@ const CustomImage = ({
   className = '',
   overlayText = '',
 }) => {
+  // All props for Image component in one object
+  const imageProps = {
+    src,
+    alt,
+    width: !fill ? width : undefined,
+    height: !fill ? height : undefined,
+    fill,
+    sizes,
+    style: { borderRadius, objectFit: 'cover', ...style },
+    className,
+  };
+
   return (
     <figure style={{ textAlign: 'center', margin: '0', position: 'relative' }}>
       <a
-        href={link || '#'}  
+        href={link || '#'} 
         target='_blank'
         rel='noopener noreferrer'
         aria-label={alt} 
       >
-        <Image
-          src={src}
-          alt={alt}
-          width={!fill ? width : undefined}  
-          height={!fill ? height : undefined} 
-          fill={fill}  
-          sizes={sizes}
-          style={{ borderRadius, objectFit: 'cover', ...style }} 
-          className={className}
-        />
+        <Image {...imageProps} /> 
       </a>
 
       
@@ -42,6 +45,7 @@ const CustomImage = ({
 };
 
 export default CustomImage;
+
 
 
 
