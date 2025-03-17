@@ -1,7 +1,7 @@
 'use client'
  import React from 'react'
 import Image from 'next/image'
- 
+
 const CustomImage = ({
   src,
   alt,
@@ -11,36 +11,38 @@ const CustomImage = ({
   caption = '',
   link = '',
   sizes = '',
-  borderRadius = '0',  
+  borderRadius = '0',
   style = {},
   className = '',
-  overlayText = '',  
+  overlayText = '',
 }) => {
-  const imageElement = (
-    <Image
-      src={src}
-      alt={alt}
-      width={!fill ? width : undefined}
-      height={!fill ? height : undefined}
-      fill={fill}
-      sizes={sizes}
-      style={{
-        borderRadius: borderRadius,
-        objectFit: 'cover',
-        ...style,
-      }}
-      className={className}
-    />
-  );
-
   return (
-    <figure style={{ textAlign: "center", margin: "0"}}>
+    <figure style={{ textAlign: 'center', margin: '0', position: 'relative' }}>
+      <a
+        href={link || '#'}  
+        target='_blank'
+        rel='noopener noreferrer'
+        aria-label={alt} 
+      >
+        <Image
+          src={src}
+          alt={alt}
+          width={!fill ? width : undefined}  
+          height={!fill ? height : undefined} 
+          fill={fill}  
+          sizes={sizes}
+          style={{ borderRadius, objectFit: 'cover', ...style }} 
+          className={className}
+        />
+      </a>
+
+      
     </figure>
-    
-  )
-}
+  );
+};
 
 export default CustomImage;
+
 
 
 
