@@ -52,8 +52,20 @@ const CustomImage = ({
       )}
      
       {caption && (
-        <figcaption className="text-white font-bold mt-2 text-[18px] text-center max-w-[200px] break-words leading-[1.4]">{caption}</figcaption>
-      )}
+        <figcaption className="text-white font-bold mt-2 text-[18px] text-center max-w-[200px] break-words leading-[1.4]">
+          {link ? (
+            <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ textDecoration: 'none', color: 'inherit' }}
+            >
+              {caption}
+              </a>
+              ) : (
+                caption)}
+          </figcaption>
+        )}
 
       {overlayText && (
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-lg font-bold">

@@ -35,6 +35,7 @@ export default function Query() {
       height={165}
       caption="AI Image Generators Can Make Bias Worse"
       borderRadius='20px'
+      link="https://www.youtube.com/watch?v=L2sQRrf1Cd8"
       />
     </div>
   </>);
