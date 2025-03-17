@@ -17,7 +17,9 @@ export default function PromptInput({
   const [risks, setRisks] = useState([]);
   const [showResponseContainer, setShowResponseContainer] = useState(false);
 
-
+  // Fixed models for text and image generation
+  const textModel = "gpt-4";
+  const imageModel = "dall-e-3";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -39,12 +41,17 @@ export default function PromptInput({
          : { prompt, textModel } // gpt-4o for text summarisation
      );
 
+
     try {
       const response = await fetch(apiEndpoint, {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: requestBody,
       });
+
+      if (!response.ok) {
+        throw new Error(data.error || "Network response was not ok");
+      }
 
 
       const data = await response.json();
@@ -53,14 +60,14 @@ export default function PromptInput({
       setShowResponseContainer(true);
       onSubmit(data);
     } catch (error) {
-      setErrorMessage("Something went wrong. Please try again later.");
+      setErrorMessage(error.message || "Something went wrong. Please try again later.");
     }
 
     setPromptSubmitted(false);
   };
 
   return (
-    <div className="flex flex-col justify-center items-center min-h-screen bg-[#2218A4]">
+    <div className="flex flex-col justify-center items-center min-h-screen bg-[#1C0080]">
       <form onSubmit={handleSubmit} className="relative w-[700px]">
         {/* Input Box */}
         <div className="bg-white rounded-2xl shadow-lg p-6 flex items-center relative">
@@ -84,10 +91,11 @@ export default function PromptInput({
 
         {/* Submit Button */}
         <RouteButton
-          type="button"
+          type="submit"
           variant="primary"
-          className="mt-4"
+          className="mt-4 text-[#1B1806] font-normal"
           disabled={promptSubmitted}
+          onClick={handleSubmit}
         >
           {buttonText}
         </RouteButton>

@@ -15,7 +15,7 @@ const RouteButton = ({ href, children, className = "", ariaLabel, onClick, varia
         href={href}
         className={`route-button ${routeStyle[variant]} ${className}`}
         aria-label={ariaLabel || children}
-        aria-describedby='route-link-description'
+        aria-describedby="route-link-description"
         tabIndex= "0" 
         onClick={onClick}
         {...props}
@@ -27,10 +27,10 @@ const RouteButton = ({ href, children, className = "", ariaLabel, onClick, varia
 
     return (
         <button 
-        type={type || "button"}
+        type={type}
         className={`route-button ${routeStyle[variant]} ${className}`}
         aria-label={ariaLabel || children}
-        aria-describedby='submit-prompt-description'
+        aria-describedby="submit-prompt-description"
         tabIndex= "0" 
         onClick={onClick}
         {...props}
