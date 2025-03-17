@@ -2,7 +2,7 @@
  import React from 'react'
 import Image from 'next/image'
  
-const Image = ({
+const CustomImage = ({
   src,
   alt,
   width,
@@ -36,7 +36,13 @@ const Image = ({
   return (
     <figure style={{ textAlign: "center", margin: "0"}}>
     </figure>
+    
   )
 }
 
-export default Image;
+export default CustomImage;
+
+
+
+// image
+{/* <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="191" height="165" vieBox="0 0 191 165" fill="none"> */}
