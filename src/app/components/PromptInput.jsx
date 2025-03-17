@@ -84,8 +84,8 @@ export default function PromptInput({
 
         {/* Submit Button */}
         <RouteButton
-          type="submit"
-          variant="primary"
+          type="button"
+          variant="secondary"
           className="mt-4"
           disabled={promptSubmitted}
         >
@@ -96,9 +96,23 @@ export default function PromptInput({
       {/* Response Section */}
       {showResponseContainer && (
         <div>
-         
-          
+        <h2>Your Prompt:</h2>
+        <p>{prompt}</p>
 
+        <h2>Response:</h2>
+        <div>
+          {promptResponse && modelType === "image-generation" && (
+            <img
+              alt="requested asset" 
+              className="ai-image"
+              src={promptResponse}
+            />
+          )}
+          {promptResponse && modelType === "summary" && (
+            <p className="ai-text">{promptResponse}</p>
+          )}
+        </div>
+         
           {/* Risk Mitigation Section */}
           {risks.length > 0 && (
             <>
@@ -116,6 +130,8 @@ export default function PromptInput({
 // Complete the response display section
 // Complete risk section, complete "your prompt" and response section
 
-// Make the submit button functional and connet to API  -> 1- handleSubmit function to process form data; 2- connet API endpoints based on modelType
+// Make the submit button functional and connet to API  -> 
+// 1- handleSubmit function to process form data; 
+// 2- connet API endpoints based on modelType
 
 
