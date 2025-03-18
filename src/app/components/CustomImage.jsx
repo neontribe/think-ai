@@ -1,4 +1,5 @@
 'use client'
+
 import React from 'react';
 import Image from 'next/image';
 
@@ -10,7 +11,7 @@ const CustomImage = ({
   fill = false,
   caption = '',
   link = '',
-  sizes = '',
+  sizes = `(max-width: 37.5rem) 100w, (max-width: 56.25rem) 40rem, 50rem`,
   borderRadius = '0',
   style = {},
   className = '',
@@ -18,7 +19,7 @@ const CustomImage = ({
 }) => {
 
   return (
-    <figure style={{ textAlign: 'center', margin: '0', position: 'relative' }}>
+    <figure className='relative mx-auto text-center w-full max-w-[75rem]'>
       {/* if link not provided, the image should no be wrapped in a <a> tag */}
       { link ? (
          <a
@@ -68,7 +69,7 @@ const CustomImage = ({
         )}
 
       {overlayText && (
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-lg font-bold">
+        <div className="absolute insert-0 flex items-center justify-center text-white bg-black bg-opacity-30 text-base md:text-lg lg:text-xl font-bold">
           {overlayText}
         </div>
       )}
@@ -79,7 +80,6 @@ const CustomImage = ({
 };
 
 export default CustomImage;
-
 
 
 
