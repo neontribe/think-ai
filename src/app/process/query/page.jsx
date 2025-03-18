@@ -29,18 +29,19 @@ export default function Query() {
       Create!
     </button>
 
-    <div style={{ display: 'flex', gap: '16px', margin: '20px 0' }}>
+  <div style={{ display: 'flex', gap: '16px', margin: '20px 0' }}>
   <CustomImage
     src={Star} 
-   alt="Decorative stars"
+    alt="Decorative stars"
     isStar={true} 
+    starSize="large"
   />
 </div>
 
 <div style={{ display: 'flex', gap: '16px', margin: '20px 0' }}>
   <CustomImage
     src={Star} 
-    alt="Decorative stars"
+    alt="Small Decorative Star"
     isStar={true}
     starSize="small" 
   />
