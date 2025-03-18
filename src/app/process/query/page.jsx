@@ -3,9 +3,9 @@
 import { useRouter } from 'next/navigation';
 import { useGlobalState } from "@/app/contexts/GlobalStateProvider";
 import { useEffect } from "react";
-import CustomImage from '@/app/components/CustomImage';
 import DollImage from '@/app/assets/doll-image.jpg';
 import LearnBox from '@/app/components/LearnBox';
+import ClimatImpact from '@/app/assets/ClimatImpact.png'
 
 export default function Query() {
   const router = useRouter();
@@ -28,7 +28,31 @@ export default function Query() {
       Create!
     </button>
     {/* CustomImage componenet */}
-    <div className='relative flex gap-4 mt-16'>
+    <div className='flex flex-col md:flex-row flex-wrap justify-center gap-6 mt-16 md:space-y-6 sm:space-y-6 items-center'>
+    <LearnBox 
+    src={DollImage} 
+    alt="Doll image"
+    caption="AI Image Generators Can Make Bias Worse"
+    link="https://www.youtube.com/watch?v=L2sQRrf1Cd8"
+    buttonText='video'
+    />
+
+    <LearnBox 
+    src={ClimatImpact} 
+    alt="Men image"
+    caption="Cimate Impact of Generative AI"
+    link="https://www.youtube.com/watch?v=L2sQRrf1Cd8"
+    buttonText='video'
+    />
+
+    <LearnBox 
+    src={DollImage} 
+    alt="Doll image"
+    caption="AI Image Generators Can Make Bias Worse"
+    link="https://www.youtube.com/watch?v=L2sQRrf1Cd8"
+    buttonText='video'
+    />
+
     <LearnBox 
     src={DollImage} 
     alt="Doll image"
