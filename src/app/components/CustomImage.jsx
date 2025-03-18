@@ -37,6 +37,7 @@ const CustomImage = ({
            sizes={sizes}
            style= { {borderRadius, objectFit: 'cover', ...style }}
            className={className}
+           tabIndex='0'
          /> 
        </a>
       ) : (
@@ -49,6 +50,7 @@ const CustomImage = ({
         sizes={sizes}
         style= { {borderRadius, objectFit: 'cover', ...style }}
         className={className}
+        tabIndex='0'
       /> 
       )}
      
@@ -60,6 +62,7 @@ const CustomImage = ({
             target="_blank"
             rel="noopener noreferrer"
             style={{ textDecoration: 'none', color: 'inherit' }}
+            tabIndex='0'
             >
               {caption}
               </a>
