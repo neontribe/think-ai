@@ -4,17 +4,27 @@ import React from 'react'
 import CustomImage from './CustomImage'
 import OffsiteLinkButton from './OffsiteLinkButton'
 
-const LearnBox = ({ src, alt, buttonText, buttonLink}) => {
+const LearnBox = ({ src, alt, buttonText, buttonLink, caption, link}) => {
     return (
-        <div>
+        <div className='relative flex flex-col items-center bg-[#1C0080] rounded-2xl'>
             {/* Image componenet positions at the top with slight overflow */}
-            <div>
-                <CustomImage src={src} alt={alt} />
+            <div className='relative item-center mt-[-40px]'>
+                <CustomImage 
+                 src={src}
+                 alt={alt}
+                 caption={caption}
+                 link={link}
+                 width={191}
+                 height={165}
+                 borderRadius='20px'
+                />
             </div>
 
             {/* Button componenet alignes to left */}
-            <div>
-                <OffsiteLinkButton />
+            <div className='mt-4 mb-6 pl-6 self-start w-[16rem] md:w-[16.8rem]'>
+                <OffsiteLinkButton text={buttonText} href={buttonLink}  variant='learnMore'>
+                    {buttonText}
+                </OffsiteLinkButton>
             </div>
         </div>
         
@@ -22,3 +32,5 @@ const LearnBox = ({ src, alt, buttonText, buttonLink}) => {
 }
 
 export default LearnBox;
+
+// className='absolute -top-12 item-center overflow-hidden'
