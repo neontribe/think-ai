@@ -28,7 +28,7 @@ export default function Query() {
       Create!
     </button>
     {/* CustomImage componenet */}
-    <div className='relative flex gap-4 mt-6'>
+    <div className='relative flex gap-4 mt-16'>
     <LearnBox 
     src={DollImage} 
     alt="Doll image"

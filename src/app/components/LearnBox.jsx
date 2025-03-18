@@ -8,7 +8,7 @@ const LearnBox = ({ src, alt, buttonText, buttonLink, caption, link}) => {
     return (
         <div className='relative flex flex-col items-center bg-[#1C0080] rounded-2xl'>
             {/* Image componenet positions at the top with slight overflow */}
-            <div className='relative item-center mt-[-40px]'>
+            <div className='relative item-center -top-6'>
                 <CustomImage 
                  src={src}
                  alt={alt}
@@ -21,7 +21,7 @@ const LearnBox = ({ src, alt, buttonText, buttonLink, caption, link}) => {
             </div>
 
             {/* Button componenet alignes to left */}
-            <div className='mt-4 mb-6 pl-6 self-start w-[16rem] md:w-[16.8rem]'>
+            <div className='mb-4 pl-6 self-start w-[16rem] md:w-[16.8rem]'>
                 <OffsiteLinkButton text={buttonText} href={buttonLink}  variant='learnMore'>
                     {buttonText}
                 </OffsiteLinkButton>
