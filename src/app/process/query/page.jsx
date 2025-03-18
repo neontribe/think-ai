@@ -5,6 +5,7 @@ import { useGlobalState } from "@/app/contexts/GlobalStateProvider";
 import { useEffect } from "react";
 import CustomImage from '@/app/components/CustomImage';
 import DollImage from '@/app/assets/doll-image.jpg';
+import LearnBox from '@/app/components/LearnBox';
 
 export default function Query() {
   const router = useRouter();
@@ -27,16 +28,14 @@ export default function Query() {
       Create!
     </button>
     {/* CustomImage componenet */}
-    <div style={{display: 'flex', gap: '16px', margin: '20px 0'}}>
-      <CustomImage
-      src={DollImage} 
-      alt="Doll image"
-      width={191}
-      height={165}
-      caption="AI Image Generators Can Make Bias Worse"
-      borderRadius='20px'
-      link="https://www.youtube.com/watch?v=L2sQRrf1Cd8"
-      />
+    <div className='relative flex gap-4 mt-6'>
+    <LearnBox 
+    src={DollImage} 
+    alt="Doll image"
+    caption="AI Image Generators Can Make Bias Worse"
+    link="https://www.youtube.com/watch?v=L2sQRrf1Cd8"
+    buttonText='video'
+    />
     </div>
   </>);
 }
