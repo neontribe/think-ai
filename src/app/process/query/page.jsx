@@ -3,6 +3,10 @@
 import { useRouter } from 'next/navigation';
 import { useGlobalState } from "@/app/contexts/GlobalStateProvider";
 import { useEffect } from "react";
+import Star from '@/app/assets/Star.png'
+import CustomImage from '@/app/components/CustomImage';
+import DollImage from '@/app/assets/DollImage.png';
+
 
 export default function Query() {
   const router = useRouter();
@@ -24,5 +28,35 @@ export default function Query() {
     <button className="bg-[#63E2F1] text-[#1B0080] px-6 py-3 w-[171px] h-[48px] text-lg inline-flex items-center justify-center font-bold rounded-full transition durantion-300 hover:bg-[#9747FF] hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#9747FF]" type="button" onClick={() => router.push('/process/response')}>
       Create!
     </button>
-  </>);
+
+    <div style={{ display: 'flex', gap: '16px', margin: '20px 0' }}>
+  <CustomImage
+    src={Star} 
+   alt="Decorative stars"
+    isStar={true} 
+  />
+</div>
+
+<div style={{ display: 'flex', gap: '16px', margin: '20px 0' }}>
+  <CustomImage
+    src={Star} 
+    alt="Decorative stars"
+    isStar={true}
+    starSize="small" 
+  />
+</div>
+
+<div style={{ display: 'flex', gap: '16px', margin: '20px 0' }}>
+  <CustomImage
+    src={DollImage} 
+    alt="Doll image"
+    width={191}
+    height={165}
+    caption="AI Image Generators Can Make Bias Worse"
+    borderRadius="20px"
+    link="https://www.youtube.com/watch?v=L2sQRrf1Cd8"
+  />
+</div>
+  </>
+);
 }
