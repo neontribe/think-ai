@@ -53,7 +53,7 @@ const CustomImage = ({
       )}
      
       {caption && (
-        <figcaption className="text-white font-bold mt-2 text-[18px] text-center max-w-[200px] break-words leading-[1.4]">
+        <figcaption className="text-white font-bold mt-2 text-[16px] text-center max-w-[200px] break-words leading-[1.4]">
           {link ? (
             <a
             href={link}
