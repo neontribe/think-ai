@@ -4,7 +4,7 @@ import { useState } from "react";
 import RouteButton from "./RouteButton";
 
 export default function PromptInput({
-  apiEndpoint,  // API route ("/apy/text", or "api/image")
+  apiEndpoint,  // API route ("/api/text", or "api/image")
   suggestedText,
   modelType, // "image-generation" or "summary"
   buttonText,
@@ -26,7 +26,7 @@ export default function PromptInput({
     setPromptSubmitted(true);
     setErrorMessage("");
     setPromptResponse(null);
-    setRisks([]); 
+    setRisks([]);
 
     // Prevent empty input
     if (!prompt.trim()) {
@@ -111,7 +111,7 @@ export default function PromptInput({
         <div>
           {promptResponse && modelType === "image-generation" && (
             <img
-              alt="requested asset" 
+              alt="requested asset"
               className="ai-image"
               src={promptResponse}
             />
@@ -120,14 +120,14 @@ export default function PromptInput({
             <p className="ai-text">{promptResponse}</p>
           )}
         </div>
-         
+
           {/* Risk Mitigation Section */}
           {risks.length > 0 && (
             <>
             <h2>But...</h2>
               <ol>
                 {risks.map((risk, index) => (
-                  <li key={index}>{risk}</li>
+                  <li key={'key_'+index}>{risk}</li>
                 ))}
               </ol>
             </>
