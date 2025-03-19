@@ -24,15 +24,15 @@ const ToggleButton = ({
     };
 
     return (
-        <div className="flex items-center space-x-4"> 
+        <div className="flex items-center space-x-4">
               {/* Left Label */}
             <span id="toggle-left-label" className={`text-blue text-lg font-medium mr-1`}>
              {labelLeft}
             </span>
-    
-        
+
+
          <label className={`relative inline-flex items-center cursor-pointer`}
-         htmlFor='toggle-checkbox'> 
+         htmlFor='toggle-checkbox'>
          </label>
          <input
             type="checkbox"
@@ -47,11 +47,11 @@ const ToggleButton = ({
             onKeyDown={handleKeyDown}
             tabIndex={0}
             onClick={handleToggle}
-            />
+          />
 
             <div onClick={handleToggle}>
-            <div className={`w-12 h-6 bg-[##1B0080] rounded-full border-2 border-[#66E1F1] p-1 py-[2px] transition-all duration-300 ${isChecked ? "bg-[#1B0080]" : "bg-[#1B0080]"}`}>
-                <div className={`w-4 h-4 bg-[#66E1F1] bg-[#1B0080] rounded-full transition-all duration-300 ${isChecked ? "translate-x-6" : "translate-x-0"}`}></div>
+            <div className={`w-12 h-6 bg-[##1B0080] rounded-full border-2 border-[#66E1F1] p-1 py-[2px] transition-all duration-300 bg-[#1B0080]"}`}>
+                <div className={`w-4 h-4 bg-[#66E1F1]  rounded-full transition-all duration-300 ${isChecked ? "translate-x-6" : "translate-x-0"}`}></div>
             </div>
             </div>
          {/* Right Label */}
