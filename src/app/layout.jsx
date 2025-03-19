@@ -6,6 +6,7 @@ import ModalWrapper from '@/app/components/modal/ModalWrapper';
 import Link from 'next/link';
 import { Poppins } from 'next/font/google';
 
+
 const poppins = Poppins({
   subsets: ['latin'],
   weight: ['400', '600', '700'],
@@ -25,9 +26,6 @@ export default function RootLayout({ children }) {
 
       <GlobalStateProvider>
         <ModalWrapper>
-          <header className='p-2'>
-            <Link href='/' className='text-3xl'>Think AI</Link>
-          </header>
           {children}
         </ModalWrapper>
       </GlobalStateProvider>
