@@ -32,18 +32,19 @@ export default function Query() {
   <div style={{ display: 'flex', gap: '16px', margin: '20px 0' }}>
   <CustomImage
     src={Star} 
-    alt="Decorative stars"
-    isStar={true} 
-    starSize="large"
+    alt=""
+    width={177}
+    height={193} 
+    
   />
 </div>
 
 <div style={{ display: 'flex', gap: '16px', margin: '20px 0' }}>
   <CustomImage
     src={Star} 
-    alt="Small Decorative Star"
-    isStar={true}
-    starSize="small" 
+    alt=""
+    width={86}
+    height={94} 
   />
 </div>
 

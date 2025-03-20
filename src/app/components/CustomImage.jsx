@@ -16,37 +16,29 @@ const CustomImage = ({
   style = {},
   className = '',
   overlayText = '',
-  isStar = false,
-  starSize = 'large',
 }) => {
-  const sizeStar = {
-    small: { width: 86, height: 94 },
-    large: { width: 177, height: 193 },
-  };
-
-  // Set width & height dynamically
-  const finalWidth = isStar ? sizeStar[starSize].width : width;
-  const finalHeight = isStar ? sizeStar[starSize].height : height;
+  
+  const isDecorative = !alt && !caption && !overlayText;
 
 
   const imageProps = {
     src,
-    alt: isStar ? '' : alt,
-    width: !fill ? finalWidth : undefined,
-    height: !fill ? finalHeight : undefined,
+    alt: isDecorative ? '' : alt,
+    width: !fill ? width : undefined,
+    height: !fill ? height : undefined,
     fill,
     sizes,
     style: {
-      borderRadius: isStar ? '0' : borderRadius, 
+      borderRadius, 
       objectFit: 'cover',
       ...style,
     },
     className,
-    'aria-hidden': isStar ? 'true' : 'false',
-    tabIndex: isStar ? -1 : 0,
+    'aria-hidden': isDecorative ? 'true' : 'false',
+    tabIndex: isDecorative ? -1 : 0,
   };
 
-  const ImageElement = link && !isStar ? (
+  const ImageElement = link && !isDecorative ? (
     <a href={link} target="_blank" rel="noopener noreferrer" aria-label={alt}>
       <Image {...imageProps} />
     </a>
@@ -58,7 +50,7 @@ const CustomImage = ({
     <figure className="relative mx-auto text-center w-full max-w-[75rem]">
       {ImageElement}
 
-      {caption && !isStar && (
+      {caption && !isDecorative && (
         <figcaption className="text-white font-bold mt-2 text-[16px] text-center max-w-[200px] break-words leading-[1.4]">
           {link ? (
             <a href={link} target="_blank" rel="noopener noreferrer" className="text-inherit" tabIndex="0">
@@ -70,7 +62,7 @@ const CustomImage = ({
         </figcaption>
       )}
 
-      {overlayText && !isStar && (
+      {overlayText && !isDecorative && (
         <div className="absolute inset-0 flex items-center justify-center text-white bg-black bg-opacity-30 text-base md:text-lg lg:text-xl font-bold">
           {overlayText}
         </div>
