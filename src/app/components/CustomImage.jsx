@@ -72,8 +72,3 @@ const CustomImage = ({
 };
 
 export default CustomImage;
-
-
-
-
-

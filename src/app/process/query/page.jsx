@@ -38,29 +38,38 @@ export default function Query() {
     buttonText='video'
     />
 
-    <LearnBox 
-    src={ClimatImpact} 
-    alt="Men image"
-    caption="Cimate Impact of Generative AI"
-    link="https://www.youtube.com/watch?v=L2sQRrf1Cd8"
-    buttonText='video'
+  <div style={{ display: 'flex', gap: '16px', margin: '20px 0' }}>
+    <CustomImage
+      src={Star} 
+      alt=""
+      width={177}
+      height={193} 
     />
+  </div>
 
-    <LearnBox 
-    src={DollImage} 
-    alt="Doll image"
-    caption="AI Image Generators Can Make Bias Worse"
-    link="https://www.youtube.com/watch?v=L2sQRrf1Cd8"
-    buttonText='video'
+  <div style={{ display: 'flex', gap: '16px', margin: '20px 0' }}>
+    <CustomImage
+      src={Star} 
+      alt=""
+      width={86}
+      height={94} 
     />
+  </div>
 
-    <LearnBox 
-    src={DollImage} 
-    alt="Doll image"
-    caption="AI Image Generators Can Make Bias Worse"
-    link="https://www.youtube.com/watch?v=L2sQRrf1Cd8"
-    buttonText='video'
+  <div style={{ display: 'flex', gap: '16px', margin: '20px 0' }}>
+    <CustomImage
+      src={DollImage} 
+      alt="Doll image"
+      width={191}
+      height={165}
+      caption="AI Image Generators Can Make Bias Worse"
+      borderRadius="20px"
+      link="https://www.youtube.com/watch?v=L2sQRrf1Cd8"
     />
-    </div>
-  </>);
+  </div>
+
+  <div className='flex'>
+    <ButTypography text="Think about..."className="mt-4" />
+  </div>
+</>);
 }
