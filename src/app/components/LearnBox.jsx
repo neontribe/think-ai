@@ -34,5 +34,3 @@ const LearnBox = ({ src, alt, buttonText, buttonLink, caption, link}) => {
 }
 
 export default LearnBox;
-
-// className='absolute -top-12 item-center overflow-hidden'
