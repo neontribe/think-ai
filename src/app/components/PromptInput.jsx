@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import RouteButton from "./RouteButton";
+import {useGlobalState} from "@/app/contexts/GlobalStateProvider";
 
 export default function PromptInput({
   apiEndpoint,  // API route ("/api/text", or "api/image")
@@ -10,12 +11,10 @@ export default function PromptInput({
   buttonText,
   onSubmit,
 }) {
+  const { registerValue } = useGlobalState();
   const [prompt, setPrompt] = useState("");
-  const [promptResponse, setPromptResponse] = useState(null);
   const [promptSubmitted, setPromptSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
-  const [risks, setRisks] = useState([]);
-  const [showResponseContainer, setShowResponseContainer] = useState(false);
 
   // Fixed models for text and image generation
   const textModel = "gpt-4";
@@ -25,8 +24,6 @@ export default function PromptInput({
     e.preventDefault();
     setPromptSubmitted(true);
     setErrorMessage("");
-    setPromptResponse(null);
-    setRisks([]);
 
     // Prevent empty input
     if (!prompt.trim()) {
@@ -41,7 +38,6 @@ export default function PromptInput({
          : { prompt, textModel } // gpt-4o for text summarisation
      );
 
-
     try {
       const response = await fetch(apiEndpoint, {
         method: "POST",
@@ -53,17 +49,14 @@ export default function PromptInput({
         throw new Error(data.error || "Network response was not ok");
       }
 
-
       const data = await response.json();
-      setPromptResponse(data.promptResponseContent);
-      setRisks(data.splitRiskPoints || []);
-      setShowResponseContainer(true);
-      onSubmit(data);
+      registerValue('responseData', data);
     } catch (error) {
       setErrorMessage(error.message || "Something went wrong. Please try again later.");
     }
 
     setPromptSubmitted(false);
+    onSubmit(e);
   };
 
   return (
@@ -95,45 +88,10 @@ export default function PromptInput({
           variant="primary"
           className="mt-4 text-[#1B1806] font-normal"
           disabled={promptSubmitted}
-          onClick={handleSubmit}
         >
           {buttonText}
         </RouteButton>
       </form>
-
-      {/* Response Section */}
-      {showResponseContainer && (
-        <div>
-        <h2>Your Prompt:</h2>
-        <p>{prompt}</p>
-
-        <h2>Response:</h2>
-        <div>
-          {promptResponse && modelType === "image-generation" && (
-            <img
-              alt="requested asset"
-              className="ai-image"
-              src={promptResponse}
-            />
-          )}
-          {promptResponse && modelType === "summary" && (
-            <p className="ai-text">{promptResponse}</p>
-          )}
-        </div>
-
-          {/* Risk Mitigation Section */}
-          {risks.length > 0 && (
-            <>
-            <h2>But...</h2>
-              <ol>
-                {risks.map((risk, index) => (
-                  <li key={'key_'+index}>{risk}</li>
-                ))}
-              </ol>
-            </>
-          )}
-        </div>
-      )}
     </div>
   );
 }

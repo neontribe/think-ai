@@ -3,10 +3,14 @@
 import { useRouter } from 'next/navigation';
 import ProcessGuard from "@/app/components/ProcessGuard";
 import TwoColLayout from '@/app/components/TwoColLayout';
-
+import { useGlobalState } from "@/app/contexts/GlobalStateProvider";
 
 const Response = () => {
   const router = useRouter();
+  const { state } = useGlobalState();
+  const { responseData } = state;
+  console.log(responseData);
+
   return (<>
     <div>
       <p>Nice!</p>
@@ -19,9 +23,9 @@ const Response = () => {
     <TwoColLayout>
 
     </TwoColLayout>
-   
-    
-      
+
+
+
 
   </>);
 }
