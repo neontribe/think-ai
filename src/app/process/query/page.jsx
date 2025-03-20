@@ -7,6 +7,7 @@ import Star from '@/app/assets/Star.png'
 import CustomImage from '@/app/components/CustomImage';
 import DollImage from '@/app/assets/DollImage.png';
 import ButTypography from '@/app/components/ButTypography';
+import LearnBox from '@/app/components/LearnBox';
 
 export default function Query() {
   const router = useRouter();
@@ -17,7 +18,8 @@ export default function Query() {
     setState((prevState) => ({ ...prevState, auth: true }));
   }, [setState]);
 
-  return (<>
+  return (
+  <>
     <div>
       <p> Think of an idea for an image</p>
       <p><strong>BUT</strong> think about ...</p>
@@ -71,5 +73,7 @@ export default function Query() {
   <div className='flex'>
     <ButTypography text="Think about..."className="mt-4" />
   </div>
-</>);
+  </div>
+</>
+);
 }
