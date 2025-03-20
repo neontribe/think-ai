@@ -35,7 +35,7 @@ export default function ModalDemo() {
   return (
     <div className='min-h-screen p-8'>
       <p>press to test the modal behaviour</p>
-      <button type='submit' onClick={(e) => {
+      <button type='button' onClick={(e) => {
         return handleSubmit(e);
       }} className='mt-4 bg-blue-500 text-white px-4 py-2 rounded'>
         Submit
