@@ -3,6 +3,9 @@
 import { useRouter } from 'next/navigation';
 import { useGlobalState } from "@/app/contexts/GlobalStateProvider";
 import { useEffect } from "react";
+import Star from '@/app/assets/Star.png'
+import CustomImage from '@/app/components/CustomImage';
+import DollImage from '@/app/assets/DollImage.png';
 import ButTypography from '@/app/components/ButTypography';
 
 export default function Query() {
@@ -26,8 +29,38 @@ export default function Query() {
       Create!
     </button>
 
-    <div className='flex'>
+  <div style={{ display: 'flex', gap: '16px', margin: '20px 0' }}>
+    <CustomImage
+      src={Star} 
+      alt=""
+      width={177}
+      height={193} 
+    />
+  </div>
+
+  <div style={{ display: 'flex', gap: '16px', margin: '20px 0' }}>
+    <CustomImage
+      src={Star} 
+      alt=""
+      width={86}
+      height={94} 
+    />
+  </div>
+
+  <div style={{ display: 'flex', gap: '16px', margin: '20px 0' }}>
+    <CustomImage
+      src={DollImage} 
+      alt="Doll image"
+      width={191}
+      height={165}
+      caption="AI Image Generators Can Make Bias Worse"
+      borderRadius="20px"
+      link="https://www.youtube.com/watch?v=L2sQRrf1Cd8"
+    />
+  </div>
+
+  <div className='flex'>
     <ButTypography text="Think about..."className="mt-4" />
-    </div>
-  </>);
+  </div>
+</>);
 }
