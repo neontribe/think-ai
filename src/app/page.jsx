@@ -7,7 +7,6 @@ import ResponseCarousel from "./components/ResponseCarousel";
 import Header from "./components/Header";
 
 
-
 export default function Home() {
   return (
     <div className="full-width-container">
