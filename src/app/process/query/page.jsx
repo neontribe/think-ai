@@ -3,9 +3,9 @@
 import { useRouter } from 'next/navigation';
 import { useGlobalState } from "@/app/contexts/GlobalStateProvider";
 import { useEffect } from "react";
-import DollImage from '@/app/assets/doll-image.jpg';
-import LearnBox from '@/app/components/LearnBox';
-import ClimatImpact from '@/app/assets/ClimatImpact.png'
+import Star from '@/app/assets/Star.png'
+import CustomImage from '@/app/components/CustomImage';
+import DollImage from '@/app/assets/DollImage.png';
 import ButTypography from '@/app/components/ButTypography';
 
 export default function Query() {
@@ -28,43 +28,39 @@ export default function Query() {
     <button className="bg-[#63E2F1] text-[#1B0080] px-6 py-3 w-[171px] h-[48px] text-lg inline-flex items-center justify-center font-bold rounded-full transition durantion-300 hover:bg-[#9747FF] hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#9747FF]" type="button" onClick={() => router.push('/process/response')}>
       Create!
     </button>
+    {/* CustomImage componenet */}
     <div className='flex flex-col md:flex-row flex-wrap justify-center gap-6 mt-16 md:space-y-6 sm:space-y-6 items-center'>
+    <LearnBox 
+    src={DollImage} 
+    alt="Doll image"
+    caption="AI Image Generators Can Make Bias Worse"
+    link="https://www.youtube.com/watch?v=L2sQRrf1Cd8"
+    buttonText='video'
+    />
 
-      <LearnBox 
-        src={DollImage} 
-        alt="Doll image"
-        caption="AI Image Generators Can Make Bias Worse"
-        link="https://www.youtube.com/watch?v=L2sQRrf1Cd8"
-        buttonText='video'
-      />
+    <LearnBox 
+    src={ClimatImpact} 
+    alt="Men image"
+    caption="Cimate Impact of Generative AI"
+    link="https://www.youtube.com/watch?v=L2sQRrf1Cd8"
+    buttonText='video'
+    />
 
-      <LearnBox 
-        src={ClimatImpact} 
-        alt="Men image"
-        caption="Cimate Impact of Generative AI"
-        link="https://www.youtube.com/watch?v=L2sQRrf1Cd8"
-        buttonText='video'
-      />
+    <LearnBox 
+    src={DollImage} 
+    alt="Doll image"
+    caption="AI Image Generators Can Make Bias Worse"
+    link="https://www.youtube.com/watch?v=L2sQRrf1Cd8"
+    buttonText='video'
+    />
 
-      <LearnBox 
-        src={DollImage} 
-        alt="Doll image"
-        caption="AI Image Generators Can Make Bias Worse"
-        link="https://www.youtube.com/watch?v=L2sQRrf1Cd8"
-        buttonText='video'
-      />
-
-      <LearnBox 
-        src={DollImage} 
-        alt="Doll image"
-        caption="AI Image Generators Can Make Bias Worse"
-        link="https://www.youtube.com/watch?v=L2sQRrf1Cd8"
-        buttonText='video'
-      />
-    </div>
-
-    <div className='flex'>
-      <ButTypography text="Think about..."className="mt-4" />
+    <LearnBox 
+    src={DollImage} 
+    alt="Doll image"
+    caption="AI Image Generators Can Make Bias Worse"
+    link="https://www.youtube.com/watch?v=L2sQRrf1Cd8"
+    buttonText='video'
+    />
     </div>
   </>);
 }
