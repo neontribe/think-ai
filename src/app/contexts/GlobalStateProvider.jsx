@@ -9,6 +9,7 @@ export function GlobalStateProvider({ children }) {
     auth: false // we're not authed by default
   });
 
+
   // we can let other components register fresh state in the global context
   const registerValue = (key, value) => {
     setState(( prevState ) => ({ ...prevState, [key]: value }));

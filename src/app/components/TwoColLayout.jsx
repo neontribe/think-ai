@@ -6,15 +6,17 @@ const TwoColLayout=({
     children,
     leftColumn,
     rightColumn,
-    containerClass = "w-full md:w-[1150px] h-auto md:h-[466px]",
+    containerClass = "w-full min-h-screen p-6 md:p-12 flex flex-col md:flex-row flex-wrap",
 }) => {
     return (
-        <div className={` ${containerClass} bg-[#1C0080] flex mx-auto md:flex-row`}>
-            <div className="w-full md:w-1/2 h-full text-white flex flex-col items-center justify-center md:order-1 3xl:order-2">
-            {leftColumn || children}
+        <div className={` ${containerClass} bg-[#1C0080] mx-auto`}>
+            <div className="w-full md:w-1/2 h-full text-white flex flex-col items-center justify-center md:order-1 3xl:order-2 flex-grow">
+            {/* left Column */}
+            {children[0]}
             </div>
-            <div className="w-full md:w-1/2 h-full text-white flex flex-col items-center justify-center md:oder-2 3xl:order-1">
-            {rightColumn || children}
+            <div className="w-full md:w-1/2 h-full text-white flex flex-col items-center justify-center md:order-2 3xl:order-1 flex-grow">
+            {/* right column */}
+            {children[1]}
             </div>
         </div>
     )
