@@ -6,6 +6,7 @@ import TwoColLayout from '@/app/components/TwoColLayout';
 import { useGlobalState } from "@/app/contexts/GlobalStateProvider";
 import Header from "@/app/components/Header"
 import ButTypography from '@/app/components/ButTypography';
+import RouteButton from '@/app/components/RouteButton';
 
 
 const Response = () => {
@@ -25,19 +26,19 @@ const Response = () => {
           <ButTypography className="text-left w-full mb-4" />
           <p className="mb-4">What could the issues be with asking AI to answer questions or do tasks?</p>
   
-          <ul className="list-disc pl-6 space-y-2">
+          <ul className="list-disc pl-6 space-y-2 mb-8">
             {splitRiskPoints.map((risk, index) => (
               risk && <li key={index}>{risk}</li>
             ))}
           </ul>
   
-          <button
-            className="bg-[#63E2F1] text-[#1B0080] px-6 py-3 w-[171px] h-[48px] text-lg inline-flex items-center justify-center font-bold rounded-full transition duration-300 hover:bg-[#9747FF] hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#9747FF] mt-8"
+          <RouteButton
+            variant="third"
             type="button"
             onClick={() => router.push('/process/discuss')}
           >
             Find Out
-          </button>
+          </RouteButton>
         </div>
   
         <div className="p-6 md:p-12 text-left max-w-[80%] flex justify-center items-start bg-white text-[#23009F] rounded-lg">
