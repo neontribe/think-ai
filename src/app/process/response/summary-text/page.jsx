@@ -43,7 +43,7 @@ const Response = () => {
         <div className="p-6 md:p-12 text-left max-w-[80%] flex justify-center items-start bg-white text-[#23009F] rounded-lg">
           {modelType === "summary" && promptResponseContent && (
             <div className="w-full">
-              <h2 className="text-lg font-bold mb-2">Your answer</h2>
+              <h2 className="text-lg font-bold mb-2 mb-8">Your answer</h2>
               <div className="space-y-4">
                 {promptResponseContent.split(/\n\s*\n|\. /g).map((paragraph, index) => (
                   paragraph.trim() && (
