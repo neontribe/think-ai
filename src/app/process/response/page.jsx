@@ -5,11 +5,14 @@ import ProcessGuard from "@/app/components/ProcessGuard";
 import TwoColLayout from '@/app/components/TwoColLayout';
 import { useGlobalState } from "@/app/contexts/GlobalStateProvider";
 
+
 const Response = () => {
   const router = useRouter();
-  const { state } = useGlobalState();
+  const { state, registerValue } = useGlobalState();
   const { responseData } = state;
   console.log(responseData);
+
+  const { modelType, promptResponseContent, splitRiskPoints } = responseData;
 
   return (<>
     <div>
@@ -21,12 +24,27 @@ const Response = () => {
       Find Out
     </button>
     <TwoColLayout>
+    <div className="p-4">
+          <h2>But...</h2>
+          <ol>
+            {splitRiskPoints.map((risk, index) => (
+              risk && <li key={index}>{risk}</li>
+            ))}
+          </ol>
+        </div>
 
+        <div className="p-4 flex justify-center items-center">
+      {modelType === "image-generation" && promptResponseContent && (
+            <img
+              src={promptResponseContent}
+              alt="Requested asset"
+              width={379}
+              height={379}
+              priority
+            />
+          )}
+          </div>
     </TwoColLayout>
-
-
-
-
   </>);
 }
 

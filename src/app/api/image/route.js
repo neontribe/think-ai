@@ -30,7 +30,7 @@ export async function POST(request) {
     const responseRisksContent = responseRisks.choices[0].message.content;
     const splitRiskPoints = responseRisksContent.split("\n");
 
-    return Response.json({ promptResponseContent, splitRiskPoints });
+    return Response.json({ promptResponseContent, splitRiskPoints,  modelType: 'image-generation' });
   } catch (e) {
     throw Error (e.message);
   }
