@@ -8,7 +8,7 @@ import { useGlobalState } from "@/app/contexts/GlobalStateProvider";
 
 const Response = () => {
   const router = useRouter();
-  const { state, registerValue } = useGlobalState();
+  const { state} = useGlobalState();
   const { responseData } = state;
   console.log(responseData);
 

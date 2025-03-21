@@ -35,7 +35,7 @@ export async function POST(request) {
 
     const splitRiskPoints = responseRisksContent.split("\n");
 
-    return Response.json({ promptResponseContent, splitRiskPoints });
+    return Response.json({ promptResponseContent, splitRiskPoints, modelType: 'summary' });
   } catch (e) {
     throw Error (e.message);
   }

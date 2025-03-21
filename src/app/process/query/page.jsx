@@ -30,8 +30,16 @@ export default function Query() {
         suggestedText="Describe something ..."
         modelType="image-generation"
         buttonText="Make Image"
-        onSubmit={() => router.push("/process/response")}
+        onSubmit={() => router.push("/process/response/image-generation")}
       />
+
+      <PromptInput
+        apiEndpoint="/api/text"
+        suggestedText="Describe something ..."
+        modelType="summary"
+        buttonText="Go"
+        onSubmit={() => router.push("/process/response/summary-text")}
+      />  
     </div>
   </div>);
 }
