@@ -5,6 +5,7 @@ import ProcessGuard from "@/app/components/ProcessGuard";
 import TwoColLayout from '@/app/components/TwoColLayout';
 import { useGlobalState } from "@/app/contexts/GlobalStateProvider";
 import Header from "@/app/components/Header"
+import ButTypography from '@/app/components/ButTypography';
 
 
 const Response = () => {
@@ -19,9 +20,9 @@ const Response = () => {
     <>
      <Header/>
       <TwoColLayout>
-      <div className="p-6 md:p-12 text-left max-w-[80%]">
-          <p>Nice!</p>
-          <p className="text-2xl font-bold mb-4">BUT...</p>
+      <div className="p-6 md:p-12 text-left max-w-[80%] text-[16pt]">
+          <p>Nice work</p>
+          <ButTypography className="text-left w-full mb-4" />
           <p className="mb-4">What could the issues be with asking AI to answer questions or do tasks?</p>
   
           <ul className="list-disc pl-6 space-y-2">
