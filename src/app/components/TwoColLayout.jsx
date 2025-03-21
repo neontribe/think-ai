@@ -6,7 +6,7 @@ const TwoColLayout=({
     children,
     leftColumn,
     rightColumn,
-    containerClass = "w-full md:w-[1150px] min-h-screen p-6 md:p-12 flex flex-col md:flex-row flex-wrap",
+    containerClass = "w-full min-h-screen p-6 md:p-12 flex flex-col md:flex-row flex-wrap",
 }) => {
     return (
         <div className={` ${containerClass} bg-[#1C0080] mx-auto`}>
