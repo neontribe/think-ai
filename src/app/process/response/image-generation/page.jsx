@@ -4,7 +4,6 @@ import { useRouter } from 'next/navigation';
 import ProcessGuard from "@/app/components/ProcessGuard";
 import TwoColLayout from '@/app/components/TwoColLayout';
 import { useGlobalState } from "@/app/contexts/GlobalStateProvider";
-import ButTypography from '@/app/components/ButTypography';
 
 
 const Response = () => {

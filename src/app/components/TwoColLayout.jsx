@@ -14,7 +14,7 @@ const TwoColLayout=({
             {/* left Column */}
             {children[0]}
             </div>
-            <div className="w-full md:w-1/2 h-full text-white flex flex-col items-center justify-center md:oder-2 3xl:order-1 flex-grow">
+            <div className="w-full md:w-1/2 h-full text-white flex flex-col items-center justify-center md:order-2 3xl:order-1 flex-grow">
             {/* right column */}
             {children[1]}
             </div>
