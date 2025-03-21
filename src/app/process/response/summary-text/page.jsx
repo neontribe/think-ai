@@ -18,9 +18,9 @@ const Response = () => {
 
   return (
     <>
-     <Header/>
+      <Header />
       <TwoColLayout>
-      <div className="p-6 md:p-12 text-left max-w-[80%] text-[16pt]">
+        <div className="p-6 md:p-12 text-left max-w-[80%] text-[16pt]">
           <p>Nice work</p>
           <ButTypography className="text-left w-full mb-4" />
           <p className="mb-4">What could the issues be with asking AI to answer questions or do tasks?</p>
@@ -44,14 +44,22 @@ const Response = () => {
           {modelType === "summary" && promptResponseContent && (
             <div className="w-full">
               <h2 className="text-lg font-bold mb-2">Your answer</h2>
-              <p className="bg-transparent text-[#23009F] p-4">{promptResponseContent}</p>
-            </div>  
-            )}    
+              <div className="space-y-4">
+                {promptResponseContent.split(/\n\s*\n|\. /g).map((paragraph, index) => (
+                  paragraph.trim() && (
+                    <p key={index} className="bg-transparent text-[#23009F] leading-normal">
+                      {paragraph}
+                    </p>
+                  )
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </TwoColLayout>
     </>
-  );
-  
+  );  
+ 
 }
 
 export default ProcessGuard(Response);
