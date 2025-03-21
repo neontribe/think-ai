@@ -18,7 +18,7 @@ const Response = () => {
 
   return (
     <>
-      <Header />
+      <Header hideLinks={true}/>
       <TwoColLayout>
         <div className="p-6 md:p-12 text-left max-w-[80%] text-[16pt]">
           <p>Nice work</p>
