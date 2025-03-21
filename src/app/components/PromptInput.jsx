@@ -5,7 +5,7 @@ import RouteButton from './RouteButton';
 import {useGlobalState} from '@/app/contexts/GlobalStateProvider';
 
 export default function PromptInput({
-  apiEndpoint,  // API route ('/api/text', or 'api/image')
+  apiEndpoint,  // API route ('/api/summary', or 'api/image')
   suggestedText,
   modelType, // 'image-generation' or 'summary'
   buttonText,

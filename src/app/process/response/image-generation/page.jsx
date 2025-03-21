@@ -40,7 +40,6 @@ const Response = () => {
               alt="Requested asset"
               width={379}
               height={379}
-              priority
             />
           )}
           </div>

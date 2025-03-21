@@ -34,7 +34,7 @@ export default function Query() {
       />
 
       <PromptInput
-        apiEndpoint="/api/text"
+        apiEndpoint="/api/summary"
         suggestedText="Describe something ..."
         modelType="summary"
         buttonText="Go"
