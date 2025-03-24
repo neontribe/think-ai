@@ -23,7 +23,7 @@ export default function Query() {
       <Header />
 
       <TwoColLayout>
-        <ContentBox width="w-[530px]" height="h-[466px]">
+        <ContentBox>
           <h3 className="text-2xl mb-4">1. Think of something you want AI to help with</h3>
 
           <ButTypography text="think about..." className="text-left w-full mb-4" />
@@ -41,15 +41,15 @@ export default function Query() {
           </h3>
         </ContentBox>
 
-        <div className="p-6 md:p-12">
-        <h3 className="text-2xl mb-4">2. Write your message.</h3>
-          <PromptInput
+        <div className="p-6">
+          <h3 className="text-2xl p-6">2. Write your message.</h3>
+            <PromptInput
             apiEndpoint="/api/summary"
-            suggestedText="Add your text here, it could be somthing like summarising text e.g. a new article, research paper, essay etc. or asking ..."
+            suggestedText="Add your text here, e.g. summarizing a news article or asking AI a question..."
             modelType="summary"
             buttonText="Go"
             onSubmit={() => router.push("/process/response/summary-text")}
-          />
+            />
         </div>
       </TwoColLayout>
     </>
