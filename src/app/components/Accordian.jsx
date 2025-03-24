@@ -15,12 +15,12 @@ const ExpandAccordion = ({
   };
 
 
-  const headerClasses = `flex items-center justify-between w-full py-3 px-4 text-left text-white bg-[#291498]`;
+  const headerClasses = `flex items-center justify-between w-full py-3 px-4 text-left text-white bg-[#291498] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#9747FF]`;
 
   const icon = isOpen ? "−" : "+";
 
   return (
-    <div className={`bg-[#291498] rounded-md overflow-hidden transition-all ${className}`} {...props}>
+    <div className={`bg-[#291498] overflow-hidden transition-all ${className}`} {...props}>
       <button
         type="button"
         onClick={handleToggle}
