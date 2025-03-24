@@ -6,7 +6,7 @@ import TwoColLayout from '@/app/components/TwoColLayout';
 import { useGlobalState } from "@/app/contexts/GlobalStateProvider";
 import Header from "@/app/components/Header"
 import ButTypography from '@/app/components/ButTypography';
-import RouteButton from '@/app/components/RouteButton';
+import Accordian from '@/app/components/Accordian'
 
 
 const Response = () => {
@@ -25,12 +25,16 @@ const Response = () => {
           <p>Nice work</p>
           <ButTypography className="text-left w-full mb-4" />
           <p className="mb-4">What could the issues be with asking AI to answer questions or do tasks?</p>
-  
-          <ul className="list-disc pl-6 space-y-2 mb-8">
+          <Accordian
+          text="Think about these things"
+          className="text-start"
+          >
+            <ul className="list-disc pl-6 space-y-2">
             {splitRiskPoints.map((risk, index) => (
               risk && <li key={index}>{risk}</li>
             ))}
           </ul>
+          </Accordian>
   
           <RouteButton
             variant="third"
