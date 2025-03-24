@@ -36,7 +36,7 @@ const Response = () => {
             ))}
           </ul>
           </Accordian>
-  
+
           <RouteButton
             variant="third"
             type="button"
@@ -45,7 +45,7 @@ const Response = () => {
             Find Out
           </RouteButton>
         </div>
-  
+
         <div className="p-6 md:p-12 text-left max-w-[80%] flex justify-center items-start bg-white text-[#23009F] rounded-lg">
           {modelType === "summary" && promptResponseContent && (
             <div className="w-full">
@@ -64,8 +64,8 @@ const Response = () => {
         </div>
       </TwoColLayout>
     </>
-  );  
- 
+  );
+
 }
 
 export default ProcessGuard(Response);
