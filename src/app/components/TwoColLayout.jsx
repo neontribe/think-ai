@@ -4,9 +4,7 @@ import React from "react";
 
 const TwoColLayout=({
     children,
-    leftColumn,
-    rightColumn,
-    containerClass = "w-full min-h-screen p-6 md:p-12 flex flex-col md:flex-row flex-wrap",
+    containerClass = "w-full p-4 md:p-8 flex flex-col md:flex-row items-start",  
 }) => {
     return (
         <div className={` ${containerClass} bg-[#1C0080] mx-auto`}>
@@ -26,3 +24,4 @@ const TwoColLayout=({
 export default TwoColLayout;
 
 
+// containerClass = "w-full min-h-screen p-6 md:p-12 flex flex-col md:flex-row flex-wrap",
