@@ -24,4 +24,3 @@ const TwoColLayout = ({
 
 export default TwoColLayout;
 
-// containerClass = "w-full min-h-screen p-6 md:p-12 flex flex-col md:flex-row flex-wrap",

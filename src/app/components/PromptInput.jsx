@@ -63,7 +63,6 @@ export default function PromptInput({
   };
 
   return (
-    // <div className='flex flex-col justify-center items-center min-h-screen bg-[#1C0080]'>
       <form onSubmit={handleSubmit} className='relative w-[700px]'>
         {/* Input Box */}
         <div className='bg-white rounded-2xl shadow-lg p-6 flex items-center relative'>
@@ -95,7 +94,6 @@ export default function PromptInput({
           {buttonText}
         </RouteButton>
       </form>
-    // </div>
   );
 }
 
