@@ -19,12 +19,12 @@ export default function Query() {
     setState((prevState) => ({...prevState, auth: true}));
   }, [setState]);
 
-  return (
-    <>
+  return (<div className="full-width-container">
       <Header />
+      <div className="constrained-width-container mx-auto max-w-[1200px] px-4">
 
-      <TwoColLayout>
-        <ContentBox>
+      <TwoColLayout containerClass="flex flex-col md:flex-row gap-6 py-6 md:py-12">
+        <ContentBox className="w-full md:w-1/2">
           <p className="text-2xl mb-4 text-[22pt]">1. Think of something you want AI to help with</p>
 
           <ButTypography text="think about..." className="text-left w-full mb-4" />
@@ -42,7 +42,7 @@ export default function Query() {
           </ExpandAccordion>
         </ContentBox>
 
-        <div className="p-6 md:p-6">
+        <div className="w-full md:w-1/2 p-6 md:p-6">
           <p className="text-2xl text-[22pt] mb-6">2. Write your message.</p>
             <PromptInput
             apiEndpoint="/api/summary"
@@ -53,6 +53,7 @@ export default function Query() {
             />
         </div>
       </TwoColLayout>
-    </>
+    </div>
+    </div>
   ); 
 }
