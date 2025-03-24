@@ -21,10 +21,11 @@ export default function Query() {
 
   return (<div className="full-width-container">
       <Header />
-      <div className="constrained-width-container mx-auto max-w-[1200px] px-4">
+      <div className="mx-auto max-w-[1200px] px-4">
 
       <TwoColLayout containerClass="flex flex-col md:flex-row gap-6 py-6 md:py-12">
-        <ContentBox className="w-full md:w-1/2">
+      <div id="leftColumn">
+        <ContentBox >
           <p className="text-2xl mb-4 text-[22pt]">1. Think of something you want AI to help with</p>
 
           <ButTypography text="think about..." className="text-left w-full mb-4" />
@@ -41,8 +42,10 @@ export default function Query() {
             <p>Content illustrating an example scenario or issue.</p>
           </ExpandAccordion>
         </ContentBox>
+        </div>
 
-        <div className="w-full md:w-1/2 p-6 md:p-6">
+        {/* <div className="w-full md:w-1/2 p-6 md:p-6"> */}
+        <div id="rightColumn">
           <p className="text-2xl text-[22pt] mb-6">2. Write your message.</p>
             <PromptInput
             apiEndpoint="/api/summary"
@@ -51,7 +54,8 @@ export default function Query() {
             buttonText="Go"
             onSubmit={() => router.push("/process/response/summary-text")}
             />
-        </div>
+            </div>
+        {/* </div> */}
       </TwoColLayout>
     </div>
     </div>
