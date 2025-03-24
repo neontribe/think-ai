@@ -8,6 +8,7 @@ import ButTypography from '@/app/components/ButTypography';
 import Header from '@/app/components/Header';
 import TwoColLayout from '@/app/components/TwoColLayout';
 import ContentBox from '@/app/components/ContentBox';
+import ExpandAccordion from '@/app/components/Accordian';
 
 export default function Query() {
   const router = useRouter();
@@ -24,25 +25,25 @@ export default function Query() {
 
       <TwoColLayout>
         <ContentBox>
-          <h3 className="text-2xl mb-4">1. Think of something you want AI to help with</h3>
+          <p className="text-2xl mb-4 text-[22pt]">1. Think of something you want AI to help with</p>
 
           <ButTypography text="think about..." className="text-left w-full mb-4" />
 
-          <h3 text="How to ask AI questions">
+          <ExpandAccordion text="How to ask AI questions">
             <p>Content about how to ask questions to AI.</p>
-          </h3>
+          </ExpandAccordion>
 
-          <h3 text="Some risks to think about">
+          <ExpandAccordion text="Some risks to think about">
             <p>Content about potential risks or caveats.</p>
-          </h3>
+          </ExpandAccordion>
 
-          <h3 text="Here’s an example. What are the issues here?">
+          <ExpandAccordion text="Here’s an example. What are the issues here?">
             <p>Content illustrating an example scenario or issue.</p>
-          </h3>
+          </ExpandAccordion>
         </ContentBox>
 
         <div className="p-6">
-          <h3 className="text-2xl p-6">2. Write your message.</h3>
+          <p className="text-2xl p-6 text-[22pt]">2. Write your message.</p>
             <PromptInput
             apiEndpoint="/api/summary"
             suggestedText="Add your text here, e.g. summarizing a news article or asking AI a question..."
