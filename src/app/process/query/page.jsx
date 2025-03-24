@@ -42,8 +42,8 @@ export default function Query() {
           </ExpandAccordion>
         </ContentBox>
 
-        <div className="p-6">
-          <p className="text-2xl p-6 text-[22pt]">2. Write your message.</p>
+        <div className="p-6 md:p-6">
+          <p className="text-2xl text-[22pt] mb-6">2. Write your message.</p>
             <PromptInput
             apiEndpoint="/api/summary"
             suggestedText="Add your text here, e.g. summarizing a news article or asking AI a question..."
