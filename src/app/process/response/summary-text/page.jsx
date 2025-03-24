@@ -6,6 +6,7 @@ import TwoColLayout from '@/app/components/TwoColLayout';
 import { useGlobalState } from "@/app/contexts/GlobalStateProvider";
 import Header from "@/app/components/Header"
 import ButTypography from '@/app/components/ButTypography';
+import RouteButton from '@/app/components/RouteButton';
 import Accordian from '@/app/components/Accordian'
 
 
@@ -27,7 +28,7 @@ const Response = () => {
           <p className="mb-4">What could the issues be with asking AI to answer questions or do tasks?</p>
           <Accordian
           text="Think about these things"
-          className="text-start"
+          className="text-start mb-6"
           >
             <ul className="list-disc pl-6 space-y-2">
             {splitRiskPoints.map((risk, index) => (
