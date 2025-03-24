@@ -20,7 +20,7 @@ const Response = () => {
   return (
     <>
       <Header />
-      <TwoColLayout>
+      <TwoColLayout containerClass="w-full min-h-screen p-6 md:p-12 flex flex-col md:flex-row flex-wrap">
         <div className="p-6 md:p-12 text-left max-w-[80%] text-[16pt]">
           <p>Nice work</p>
           <ButTypography className="text-left w-full mb-4" />
@@ -36,7 +36,7 @@ const Response = () => {
             ))}
           </ul>
           </Accordian>
-  
+
           <button
             className="bg-[#63E2F1] text-[#1B0080] px-6 py-3 w-[171px] h-[48px] text-lg inline-flex items-center justify-center font-bold rounded-full transition duration-300 hover:bg-[#9747FF] hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#9747FF] mt-8"
             type="button"
@@ -45,7 +45,7 @@ const Response = () => {
             Find Out
           </button>
         </div>
-  
+
         <div className="p-6 md:p-12 text-left max-w-[80%] flex justify-center items-start bg-white text-[#23009F] rounded-lg">
           {modelType === "summary" && promptResponseContent && (
             <div className="w-full">
@@ -64,8 +64,8 @@ const Response = () => {
         </div>
       </TwoColLayout>
     </>
-  );  
- 
+  );
+
 }
 
 export default ProcessGuard(Response);
