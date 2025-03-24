@@ -10,13 +10,13 @@ export default function Home() {
   return (<div className="full-width-container">
       <Header/>
       <div className="constrained-width-container">
-        <TwoColLayout>
+        <TwoColLayout style="flex-col-reverse items-start md:items-center p-6 md:p-12">
           <div id="leftColumn">
-            <p className="text-4xl md:text-5xl font-semibold leading-[1.5] pb-12">
+            <p className="text-4xl md:text-5xl font-semibold leading-[1.5] pb-6 md:pb-12">
               Learn <span className="text-[#87E2D9] md:ml-2">how to use generative AI</span> while you use it
             </p>
 
-            <nav className="flex flex-col gap-2 items-center md:flex-row md:gap-8 md:justify-between w-full"
+            <nav className="flex flex-wrap gap-2 md:gap-8 justify-center w-full"
                  aria-label="Choose how to explore">
               <RouteButton
                 ariaLabel="generate an image"
@@ -33,7 +33,7 @@ export default function Home() {
             </nav>
           </div>
           <div id="rightColumn">
-            <Image src={SplashImage} alt=''/>
+            <Image src={SplashImage} alt='' className="max-w-full h-auto"/>
           </div>
         </TwoColLayout>
       </div>
