@@ -20,7 +20,7 @@ const Response = () => {
   return (
     <>
       <Header />
-      <TwoColLayout containerClass="w-full min-h-screen p-6 md:p-12 flex flex-col md:flex-row flex-wrap">
+      <TwoColLayout>
         <div className="p-6 md:p-12 text-left max-w-[80%] text-[16pt]">
           <p>Nice work</p>
           <ButTypography className="text-left w-full mb-4" />
