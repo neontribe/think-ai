@@ -2,7 +2,7 @@
 
 import React from "react";
 
-const TwoColLayout = ({leftColumn, rightColumn, children, style = ''}) => {
+const TwoColLayout = ({leftColumn, rightColumn, children, containerClass = ''}) => {
   // Combine left, children, and right into a single array
   const combinedContent = [
     ...(leftColumn ? [leftColumn] : []),
@@ -11,7 +11,7 @@ const TwoColLayout = ({leftColumn, rightColumn, children, style = ''}) => {
   ];
 
   // Calculate the width based on the number of combined items
-  return (<div className={`w-full md:min-h-screen flex md:flex-row ${style}`}>
+  return (<div className={`w-full md:min-h-screen flex md:flex-row ${containerClass}`}>
       {combinedContent.map((content, index) => (
         <div
           key={'key_'+index}

@@ -10,7 +10,7 @@ export default function Home() {
   return (<div className="full-width-container">
       <Header/>
       <div className="constrained-width-container">
-        <TwoColLayout style="flex-col-reverse items-start md:items-center p-6 md:p-12">
+        <TwoColLayout containerClass="flex-col-reverse items-start md:items-center p-6 md:p-12">
           <div id="leftColumn">
             <p className="text-4xl md:text-5xl font-semibold leading-[1.5] pb-6 md:pb-12">
               Learn <span className="text-[#87E2D9] md:ml-2">how to use generative AI</span> while you use it
