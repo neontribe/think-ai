@@ -9,6 +9,8 @@ import Header from '@/app/components/Header';
 import TwoColLayout from '@/app/components/TwoColLayout';
 import ContentBox from '@/app/components/ContentBox';
 import ExpandAccordion from '@/app/components/Accordian';
+import Image from 'next/image';
+import exampleImage from "@/app/assets/exampleImage.png"
 
 export default function Query() {
   const router = useRouter();
@@ -30,16 +32,46 @@ export default function Query() {
 
           <ButTypography text="think about..." className="text-left w-full mb-4" />
 
-          <ExpandAccordion text="How to ask AI questions">
-            <p>Content about how to ask questions to AI.</p>
-          </ExpandAccordion>
+          <ExpandAccordion text="How to ask AI for the image">
+              <ul className="list-disc pl-5 space-y-2">
+                <li>Be clear about details like style and layout.</li>
+                <li>Give context like the time period, culture, or art style to make sure it’s unique.</li>
+                <li>Avoid describing unclear scenes or describing clashing things e.g. a sad and happy person.</li>
+                </ul>
+                <Image
+                src={exampleImage}
+                alt="Example AI image"
+                width={500}
+                height={300}
+                className="rounded-xl border-2 shadow-md mx-auto"
+                />
+                </ExpandAccordion>
+
 
           <ExpandAccordion text="Some risks to think about">
-            <p>Content about potential risks or caveats.</p>
+              <ul className="list-disc pl-5 space-y-2">
+                <li>AI-generated images are based on thousands of images the ai learns from.</li>
+                <li>If those images aren’t a fair example of the thing it’s trying to make, the result wont be fair either, this is known as ‘image bias’ in the ai world.</li>
+                <li>Fine details like text, hands, and emotions can sometimes look off or unnatural with ai images.</li>
+                </ul>
+                <Image
+                src={exampleImage}
+                alt="Example AI image"
+                width={500}
+                height={247}
+                className="rounded-xl border-2 shadow-md mx-auto"
+                />
           </ExpandAccordion>
 
           <ExpandAccordion text="Here’s an example. What are the issues here?">
-            <p>Content illustrating an example scenario or issue.</p>
+            <p>description “ an image of a head teacher wearing a dark grey suit, having a conversation with a student. There’s a computer on the desk behind them”.</p>
+            <Image
+                src={exampleImage}
+                alt="Example AI image"
+                width={500}
+                height={247}
+                className="rounded-xl border-2 shadow-md mx-auto"
+                />
           </ExpandAccordion>
         </ContentBox>
         </div>
