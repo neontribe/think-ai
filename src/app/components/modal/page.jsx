@@ -20,7 +20,7 @@ export default function ModalDemo() {
         setTimeout(() => {
           console.log('resolving "request"');
           resolve('This is the response from OpenAI.');
-        }, 3000);
+        }, 5000);
       });
       console.log(simulatedResponse);
     } catch (error) {
