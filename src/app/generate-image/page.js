@@ -4,9 +4,6 @@ import PromptInput from "../components/PromptInput";
 
 export default function GenerateImageEndPoint() {
   const apiEndpoint = "api/image"; 
-
-  // temporary fix
-  const data = () => {};
   
   return (
       <PromptInput
@@ -14,7 +11,7 @@ export default function GenerateImageEndPoint() {
         modelType="image-generation" 
         suggestedText="Describe the image you want to generate..."
         buttonText="Make Image" 
-        onSubmit={(data)}
+        onSubmit=""
       />
   );
 }
