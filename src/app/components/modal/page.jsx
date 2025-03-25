@@ -28,7 +28,7 @@ export default function ModalDemo() {
       console.log('Error retrieving response.');
     } finally {
       clearTimeout(timer);
-     // registerValue('modalVisible', false);
+     registerValue('modalVisible', false);
       console.log('Modal disabled');
     }
   };
