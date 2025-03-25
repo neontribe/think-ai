@@ -44,7 +44,6 @@ export default function Query() {
         </ContentBox>
         </div>
 
-        {/* <div className="w-full md:w-1/2 p-6 md:p-6"> */}
         <div id="rightColumn">
           <p className="text-2xl text-[22pt] mb-6">2. Write your message.</p>
             <PromptInput
@@ -55,7 +54,6 @@ export default function Query() {
             onSubmit={() => router.push("/process/response/summary-text")}
             />
             </div>
-        {/* </div> */}
       </TwoColLayout>
     </div>
     </div>
