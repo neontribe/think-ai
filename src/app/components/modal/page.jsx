@@ -8,6 +8,7 @@ export default function ModalDemo() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+
     // Start a timer to show the modal after 2 seconds
     const timer = setTimeout(() => {
       registerValue('modalVisible', true);
@@ -27,7 +28,7 @@ export default function ModalDemo() {
       console.log('Error retrieving response.');
     } finally {
       clearTimeout(timer);
-      registerValue('modalVisible', false);
+     // registerValue('modalVisible', false);
       console.log('Modal disabled');
     }
   };
