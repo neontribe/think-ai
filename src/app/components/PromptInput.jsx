@@ -85,6 +85,7 @@ export default function PromptInput({
         )}
 
         {/* Submit Button */}
+        <div className="flex justify-center md:justify-start mt-4">
         <RouteButton
           type='submit'
           variant='primary'
@@ -93,6 +94,7 @@ export default function PromptInput({
         >
           {buttonText}
         </RouteButton>
+        </div>
       </form>
   );
 }
