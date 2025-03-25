@@ -1,24 +1,45 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
+import { useGlobalState } from "@/app/contexts/GlobalStateProvider";
 import ProcessGuard from "@/app/components/ProcessGuard";
 import ThreeRowLayout from "@/app/components/ThreeRowLayout";
 import Header from '@/app/components/Header';
+import Image from 'next/image';
+import ResponseCarousel from '@/app/components/ResponseCarousel';
 
-const Discuss = () => {
-  const router = useRouter();
+  const Discuss = () => {
+    const router = useRouter();
+    const { state } = useGlobalState();
+    const { responseData } = state;
+    const { modelType, promptResponseContent, splitRiskPoints } = responseData;
+    
+
   return (
     <>
       <Header />
       <ThreeRowLayout
         top={
           <div>
-            <p className="text-2xl font-bold mb-4">Let’s Dive Deeper</p>
-            <div>
-              <p><i>... insert discussion of the response</i></p>
+            <h2 className="text-2xl text-center font-bold mb-4">Let’s Dive Deeper Into This Image</h2>
+            
+            <ResponseCarousel />
+      
+            
+            <div className="flex flex-col md:flex-row gap-6 items-start justify-center mt-4">
+              {modelType === 'image-generation' && promptResponseContent && (
+                <Image
+                  src={promptResponseContent}
+                  alt="Requested asset"
+                  width={379}
+                  height={379}
+                  className="rounded-lg shadow-md"
+                />
+              )}
             </div>
           </div>
         }
+
         middle={
           <div className="flex">
             
