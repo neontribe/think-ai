@@ -5,6 +5,9 @@ import PromptInput from "../components/PromptInput";
 export default function GenerateImageEndPoint() {
   const apiEndpoint = "api/image"; 
 
+  // temporary fix
+  const data = () => {};
+  
   return (
       <PromptInput
         apiEndpoint={apiEndpoint} 
