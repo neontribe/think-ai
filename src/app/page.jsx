@@ -21,7 +21,6 @@ export default function Home() {
               <RouteButton
                 ariaLabel="generate an image"
                 href="/process/query/image-generation"
-                // href="/process/query?modelType=image-generation"
               >
                 generate an image
               </RouteButton>
