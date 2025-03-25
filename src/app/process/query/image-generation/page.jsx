@@ -33,6 +33,7 @@ export default function Query() {
           <ButTypography text="think about..." className="text-left w-full mb-4" />
 
           <ExpandAccordion text="How to ask AI for the image">
+          <div className="mt-2 px-4 pb-4">
               <ul className="list-disc pl-5 space-y-2">
                 <li>Be clear about details like style and layout.</li>
                 <li>Give context like the time period, culture, or art style to make sure it’s unique.</li>
@@ -43,12 +44,14 @@ export default function Query() {
                 alt="Example AI image"
                 width={500}
                 height={300}
-                className="rounded-xl border-2 shadow-md mx-auto"
+                className="mt-4 rounded-xl border-2 shadow-md mx-auto"
                 />
+                </div>
                 </ExpandAccordion>
 
 
           <ExpandAccordion text="Some risks to think about">
+          <div className="mt-2 px-4 pb-4">
               <ul className="list-disc pl-5 space-y-2">
                 <li>AI-generated images are based on thousands of images the ai learns from.</li>
                 <li>If those images aren’t a fair example of the thing it’s trying to make, the result wont be fair either, this is known as ‘image bias’ in the ai world.</li>
@@ -59,19 +62,22 @@ export default function Query() {
                 alt="Example AI image"
                 width={500}
                 height={247}
-                className="rounded-xl border-2 shadow-md mx-auto"
+                className="mt-4 rounded-xl border-2 shadow-md mx-auto"
                 />
+                </div>
           </ExpandAccordion>
 
           <ExpandAccordion text="Here’s an example. What are the issues here?">
-            <p>description “ an image of a head teacher wearing a dark grey suit, having a conversation with a student. There’s a computer on the desk behind them”.</p>
+          <div className="mt-2 px-4 pb-4">
+            <p>Description <em>“an image of a head teacher wearing a dark grey suit, having a conversation with a student. There’s a computer on the desk behind them”</em>.</p>
             <Image
                 src={exampleImage}
                 alt="Example AI image"
                 width={500}
                 height={247}
-                className="rounded-xl border-2 shadow-md mx-auto"
+                className="mt-4 rounded-xl border-2 shadow-md mx-auto"
                 />
+                </div>
           </ExpandAccordion>
         </ContentBox>
         </div>
