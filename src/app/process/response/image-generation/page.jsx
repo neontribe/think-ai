@@ -22,7 +22,7 @@ const Response = () => {
     <>
       <Header hideLinks={true}/>
       <TwoColLayout>
-        <div className="p-6 md:p-12 text-left max-w-[80%] text-[16pt]">
+        <div className="p-6 md:p-12 text-left w-full md:max-w-[80%] text-[16pt]">
           <p>Nice image!</p>
           <ButTypography className="text-left w-full mb-4" />
           <p className="mb-4">What could the issues be generating images in this wat?</p>
@@ -41,13 +41,13 @@ const Response = () => {
             variant="third"
             type="button"
             onClick={() => router.push('/process/discuss')}
-            className="w-full"
+            className="w-full max-w-[350px] mx-auto"
           >
             Find Out
           </RouteButton>
         </div>
 
-        <div className="p-4 flex justify-center items-center">
+        <div className="p-4 flex justify-center items-center w-full">
       {modelType === "image-generation" && promptResponseContent && (
             <img
               src={promptResponseContent}
