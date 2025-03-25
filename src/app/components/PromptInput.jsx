@@ -63,8 +63,7 @@ export default function PromptInput({
   };
 
   return (
-    <div className='flex flex-col justify-center items-center min-h-screen bg-[#1C0080]'>
-      <form onSubmit={handleSubmit} className='relative w-[700px]'>
+      <form onSubmit={handleSubmit} className='relative w-full md:w-[530px]'>
         {/* Input Box */}
         <div className='bg-white rounded-2xl shadow-lg p-6 flex items-center relative'>
           <textarea
@@ -89,13 +88,12 @@ export default function PromptInput({
         <RouteButton
           type='submit'
           variant='primary'
-          className='mt-4 text-[#1B1806] font-normal'
+          className='mt-4 text-[#1B1806] font-normal justify-center md:justify-left'
           disabled={promptSubmitted}
         >
           {buttonText}
         </RouteButton>
       </form>
-    </div>
   );
 }
 
