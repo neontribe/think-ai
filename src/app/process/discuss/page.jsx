@@ -20,25 +20,33 @@ import ResponseCarousel from '@/app/components/ResponseCarousel';
       <Header />
       <ThreeRowLayout
         top={
-          <div>
-            <h2 className="text-2xl text-center font-bold mb-4">Let’s Dive Deeper Into This Image</h2>
-            
-            <ResponseCarousel />
-      
-            
-            <div className="flex flex-col md:flex-row gap-6 items-start justify-center mt-4">
-              {modelType === 'image-generation' && promptResponseContent && (
-                <Image
-                  src={promptResponseContent}
-                  alt="Requested asset"
-                  width={379}
-                  height={379}
-                  className="rounded-lg shadow-md"
-                />
-              )}
+          <div className="flex flex-col gap-6">
+            <h2 className="text-2xl font-bold mb-4 ml-75">
+              Let’s Dive Deeper Into This Image
+            </h2>
+        
+            {/* LEFT*/}
+            <div className="relative flex flex-col md:flex-row">
+              <div className="md:w-1/2 relative z-20 md:w-[100%] md:-mr-100">
+                <ResponseCarousel />
+              </div>
+        
+              {/* RIGHT */}
+              <div className="md:w-1/2 flex md:justify-start md:-mt-8">
+                {modelType === 'image-generation' && promptResponseContent && (
+                  <Image
+                    src={promptResponseContent}
+                    alt="Requested asset"
+                    width={379}
+                    height={379}
+                    className="rounded-lg shadow-md"
+                  />
+                )}
+              </div>
             </div>
           </div>
         }
+        
 
         middle={
           <div className="flex">
