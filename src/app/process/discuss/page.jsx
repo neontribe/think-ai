@@ -62,14 +62,14 @@ import Star from "@/app/assets/Star.png"
               Take some time to reflect
             </h2>
             <ExpandAccordion text="Let's stop and think back">
-              <div className="mt-2 px-4 pb-4">
+              <div className="mt-2 px-4 pb-4 space-y-2">
                 <p className="mt-1">1. What have you learnt about making image with ai?</p>
                 <p>2. Will you use ai for image generation? Is it helpul for osme things and not others?</p>
               </div>
             </ExpandAccordion>
 
             <ExpandAccordion text="Think about what comes next">
-              <div className="mt-2 px-4 pb-4">
+              <div className="mt-2 px-4 pb-4 space-y-2">
                 <p>1. You might jump into learning more about how it works, check out the guides below.</p>
                 <p>2. You might want to experiment with making images and trying to get more fair results.</p>
                 <p>If you feel confident on how to generate images and what to be aware of, check out other tools like 
@@ -77,21 +77,21 @@ import Star from "@/app/assets/Star.png"
                   href="https://www.adobe.com/uk/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-600 hover:underline"
-                  >Adobe Firefly</a>, 
+                  className="text-[#65E1F1] hover:underline"
+                  > Adobe Firefly</a>, 
                   or {' '} <a 
                   hrfe="https://www.midjourney.com/home"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-600 hover:underline"
-                  >Mid Journey</a>{' '}
+                  className="text-[#65E1F1] hover:underline"
+                  > Mid Journey</a>{' '}
                   for more advanced features.</p>
                 <p>3. You could leave it there with images and learn more about another type of generative AI with us, like text generation.</p>
               </div>
             </ExpandAccordion>
 
             <ExpandAccordion text="If you do make images with ai, try following these points">
-              <div className="mt-2 px-4 pb-4">
+              <div className="mt-2 px-4 pb-4 space-y-2">
                 <p>1. Make sure you describe the features and layout of your image clearly and in detail.</p>
                 <p>2. Be aware of the fact that the AI will already have ideas about the type of people, things or places you want to make from the images it’s scanned before. For example, ai might produce more images of doctors that are white middle age men than any other appearance, because so are most images it’s seen of doctors before.</p>
                 <p>3. If you don’t want ai to unfairly weight the image result towards what it’s learnt before, then be clear about that in your description.</p>
