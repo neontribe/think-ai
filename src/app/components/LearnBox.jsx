@@ -6,7 +6,7 @@ import OffsiteLinkButton from './OffsiteLinkButton'
 
 const LearnBox = ({ src, alt, buttonText, buttonLink, caption, link}) => {
     return (
-        <div className='relative flex flex-col items-center bg-[#291498] rounded-2xl'>
+        <div className='relative flex flex-col items-center bg-[#291498] rounded-2xl mt-8'>
             {/* Image componenet positions at the top with slight overflow */}
             <div className='relative item-center -top-6'>
                 <CustomImage 
