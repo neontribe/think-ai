@@ -113,9 +113,9 @@ import DollImage from "@/app/assets/DollImage.png"
           </div>
         }
         bottom={
-          <div className="gap-4 w-full flex flex-col md:flex-row items-center">
-            <h2 className="text-2xl font-bold mb-4">
-              Go futher and learn more about making imaginative with AI
+        <div className="w-full max-w-7xl mx-auto px-4">
+          <h2 className="text-2xl font-bold text-center md:text-left mb-8">
+            Go further and learn more about making images with AI
             </h2>
             <div className="flex flex-col md:flex-row flex-wrap justify-center gap-6 mt-16 md:space-y-6 sm:space-y-6 items-center">
             <LearnBox 
