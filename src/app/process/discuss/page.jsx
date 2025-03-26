@@ -56,13 +56,12 @@ import Star from "@/app/assets/Star.png"
           </div>
         }
         
-
         middle={
-          <div className="flex flex-col gap-6 w-full md:w-3/4">
-            <h2 className="text-2xl font-bold mb-4 ml-15">
+          <div className="gap-4 w-full flex flex-col md:flex-row">
+            <div className='flex flex-col gap-4 w-full md:w-3/4 ml-10'>
+            <h2 className="text-2xl font-bold mb-4">
               Take some time to reflect
             </h2>
-
             <ExpandAccordion text="Let's stop and think back">
               <div className="mt-2 px-4 pb-4">
                 <p>1. What have you learnt about making image with ai?</p>
@@ -101,8 +100,9 @@ import Star from "@/app/assets/Star.png"
                 <p>5. Remember image generation tools are still growing and policies are still changing as the tech develops. They aren’t perfect, and you can check out the use policies and regulations of the tool you are using if you are unsure.</p>
               </div>
             </ExpandAccordion> 
+            </div>
 
-            <div className="hidden md:flex md:w-1/3 justify-center items-start">
+            <div className="hidden md:flex md:w-1/3 items-end ml-30">
             <CustomImage
             src={Star}
             alt="Decorative star"
