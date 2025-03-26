@@ -57,8 +57,8 @@ import Star from "@/app/assets/Star.png"
         }
         
         middle={
-          <div className="gap-4 w-full flex flex-col md:flex-row">
-            <div className='flex flex-col gap-4 w-full md:w-3/4 ml-10'>
+          <div className="gap-4 w-full flex flex-col md:flex-row items-center">
+            <div className='flex flex-col gap-4 w-full md:w-3/4 md:ml-10'>
             <h2 className="text-2xl font-bold mb-4">
               Take some time to reflect
             </h2>
@@ -102,7 +102,7 @@ import Star from "@/app/assets/Star.png"
             </ExpandAccordion> 
             </div>
 
-            <div className="hidden md:flex md:w-1/3 items-end ml-30">
+            <div className="flex flex-col md:w-1/3 items-end mt-4 md:mt-0 md:ml-10">
             <CustomImage
             src={Star}
             alt="Decorative star"
