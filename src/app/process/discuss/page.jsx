@@ -31,7 +31,7 @@ import imageResultData from '@/app/data/imageResultData'
       <ThreeRowLayout
         top={
           <div className="flex flex-col gap-6">
-            <h2 className="text-2xl font-bold mb-4 ml-15">
+            <h2 className="text-[16pt] gap-4 font-bold md:ml-10">
               Let’s Dive Deeper Into This Image
             </h2>
         
@@ -49,7 +49,7 @@ import imageResultData from '@/app/data/imageResultData'
                     alt="Requested asset"
                     width={379}
                     height={379}
-                    className="rounded-lg shadow-md"
+                    className="rounded-2xl shadow-md"
                   />
                 )}
               </div>
@@ -59,8 +59,8 @@ import imageResultData from '@/app/data/imageResultData'
         
         middle={
           <div className="gap-4 w-full flex flex-col md:flex-row items-center">
-            <div className='flex flex-col gap-4 w-full md:w-3/4 md:ml-10'>
-            <h2 className="text-2xl font-bold mb-4">
+            <div className="flex flex-col gap-4 w-full md:w-3/4 md:ml-10">
+            <h2 className="text-[16pt] font-bold mb-4">
               Take some time to reflect
             </h2>
             <ExpandAccordion text="Let's stop and think back">
@@ -114,7 +114,7 @@ import imageResultData from '@/app/data/imageResultData'
         }
         bottom={
         <div className="w-full max-w-7xl mx-auto px-4">
-          <h2 className="text-2xl font-bold text-center md:text-left mb-8">
+          <h2 className="text-[16pt] font-bold md:ml-10">
             Go further and learn more about making images with AI
             </h2>
             <div className="flex flex-col md:flex-row flex-wrap justify-center gap-6 mt-16 md:space-y-6 sm:space-y-6 items-center">

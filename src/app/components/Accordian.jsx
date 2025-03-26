@@ -28,7 +28,7 @@ const ExpandAccordion = ({
         className={headerClasses}
       >
         <span>{text}</span>
-        <span className="ml-2 text-4xl leading-none">{icon}</span>
+        <span className="ml-2 text-4xl leading-none text-[#65E1F1]">{icon}</span>
       </button>
 
       {isOpen && (
