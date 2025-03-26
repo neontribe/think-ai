@@ -28,7 +28,6 @@ const ResponseCarousel = ({slideData = []}) => {
     }
     
 
-
     return (
         <>
             {/* outer container */}

@@ -13,7 +13,13 @@ import ResponseCarousel from '@/app/components/ResponseCarousel';
     const { state } = useGlobalState();
     const { responseData } = state;
     const { modelType, promptResponseContent, splitRiskPoints } = responseData;
-    
+
+  const slides = splitRiskPoints.filter(Boolean).map((risk, index) => ({
+    number: index + 1,
+    paragraph: risk,
+  }));
+
+  
 
   return (
     <>
@@ -28,7 +34,7 @@ import ResponseCarousel from '@/app/components/ResponseCarousel';
             {/* LEFT*/}
             <div className="relative flex flex-col md:flex-row">
               <div className="md:w-1/2 relative z-20 md:w-[80%] md:-mr-30">
-                <ResponseCarousel />
+                <ResponseCarousel slideData={slides} />
               </div>
         
               {/* RIGHT */}
