@@ -10,7 +10,7 @@ import ResponseCarousel from '@/app/components/ResponseCarousel';
 import ExpandAccordion from '@/app/components/Accordian';
 import Star from "@/app/assets/Star.png"
 import LearnBox from '@/app/components/LearnBox';
-import DollImage from "@/app/assets/DollImage.png"
+import imageResultData from '@/app/data/imageResultData'
 
   const Discuss = () => {
     const router = useRouter();
@@ -118,34 +118,16 @@ import DollImage from "@/app/assets/DollImage.png"
             Go further and learn more about making images with AI
             </h2>
             <div className="flex flex-col md:flex-row flex-wrap justify-center gap-6 mt-16 md:space-y-6 sm:space-y-6 items-center">
-            <LearnBox 
-            src={DollImage} 
-            alt="Doll image"
-            caption="AI Image Generators Can Make Bias Worse"
-            link="https://www.youtube.com/watch?v=L2sQRrf1Cd8"
-            buttonText='video'
-            />
-            <LearnBox 
-            src={DollImage} 
-            alt="Doll image"
-            caption="AI Image Generators Can Make Bias Worse"
-            link="https://www.youtube.com/watch?v=L2sQRrf1Cd8"
-            buttonText='video'
-            />
-            <LearnBox 
-            src={DollImage} 
-            alt="Doll image"
-            caption="AI Image Generators Can Make Bias Worse"
-            link="https://www.youtube.com/watch?v=L2sQRrf1Cd8"
-            buttonText='video'
-            />
-            <LearnBox 
-            src={DollImage} 
-            alt="Doll image"
-            caption="AI Image Generators Can Make Bias Worse"
-            link="https://www.youtube.com/watch?v=L2sQRrf1Cd8"
-            buttonText='video'
-            />
+            {imageResultData.map((item, index) => (
+              <LearnBox
+              key={index}
+              src={item.src}
+              alt={item.alt}
+              caption={item.caption}
+              link={item.link}
+              buttonText={item.buttonText}
+              />
+              ))}
             </div>
           </div>
         }
