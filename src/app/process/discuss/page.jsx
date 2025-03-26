@@ -59,7 +59,7 @@ import imageResultData from '@/app/data/imageResultData'
         
         middle={
           <div className="gap-4 w-full flex flex-col md:flex-row items-center">
-            <div className="flex flex-col gap-4 w-full md:w-3/4 md:ml-10">
+            <div className="flex flex-col gap-4 w-full md:w-3/4 md:ml-8">
             <h2 className="text-[16pt] font-bold mb-4">
               Take some time to reflect
             </h2>
@@ -113,11 +113,11 @@ import imageResultData from '@/app/data/imageResultData'
           </div>
         }
         bottom={
-        <div className="w-full max-w-7xl mx-auto px-4">
+        <div className="w-full mx-auto px-2">
           <h2 className="text-[16pt] font-bold md:ml-10">
             Go further and learn more about making images with AI
             </h2>
-            <div className="flex flex-col md:flex-row flex-wrap justify-center gap-6 mt-16 md:space-y-6 sm:space-y-6 items-center">
+            <div className="flex flex-col md:flex-row flex-wrap md:ml-10 gap-8 mt-16 md:space-y-6 sm:space-y-6 items-start">
             {imageResultData.map((item, index) => (
               <LearnBox
               key={index}
