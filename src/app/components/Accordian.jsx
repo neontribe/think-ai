@@ -32,7 +32,7 @@ const ExpandAccordion = ({
       </button>
 
       {isOpen && (
-        <div className="mt-2 bg-[#291498] p-4">
+        <div className="bg-[#291498] p-4">
           {children}
         </div>
       )}

@@ -20,13 +20,13 @@ export default function Home() {
                  aria-label="Choose how to explore">
               <RouteButton
                 ariaLabel="generate an image"
-                href="/process/query?modelType=image-generation"
+                href="/process/query/image-generation"
               >
                 generate an image
               </RouteButton>
               <RouteButton
                 ariaLabel="generate some text"
-                href="/process/query?modelType=summary"
+                href="/process/query/summary-text"
               >
                 generate text
               </RouteButton>
