@@ -8,7 +8,6 @@ import Header from '@/app/components/Header';
 import Image from 'next/image';
 import ResponseCarousel from '@/app/components/ResponseCarousel';
 import ExpandAccordion from '@/app/components/Accordian';
-import CustomImage from '@/app/components/CustomImage';
 import Star from "@/app/assets/Star.png"
 
   const Discuss = () => {
@@ -64,7 +63,7 @@ import Star from "@/app/assets/Star.png"
             </h2>
             <ExpandAccordion text="Let's stop and think back">
               <div className="mt-2 px-4 pb-4">
-                <p>1. What have you learnt about making image with ai?</p>
+                <p className="mt-1">1. What have you learnt about making image with ai?</p>
                 <p>2. Will you use ai for image generation? Is it helpul for osme things and not others?</p>
               </div>
             </ExpandAccordion>
@@ -102,12 +101,11 @@ import Star from "@/app/assets/Star.png"
             </ExpandAccordion> 
             </div>
 
-            <div className="flex flex-col md:w-1/3 items-end mt-4 md:mt-0 md:ml-10">
-            <CustomImage
+            <div className="flex flex-col md:w-1/3 items-center mt-4 md:mt-0 md:ml-10">
+            <Image
             src={Star}
             alt="Decorative star"
-            width={150}
-            height={150}
+            className="w-[86px] h-[94px] md:w-[177px] md:h-[193px]"
             />
             </div>
           </div>
