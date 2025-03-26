@@ -9,6 +9,8 @@ import Image from 'next/image';
 import ResponseCarousel from '@/app/components/ResponseCarousel';
 import ExpandAccordion from '@/app/components/Accordian';
 import Star from "@/app/assets/Star.png"
+import LearnBox from '@/app/components/LearnBox';
+import DollImage from "@/app/assets/DollImage.png"
 
   const Discuss = () => {
     const router = useRouter();
@@ -111,14 +113,40 @@ import Star from "@/app/assets/Star.png"
           </div>
         }
         bottom={
-          <div className="flex">
-            <button
-              className="bg-[#63E2F1] text-[#1B0080] px-6 py-3 w-[171px] h-[48px] text-lg inline-flex items-center justify-center font-bold rounded-full transition duration-300 hover:bg-[#9747FF] hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#9747FF]"
-              type="button"
-              onClick={() => router.push('/process/query')}
-            >
-              Start again
-            </button>
+          <div className="gap-4 w-full flex flex-col md:flex-row items-center">
+            <h2 className="text-2xl font-bold mb-4 ml-15">
+              Go futher and learn more about making imaginative with AI
+            </h2>
+            <div className="flex flex-col md:flex-row flex-wrap justify-center gap-6 mt-16 md:space-y-6 sm:space-y-6 items-center">
+            <LearnBox 
+            src={DollImage} 
+            alt="Doll image"
+            caption="AI Image Generators Can Make Bias Worse"
+            link="https://www.youtube.com/watch?v=L2sQRrf1Cd8"
+            buttonText='video'
+            />
+            <LearnBox 
+            src={DollImage} 
+            alt="Doll image"
+            caption="AI Image Generators Can Make Bias Worse"
+            link="https://www.youtube.com/watch?v=L2sQRrf1Cd8"
+            buttonText='video'
+            />
+            <LearnBox 
+            src={DollImage} 
+            alt="Doll image"
+            caption="AI Image Generators Can Make Bias Worse"
+            link="https://www.youtube.com/watch?v=L2sQRrf1Cd8"
+            buttonText='video'
+            />
+            <LearnBox 
+            src={DollImage} 
+            alt="Doll image"
+            caption="AI Image Generators Can Make Bias Worse"
+            link="https://www.youtube.com/watch?v=L2sQRrf1Cd8"
+            buttonText='video'
+            />
+            </div>
           </div>
         }
       />
