@@ -21,13 +21,13 @@ import ResponseCarousel from '@/app/components/ResponseCarousel';
       <ThreeRowLayout
         top={
           <div className="flex flex-col gap-6">
-            <h2 className="text-2xl font-bold mb-4 ml-20">
+            <h2 className="text-2xl font-bold mb-4 ml-15">
               Let’s Dive Deeper Into This Image
             </h2>
         
             {/* LEFT*/}
             <div className="relative flex flex-col md:flex-row">
-              <div className="md:w-1/2 relative z-20 md:w-[80%] md:-mr-50">
+              <div className="md:w-1/2 relative z-20 md:w-[80%] md:-mr-30">
                 <ResponseCarousel />
               </div>
         
