@@ -30,7 +30,7 @@ const ResponseCarousel = ({slideData = []}) => {
 
   return (
     <div
-      className="relative overflow-hidden w-full max-w-4xl mx-auto rounded-3xl shadow-lg bg-[#291498]">
+      className="relative overflow-hidden md:w-full max-w-4xl mx-auto rounded-3xl shadow-lg bg-[#291498]">
       {/* slider container */}
       <div className="flex transition-transform duration-700 ease-in-out"
            style={{transform: `translateX(-${(currentIndex * 100)}%`}}
@@ -38,12 +38,12 @@ const ResponseCarousel = ({slideData = []}) => {
         {localSlides.map((slide, index) => {
           return (<div
             key={'key_'+index}
-            className="w-full shrink-0 p-8 text-white"
+            className="w-full shrink-0 p-4 text-white "
           >
 
             {/* slide content */}
-            <div className="flex self-start -mt-2 p-14 mr-4 rounded-3xl max-w-[90%]">
-              <div className="text-8xl font-bold relative mt-4 mr-4">{slide.number+"."}</div>
+            <div className="flex self-start -mt-2 p-12 mr-4 rounded-3xl">
+              <div className="text-5xl md:text-8xl font-bold relative mt-2 mr-2">{slide.number+"."}</div>
               <div className="flex-1">
                 <h1 className="text-lg">{slide.paragraph}</h1>
               </div>

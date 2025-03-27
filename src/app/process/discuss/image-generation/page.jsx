@@ -29,13 +29,13 @@ const Discuss = () => {
         </h2>
 
         {/* LEFT*/}
-        <div className="flex flex-col md:flex-row">
-          <div className="z-20">
+        <div className="flex flex-col-reverse md:flex-row items-center">
+          <div className="z-20 w-[90%] -mt-5 md:mt-0 md:w-[60%] md:-mr-5">
             <ResponseCarousel slideData={slides}/>
           </div>
 
           {/* RIGHT */}
-            <div className="md:w-1/2 flex md:justify-start md:-mt-8">
+            <div className="md:w-full flex">
               {modelType === 'image-generation' && promptResponseContent && (<Image
                   src={promptResponseContent}
                   alt="Requested asset"
