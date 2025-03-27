@@ -43,7 +43,7 @@ const ResponseCarousel = ({slideData = []}) => {
 
             {/* slide content */}
             <div className="flex self-start -mt-2 p-14 mr-4 rounded-3xl max-w-[90%]">
-              <div className="text-8xl font-bold relative mt-4 mr-4">{slide.number}.</div>
+              <div className="text-8xl font-bold relative mt-4 mr-4">{slide.number+"."}</div>
               <div className="flex-1">
                 <h1 className="text-lg">{slide.paragraph}</h1>
               </div>
