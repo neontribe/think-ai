@@ -57,8 +57,7 @@ const ResponseCarousel = ({slideData = []}) => {
             <ArrowButton direction="left" onClick={nextSlide} ariaLabel="Next slide"/>
           </div>
           <div className={currentIndex === slideData.length -1 ? "invisible" : "" }>
-            <ArrowButton direction="right" onClick={prevSlide} arialLabel="Previous slide"
-                         className={currentIndex === slideData.length - 1 ? "hidden" : ""}/>
+            <ArrowButton direction="right" onClick={prevSlide} arialLabel="Previous slide"/>
           </div>
         </div>
     </div>);
