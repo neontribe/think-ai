@@ -28,7 +28,7 @@ export default function Query() {
       <TwoColLayout containerClass="flex flex-col md:flex-row gap-6 py-6 md:py-12">
       <div id="leftColumn">
         <ContentBox >
-          <p className="text-2xl mb-4 text-[22pt]">1. Think of something you want AI to help with</p>
+          <p className="text-2xl mb-4 text-[22pt]">1. Think of an idea for an image</p>
 
           <ButTypography text="think about..." className="text-left w-full mb-4" />
 
@@ -39,13 +39,6 @@ export default function Query() {
                 <li>Give context like the time period, culture, or art style to make sure it’s unique.</li>
                 <li>Avoid describing unclear scenes or describing clashing things e.g. a sad and happy person.</li>
                 </ul>
-                <Image
-                src={exampleImage}
-                alt="Example AI image"
-                width={500}
-                height={300}
-                className="mt-4 rounded-xl border-2 shadow-md mx-auto"
-                />
                 </div>
                 </ExpandAccordion>
 
@@ -57,13 +50,6 @@ export default function Query() {
                 <li>If those images aren’t a fair example of the thing it’s trying to make, the result wont be fair either, this is known as ‘image bias’ in the ai world.</li>
                 <li>Fine details like text, hands, and emotions can sometimes look off or unnatural with ai images.</li>
                 </ul>
-                <Image
-                src={exampleImage}
-                alt="Example AI image"
-                width={500}
-                height={247}
-                className="mt-4 rounded-xl border-2 shadow-md mx-auto"
-                />
                 </div>
           </ExpandAccordion>
 
@@ -83,10 +69,10 @@ export default function Query() {
         </div>
 
         <div id="rightColumn">
-          <p className="text-2xl text-[22pt] mb-6">2. Describe your image.</p>
+          <p className="text-2xl text-[22pt] mb-6">2. Describe your image</p>
           <PromptInput
          apiEndpoint="/api/image"
-         suggestedText="Describe something ..."
+         suggestedText="Describe your idea clearly and fairly, trying to avoid stereotypes and provide clear details"
          modelType="image-generation"
          buttonText="Make Image"
          onSubmit={() => router.push("/process/response/image-generation")}
