@@ -12,6 +12,7 @@ import Star from "@/app/assets/Star.png"
 import LearnBox from '@/app/components/LearnBox';
 import summaryResultData from '@/app/data/summaryResultData'
 import Link from 'next/link';
+import { useRef } from 'react';
 
 
   const Discuss = () => {
@@ -25,7 +26,13 @@ import Link from 'next/link';
     paragraph: risk,
   }));
 
+  const bottomRef = useRef(null);
 
+  const scrollToBottom = () => {
+    if (bottomRef.current) {
+      bottomRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <>
@@ -88,7 +95,10 @@ import Link from 'next/link';
 
             <ExpandAccordion text="Think about what comes next">
               <div className="mt-2 px-4 pb-4 space-y-2">
-                <p>1. You might jump into learning more about how it works, check out the guides below.</p>
+                <p>1. You might jump into learning more about how it works, check out the <span
+                onClick={scrollToBottom}
+                className="text-[#65E1F1] hover:underline cursor-pointer"
+                > guides below.</span>.</p>
                 <p>2. You might want to experiment with generating text and trying to get more fair results.<br /> If you feel confident on how to generate text and what to be aware of, check out other tools like,&nbsp;
                 <a href="https://openai.com/index/gpt-4/"
                    target="_blank"
@@ -136,7 +146,7 @@ import Link from 'next/link';
           </div>
         }
         bottom={
-        <div className="w-full mx-auto px-2">
+        <div ref={bottomRef} className="w-full mx-auto px-2">
           <h2 className="text-[16pt] font-bold md:ml-10">
             Go further and learn more about generating text with AI
             </h2>

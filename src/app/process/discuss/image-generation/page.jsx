@@ -11,6 +11,7 @@ import Star from "@/app/assets/Star.png"
 import LearnBox from '@/app/components/LearnBox';
 import imageResultData from '@/app/data/imageResultData'
 import Link from "next/link";
+import { useRef } from 'react';
 
 const Discuss = () => {
   const {state} = useGlobalState();
@@ -20,6 +21,14 @@ const Discuss = () => {
   const slides = splitRiskPoints.filter(Boolean).map((risk, index) => ({
     number: index + 1, paragraph: risk,
   }));
+
+  const bottomRef = useRef(null);
+
+  const scrollToBottom = () => {
+    if (bottomRef.current) {
+      bottomRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (<>
     <Header/>
@@ -63,7 +72,10 @@ const Discuss = () => {
 
           <ExpandAccordion text="Think about what comes next">
             <div className="mt-2 px-4 pb-4 space-y-2">
-              <p>1. You might jump into learning more about how it works, check out the guides below.</p>
+              <p>1. You might jump into learning more about how it works, check out the guides <span
+                onClick={scrollToBottom}
+                className="text-[#65E1F1] hover:underline cursor-pointer"
+                > guides below.</span>.</p>
               <p>2. You might want to experiment with making images and trying to get more fair results.</p>
               <p>If you feel confident on how to generate images and what to be aware of, check out other tools like
                 <a href="https://www.adobe.com/uk/"
@@ -112,7 +124,7 @@ const Discuss = () => {
           />
         </div>
       </div>}
-      bottom={<div className="w-full mx-auto px-2">
+      bottom={<div ref={bottomRef} className="w-full mx-auto px-2">
         <h2 className="text-[16pt] font-bold md:ml-10">
           Go further and learn more about making images with AI
         </h2>
