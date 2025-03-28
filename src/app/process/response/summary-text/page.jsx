@@ -26,15 +26,10 @@ const Response = () => {
           <p>Nice work</p>
           <ButTypography className="text-left w-full mb-4" />
           <p className="mb-4">What could the issues be with asking AI to answer questions or do tasks?</p>
-          <Accordian
-          text="Think about these things"
-          className="text-start mb-6"
-          >
-            <ul className="list-disc pl-6 space-y-2">
-            {splitRiskPoints.map((risk, index) => (
-              risk && <li key={index}>{risk}</li>
-            ))}
-          </ul>
+          <Accordian text="Think about these things" className="text-start mb-6 w-full">
+              <p className="pb-2">1. could the results leave out any important details?</p>
+              <p className="pb-2">2. should or could you use these results in your own work?</p>
+              <p className="pb-2">3. could the summarised text be one-sided in any way?</p>
           </Accordian>
 
           <RouteButton
