@@ -28,7 +28,7 @@ export default function Query() {
       <TwoColLayout containerClass="flex flex-col md:flex-row gap-6 py-6 md:py-12">
       <div id="leftColumn">
         <ContentBox >
-          <p className="text-2xl mb-4 text-[22pt]">1. Think of something you want AI to help with</p>
+          <p className="text-2xl mb-4 text-[22pt]">1. Think of an idea for an image</p>
 
           <ButTypography text="think about..." className="text-left w-full mb-4" />
 
@@ -83,10 +83,10 @@ export default function Query() {
         </div>
 
         <div id="rightColumn">
-          <p className="text-2xl text-[22pt] mb-6">2. Describe your image.</p>
+          <p className="text-2xl text-[22pt] mb-6">2. Describe your image</p>
           <PromptInput
          apiEndpoint="/api/image"
-         suggestedText="Describe something ..."
+         suggestedText="Describe your idea clearly and fairly, trying to avoid stereotypes and provide clear details"
          modelType="image-generation"
          buttonText="Make Image"
          onSubmit={() => router.push("/process/response/image-generation")}
