@@ -68,7 +68,7 @@ import { useRef } from 'react';
                   </div>
 
                   {/* fade gradient */}
-                  <div className="pointer-events-none absolute bottom-0 left-0 w-full h-20 bg-gradient-to-b from-transparent via-white/60 via-white to-[#23009F]"></div>
+                  <div className="pointer-events-none absolute bottom-0 left-0 w-full h-20 bg-gradient-to-b from-transparent via-white/60 to-[#291498]"></div>
                 </div>
               )}
             </div>

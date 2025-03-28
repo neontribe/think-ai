@@ -4,6 +4,10 @@ import { useRouter } from 'next/navigation';
 import ProcessGuard from "@/app/components/ProcessGuard";
 import TwoColLayout from '@/app/components/TwoColLayout';
 import { useGlobalState } from "@/app/contexts/GlobalStateProvider";
+import Header from "@/app/components/Header"
+import ButTypography from '@/app/components/ButTypography';
+import RouteButton from '@/app/components/RouteButton';
+import Accordian from '@/app/components/Accordian'
 
 
 const Response = () => {
@@ -14,38 +18,49 @@ const Response = () => {
 
   const { modelType, promptResponseContent, splitRiskPoints } = responseData;
 
-  return (<>
-    <div>
-      <p>Nice!</p>
-      <p><strong>BUT...</strong></p>
-      <p>What could be the problem with generating content this way </p>
-    </div>
-    <button className="bg-[#63E2F1] text-[#1B0080] px-6 py-3 w-[171px] h-[48px] text-lg inline-flex items-center justify-center font-bold rounded-full transition durantion-300 hover:bg-[#9747FF] hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#9747FF]" 
-    type="button" onClick={() => router.push('/process/discuss/image-generation')}>
-      Find Out
-    </button>
-    <TwoColLayout>
-    <div className="p-4">
-          <h2>But...</h2>
-          <ol>
+  return (
+    <>
+      <Header hideLinks={true}/>
+      <TwoColLayout>
+        <div className="p-6 md:p-12 text-left w-full md:max-w-[80%] text-[16pt]">
+          <p>Nice image!</p>
+          <ButTypography className="text-left w-full mb-4" />
+          <p className="mb-4">What could the issues be generating images in this way?</p>
+          <Accordian
+          text="Think about these things"
+          className="text-start mb-6 w-full"
+          >
+            <ul className="list-disc pl-6 space-y-2">
             {splitRiskPoints.map((risk, index) => (
-              risk && <li key={index}>{risk}</li>
+              risk && <li key={'key_'+index}>{risk}</li>
             ))}
-          </ol>
+          </ul>
+          </Accordian>
+
+          <RouteButton
+            variant="third"
+            type="button"
+            onClick={() => router.push('/process/discuss/image-generation')}
+            className="w-full max-w-[350px] mx-auto"
+          >
+            Find Out
+          </RouteButton>
         </div>
 
-        <div className="p-4 flex justify-center items-center">
+        <div className="p-4 flex justify-center items-center w-full">
       {modelType === "image-generation" && promptResponseContent && (
             <img
               src={promptResponseContent}
               alt="Requested asset"
-              width={379}
-              height={379}
+              width={702}
+              height={702}
             />
           )}
           </div>
-    </TwoColLayout>
-  </>);
+      </TwoColLayout>
+    </>
+  );
+
 }
 
 export default ProcessGuard(Response);
