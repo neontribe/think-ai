@@ -41,7 +41,18 @@ export async function POST(request) {
 
     const responseRisksContent = responseRisks.choices[0].message.content;
 
-    const splitRiskPoints = responseRisksContent.split("\n");
+    let splitRiskPoints = responseRisksContent.split("\n");
+
+    // catchall for insufficient response
+    if (splitRiskPoints.length <= 1) {
+      splitRiskPoints = [
+        "Interesting ... the AI can't offer guidance in this case. Why might that be?",
+        "AI sometimes has trouble answering questions about certain topics, and this might be one of those cases. Many AIs have inbuilt rules that will refuse to let them work on certain jobs - to protect both the users and the company that runs the AI.",
+        "The work might involve sensitive, inappropriate, or harmful content. It might involve scenarios that might be about privacy, safety, or security or topics restricted by local laws.",
+        "We may also have pushed the limits of the model, such as attempting to perform tasks the AI cannot perform.",
+        "Consider what might have triggered the AI to fail and go back to reword your request.",
+      ];
+    }
 
     return Response.json({ promptResponseContent, splitRiskPoints, modelType: 'summary' });
   } catch (e) {
