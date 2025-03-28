@@ -39,13 +39,6 @@ export default function Query() {
                 <li>Give context like the time period, culture, or art style to make sure it’s unique.</li>
                 <li>Avoid describing unclear scenes or describing clashing things e.g. a sad and happy person.</li>
                 </ul>
-                <Image
-                src={exampleImage}
-                alt="Example AI image"
-                width={500}
-                height={300}
-                className="mt-4 rounded-xl border-2 shadow-md mx-auto"
-                />
                 </div>
                 </ExpandAccordion>
 
@@ -57,13 +50,6 @@ export default function Query() {
                 <li>If those images aren’t a fair example of the thing it’s trying to make, the result wont be fair either, this is known as ‘image bias’ in the ai world.</li>
                 <li>Fine details like text, hands, and emotions can sometimes look off or unnatural with ai images.</li>
                 </ul>
-                <Image
-                src={exampleImage}
-                alt="Example AI image"
-                width={500}
-                height={247}
-                className="mt-4 rounded-xl border-2 shadow-md mx-auto"
-                />
                 </div>
           </ExpandAccordion>
 
