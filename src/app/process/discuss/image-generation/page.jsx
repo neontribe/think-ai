@@ -131,7 +131,7 @@ const Discuss = () => {
         <div
           className="flex flex-col md:flex-row flex-wrap md:ml-10 gap-8 mt-16 md:space-y-6 sm:space-y-6 items-start">
           {imageResultData.map((item, index) => (<LearnBox
-            key={index}
+            key={'key_'+index}
             src={item.src}
             alt={item.alt}
             caption={item.caption}
