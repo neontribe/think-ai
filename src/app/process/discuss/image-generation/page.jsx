@@ -10,6 +10,7 @@ import ExpandAccordion from '@/app/components/Accordian';
 import Star from "@/app/assets/Star.png"
 import LearnBox from '@/app/components/LearnBox';
 import imageResultData from '@/app/data/imageResultData'
+import Link from "next/link";
 
 const Discuss = () => {
   const {state} = useGlobalState();
@@ -25,7 +26,7 @@ const Discuss = () => {
     <ThreeRowLayout
       top={<div className="flex flex-col gap-6">
         <h2 className="text-[16pt] font-bold md:ml-10">
-          Let’s Dive Deeper Into This Image
+          Let’s dive deeper into this image
         </h2>
 
         {/* LEFT*/}
@@ -47,7 +48,8 @@ const Discuss = () => {
         </div>
       </div>}
 
-      middle={<div className="gap-4 w-full flex flex-col md:flex-row items-center">
+      middle={
+      <div className="gap-4 w-full flex flex-col md:flex-row items-center">
         <div className="flex flex-col gap-4 w-full md:w-3/4 md:ml-8">
           <h2 className="text-[16pt] font-bold mb-4">
             Take some time to reflect
@@ -55,7 +57,7 @@ const Discuss = () => {
           <ExpandAccordion text="Let's stop and think back">
             <div className="mt-2 px-4 pb-4 space-y-2">
               <p className="mt-1">1. What have you learnt about making image with ai?</p>
-              <p>2. Will you use ai for image generation? Is it helpul for osme things and not others?</p>
+              <p>2. Will you use ai for image generation? Is it helpful for some things and not others?</p>
             </div>
           </ExpandAccordion>
 
@@ -68,16 +70,18 @@ const Discuss = () => {
                    target="_blank"
                    rel="noopener noreferrer"
                    className="text-[#65E1F1] hover:underline"
-                >Adobe Firefly</a>
-                , or
+                >Adobe Firefly</a>, or
                 <a href="https://www.midjourney.com/home"
                    target="_blank"
                    rel="noopener noreferrer"
                    className="text-[#65E1F1] hover:underline"
-                >Mid Journey</a>
-                for more advanced features.</p>
-              <p>3. You could leave it there with images and learn more about another type of generative AI with us,
-                like text generation.</p>
+                >Mid Journey</a> for more advanced features.</p>
+              <p>3. You could leave it there with images and learn more about another type of generative AI with us,&nbsp;
+                <Link
+                  ariaLabel="generate some text"
+                  className="underline text-[#65E1F1] hover:underline"
+                  href="/process/query/summary-text">text generation
+                </Link>.</p>
             </div>
           </ExpandAccordion>
 
