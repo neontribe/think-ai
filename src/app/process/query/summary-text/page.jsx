@@ -31,15 +31,29 @@ export default function Query() {
           <ButTypography text="think about..." className="text-left w-full mb-4" />
 
           <ExpandAccordion text="How to ask AI questions">
-            <p>Content about how to ask questions to AI.</p>
+          <div className="mt-2 px-4 pb-4">
+              <ul className="list-disc pl-5 space-y-2">
+                <li>Be clear: Give enough details so the answer makes sense.</li>
+                <li>Stay fair: Ask questions that don’t push one answer over another.</li>
+                <li>Be respectful: Think about how your question might affect others.</li>
+                </ul>
+                </div>
           </ExpandAccordion>
 
           <ExpandAccordion text="Some risks to think about">
-            <p>Content about potential risks or caveats.</p>
+          <div className="mt-2 px-4 pb-4">
+            <ul className="list-disc pl-5 space-y-2">
+                <li>Wrong answers: Sometimes AI can give answers that aren’t quite right, so double-check.</li>
+                <li>Unfair ideas: AI might accidentally say something that isn’t fair to some people.</li>
+                <li>Stereotypes: AI might repeat common but unfair ideas, so always be careful with how you ask things.</li>
+              </ul>
+            </div>
           </ExpandAccordion>
 
           <ExpandAccordion text="Here’s an example. What are the issues here?">
-            <p>Content illustrating an example scenario or issue.</p>
+          <div className="mt-2 px-4 pb-4">
+          <p>you might feed the ai an article link and ask it to summarise it e.g.  <em>“Summarise this article about women in science and be sure to cover pay differences between men and women.”</em></p>
+            </div>
           </ExpandAccordion>
         </ContentBox>
         </div>
