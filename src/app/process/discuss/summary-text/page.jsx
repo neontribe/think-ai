@@ -98,7 +98,7 @@ import { useRef } from 'react';
                 <p>1. You might jump into learning more about how it works, check out the <span
                 onClick={scrollToBottom}
                 className="text-[#65E1F1] hover:underline cursor-pointer"
-                > guides below.</span>.</p>
+                > guides below</span>.</p>
                 <p>2. You might want to experiment with generating text and trying to get more fair results.<br /> If you feel confident on how to generate text and what to be aware of, check out other tools like,&nbsp;
                 <a href="https://openai.com/index/gpt-4/"
                    target="_blank"
@@ -150,7 +150,7 @@ import { useRef } from 'react';
           <h2 className="text-[16pt] font-bold md:ml-10">
             Go further and learn more about generating text with AI
             </h2>
-            <div className="flex flex-col md:flex-row flex-wrap md:ml-10 gap-8 mt-16 md:space-y-6 sm:space-y-6 items-start">
+            <div className="flex flex-col md:flex-row flex-wrap md:ml-10 gap-8 mt-16">
             {summaryResultData.map((item, index) => (
               <LearnBox
               key={index}
@@ -170,3 +170,5 @@ import { useRef } from 'react';
 };
 
 export default ProcessGuard(Discuss);
+
+

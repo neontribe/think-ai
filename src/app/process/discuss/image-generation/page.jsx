@@ -75,7 +75,7 @@ const Discuss = () => {
               <p>1. You might jump into learning more about how it works, check out the guides <span
                 onClick={scrollToBottom}
                 className="text-[#65E1F1] hover:underline cursor-pointer"
-                > guides below.</span>.</p>
+                > guides below</span>.</p>
               <p>2. You might want to experiment with making images and trying to get more fair results.</p>
               <p>If you feel confident on how to generate images and what to be aware of, check out other tools like
                 <a href="https://www.adobe.com/uk/"

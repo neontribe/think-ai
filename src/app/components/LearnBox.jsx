@@ -6,7 +6,7 @@ import OffsiteLinkButton from './OffsiteLinkButton'
 
 const LearnBox = ({ src, alt, buttonText, buttonLink, caption, link}) => {
     return (
-        <div className='relative flex flex-col items-center bg-[#291498] rounded-2xl mt-8'>
+        <div className='relative flex flex-col justify-between items-center bg-[#291498] rounded-2xl mt-8'>
             {/* Image componenet positions at the top with slight overflow */}
             <div className='relative -top-6'>
                     <CustomImage 
@@ -26,7 +26,7 @@ const LearnBox = ({ src, alt, buttonText, buttonLink, caption, link}) => {
                 <OffsiteLinkButton text={buttonText} href={link}  variant='learnMore'
                 arial-label={`Open ${caption} (${buttonText})`}>
                     {buttonText}
-                </OffsiteLinkButton>
+                </OffsiteLinkButton>           
             </div>
         </div>
         
@@ -34,3 +34,4 @@ const LearnBox = ({ src, alt, buttonText, buttonLink, caption, link}) => {
 }
 
 export default LearnBox;
+
