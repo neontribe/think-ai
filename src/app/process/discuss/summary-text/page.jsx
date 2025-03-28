@@ -89,7 +89,22 @@ import Link from 'next/link';
             <ExpandAccordion text="Think about what comes next">
               <div className="mt-2 px-4 pb-4 space-y-2">
                 <p>1. You might jump into learning more about how it works, check out the guides below.</p>
-                <p>2. You might want to experiment with generating text and trying to get more fair results.<br /> If you feel confident on how to generate text and what to be aware of, check out other tools like GPT-4, Google’s Gemini or Claude for more advanced features.</p>
+                <p>2. You might want to experiment with generating text and trying to get more fair results.<br /> If you feel confident on how to generate text and what to be aware of, check out other tools like,&nbsp;
+                <a href="https://openai.com/index/gpt-4/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   className="text-[#65E1F1] hover:underline"
+                >GPT-4</a>,&nbsp;  
+                 <a href="https://gemini.google.com/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   className="text-[#65E1F1] hover:underline"
+                >Google’s Gemin</a> or&nbsp;
+                <a href="https://claude.ai/login?returnTo=%2F%3F"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   className="text-[#65E1F1] hover:underline"
+                >Claude</a> for more advanced features.</p>
                 <p>3. You could leave it there with text and learn more about another type of generative AI with us,&nbsp;
                   <Link
                     ariaLabel="generate some text"
