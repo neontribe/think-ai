@@ -14,7 +14,6 @@ const Response = () => {
   const router = useRouter();
   const { state} = useGlobalState();
   const { responseData } = state;
-  console.log(responseData);
 
   const { modelType, promptResponseContent, splitRiskPoints } = responseData;
 
@@ -35,7 +34,7 @@ const Response = () => {
           <RouteButton
             variant="third"
             type="button"
-            onClick={() => router.push('/process/discuss')}
+            onClick={() => router.push('/process/discuss/summary-text')}
           >
             Find Out
           </RouteButton>

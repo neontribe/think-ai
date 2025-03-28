@@ -35,7 +35,7 @@ const Response = () => {
           <RouteButton
             variant="third"
             type="button"
-            onClick={() => router.push('/process/discuss')}
+            onClick={() => router.push('/process/discuss/image-generation')}
             className="w-full max-w-[350px] mx-auto"
           >
             Find Out
