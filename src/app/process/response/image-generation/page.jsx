@@ -25,14 +25,14 @@ const Response = () => {
         <div className="p-6 md:p-12 text-left w-full md:max-w-[80%] text-[16pt]">
           <p>Nice image!</p>
           <ButTypography className="text-left w-full mb-4" />
-          <p className="mb-4">What could the issues be generating images in this wat?</p>
+          <p className="mb-4">What could the issues be generating images in this way?</p>
           <Accordian
           text="Think about these things"
           className="text-start mb-6 w-full"
           >
             <ul className="list-disc pl-6 space-y-2">
             {splitRiskPoints.map((risk, index) => (
-              risk && <li key={index}>{risk}</li>
+              risk && <li key={'key_'+index}>{risk}</li>
             ))}
           </ul>
           </Accordian>
@@ -40,7 +40,7 @@ const Response = () => {
           <RouteButton
             variant="third"
             type="button"
-            onClick={() => router.push('/process/discuss')}
+            onClick={() => router.push('/process/discuss/image-generation')}
             className="w-full max-w-[350px] mx-auto"
           >
             Find Out
