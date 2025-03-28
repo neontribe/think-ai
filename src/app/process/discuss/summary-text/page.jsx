@@ -31,37 +31,47 @@ import Link from 'next/link';
     <>
       <Header />
       <ThreeRowLayout
-        top={
-          <div className="flex flex-col gap-6">
-            <h2 className="text-[16pt] gap-4 font-bold md:ml-10">
-              Let’s dive deeper into this answer
-            </h2>
-
-            {/* LEFT*/}
-            <div className="flex flex-col-reverse md:flex-row items-center">
-              <div className="z-20 w-[90%] -mt-5 md:mt-0 md:w-[60%] md:-mr-5">
-                <ResponseCarousel slideData={slides} />
-              </div>
-
-              {/* RIGHT */}
-              <div className="md:w-full flex">
-              {modelType === "summary" && promptResponseContent && (
-            <div className="w-full">
-              <div className="space-y-4">
-                {promptResponseContent.split(/\n\s*\n|\. /g).map((paragraph, index) => (
-                  paragraph.trim() && (
-                    <p key={index} className="text-[#23009F] leading-normal">
-                      {paragraph}
-                    </p>
-                  )
-                ))}
-              </div>
+       top={
+        <div className="flex flex-col gap-6">
+          <h2 className="text-[16pt] font-bold md:ml-10">
+            Let’s dive deeper into this answer
+          </h2>
+      
+          {/* LEFT + RIGHT layout */}
+          <div className="flex flex-col-reverse md:flex-row items-center">
+            
+            {/* LEFT */}
+            <div className="z-20 w-[90%] -mt-5 md:mt-0 md:w-[60%] md:-mr-5">
+              <ResponseCarousel slideData={slides} />
             </div>
-          )}
-              </div>
+      
+            {/* RIGHT */}
+            <div className="md:w-full flex">
+              {modelType === "summary" && promptResponseContent && (
+                <div className="relative w-full max-w-xl bg-white rounded-2xl shadow-md overflow-hidden">
+                  {/* Scrollable content */}
+                  <div className="max-h-[420px] overflow-y-auto p-6 space-y-4">
+                    {promptResponseContent
+                      .split(/\n\s*\n|\. /g)
+                      .map((paragraph, index) =>
+                        paragraph.trim() ? (
+                          <p key={index} className="text-[#23009F] leading-normal">
+                            {paragraph}
+                          </p>
+                        ) : null
+                      )}
+                  </div>
+      
+                  {/* fade gradient */}
+                  <div className="pointer-events-none absolute bottom-0 left-0 w-full h-20 bg-gradient-to-b from-transparent via-white/60 via-white to-[#23009F]"></div>
+                </div>
+              )}
             </div>
           </div>
-        }
+        </div>
+      }
+      
+
 
         middle={
           <div className="gap-4 w-full flex flex-col md:flex-row items-center">
@@ -84,7 +94,7 @@ import Link from 'next/link';
                   <Link
                     ariaLabel="generate some text"
                     className="underline text-[#65E1F1] hover:underline"
-                    href="/process/query/summary-text">image generation
+                    href="/process/query/image-generation">image generation
                   </Link>.
                 </p>
               </div>
