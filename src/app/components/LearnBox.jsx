@@ -23,7 +23,7 @@ const LearnBox = ({ src, alt, buttonText, buttonLink, caption, link}) => {
 
             {/* Button componenet alignes to left */}
             <div className='mb-4 pl-6 self-start w-[16rem] md:w-[16.8rem] ml-4'>
-                <OffsiteLinkButton text={buttonText} href={buttonLink}  variant='learnMore'
+                <OffsiteLinkButton text={buttonText} href={link}  variant='learnMore'
                 arial-label={`Open ${caption} (${buttonText})`}>
                     {buttonText}
                 </OffsiteLinkButton>
