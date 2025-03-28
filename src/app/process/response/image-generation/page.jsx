@@ -20,7 +20,7 @@ const Response = () => {
 
   return (
     <>
-      <Header hideLinks={true}/>
+      <Header/>
       <TwoColLayout>
         <div className="p-6 md:p-12 text-left w-full md:max-w-[80%] text-[16pt]">
           <p>Nice image!</p>

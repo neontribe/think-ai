@@ -99,7 +99,7 @@ export default function GroupLeadersPage() {
         <h2 className="mt-8 mb-8 text-3xl leading-[1.5] font-semibold text-white">Page 4: Understanding AI’s Impact and
           Reflection</h2>
         <p className="font-semibold text-[#63E2F1]">Objective: Help young people understand the issues behind AI and
-          reflect on what they’ve learned.</p>
+          reflect on what they’ve learned. <br/> Instructions for the Facilitator:</p>
         <ul className="list-disc pl-6 space-y-2">
           <li>Review the AI result and its implications: The tool will highlight potential issues specific to the
             AI-generated content, such as bias or stereotypes in the slides.

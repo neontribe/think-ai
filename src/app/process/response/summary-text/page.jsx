@@ -19,7 +19,7 @@ const Response = () => {
 
   return (
     <>
-      <Header hideLinks={true}/>
+      <Header/>
       <TwoColLayout containerClass="flex-col-reverse md:flex-row-reverse">
         <div className="p-6 md:p-12 text-left max-w-[80%] text-[16pt]">
           <p>Nice work</p>
