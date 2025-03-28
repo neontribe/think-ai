@@ -11,6 +11,9 @@ import ExpandAccordion from '@/app/components/Accordian';
 import Star from "@/app/assets/Star.png"
 import LearnBox from '@/app/components/LearnBox';
 import summaryResultData from '@/app/data/summaryResultData'
+import RouteButton from '@/app/components/RouteButton';
+import Link from 'next/link';
+
 
   const Discuss = () => {
     const router = useRouter();
@@ -84,15 +87,21 @@ import summaryResultData from '@/app/data/summaryResultData'
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[#65E1F1] hover:underline"
-                  > Adobe Firefly</a>, 
+                  > Adobe Firefly </a> , 
                   or {' '} <a 
                   hrfe="https://www.midjourney.com/home"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[#65E1F1] hover:underline"
-                  > Mid Journey</a>{' '}
+                  > Mid Journey </a>{' '}
                   for more advanced features.</p>
-                <p>3. You could leave it there with images and learn more about another type of generative AI with us, like text generation.</p>
+                <p>3. You could leave it there with images and learn more about another type of generative AI with us, 
+                <Link
+                  ariaLabel="generate some text" 
+                  className="underline text-[#65E1F1] hover:underline"
+                  href="/process/query/summary-text">
+                  text generation
+                  </Link>.</p>
               </div>
             </ExpandAccordion>
 
