@@ -62,7 +62,7 @@ export default function Query() {
           <p className="text-2xl text-[22pt] mb-6">2. Write your message.</p>
             <PromptInput
             apiEndpoint="/api/summary"
-            suggestedText="Add your text here, e.g. summarizing a news article or asking AI a question..."
+            suggestedText="Add your text here, it could be something like summarising text e.g. a news article, research paper, essay etc. or asking it for some information on a topic you are interested in. "
             modelType="summary"
             buttonText="Go"
             onSubmit={() => router.push("/process/response/summary-text")}
