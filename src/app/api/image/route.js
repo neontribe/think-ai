@@ -3,6 +3,9 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
+// order vercel to run this function for 45 seconds
+export const maxDuration = 45;
+
 export async function POST(request) {
   try {
     const { prompt } = await request.json();
