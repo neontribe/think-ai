@@ -59,6 +59,7 @@ export default function Query() {
         </div>
 
         <div id="rightColumn">
+        <ContentBox bg="bg-transparent">
           <p className="text-2xl text-[22pt] mb-6">2. Write your message.</p>
             <PromptInput
             apiEndpoint="/api/summary"
@@ -67,6 +68,7 @@ export default function Query() {
             buttonText="Go"
             onSubmit={() => router.push("/process/response/summary-text")}
             />
+        </ContentBox>
             </div>
       </TwoColLayout>
     </div>
