@@ -8,7 +8,7 @@ const Header = ({ hideLinks = false }) => {
             <Link href="/"
             className="focus:outline-none focus:ring-2 focus:ring-[#65E1F1]">
                 <h1 className="text-[28pt] font-semibold cursor-pointer leading-tight" id="site-title">
-                    Real Talk
+                    Real Chat
                     <br className="md:hidden" />
                     <span className="text-[#87E2D9] md:ml-2">AI</span>
                 </h1>
