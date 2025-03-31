@@ -14,7 +14,7 @@ const Header = ({ hideLinks = false }) => {
                 </h1>
             </Link>
             </div>
-           
+
 
             {/* Conditional rendering based on hideLinks prop */}
             {!hideLinks && (
@@ -25,7 +25,7 @@ const Header = ({ hideLinks = false }) => {
                       aria-label="View our team">our team
                     </Link>
                     <Link href="/group-leaders"
-                          className="px-4 py-2 text-[16pt] border-2 border-[#65E1F1] rounded-full cursor-pointer hover:text-[#87E2D9] w-full md:w-auto focus:outline-none focus:ring-2"
+                          className="px-4 py-2 text-[16pt] text-center border-2 border-[#65E1F1] rounded-full cursor-pointer hover:text-[#87E2D9] w-full md:w-auto focus:outline-none focus:ring-2"
                           aria-label="resources for group leaders">for group leaders
                     </Link>
                 </nav>
