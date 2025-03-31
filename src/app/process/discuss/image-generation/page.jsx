@@ -129,7 +129,7 @@ const Discuss = () => {
           Go further and learn more about making images with AI
         </h2>
         <div
-          className="flex flex-col md:flex-row flex-wrap md:ml-10 gap-8 mt-16 md:space-y-6 sm:space-y-6 items-start">
+          className="flex flex-col md:flex-row flex-wrap md:ml-10 gap-8 mt-16 md:space-y-6 sm:space-y-6 items-center">
           {imageResultData.map((item, index) => (<LearnBox
             key={'key_'+index}
             src={item.src}

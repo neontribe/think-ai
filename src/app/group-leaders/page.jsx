@@ -8,7 +8,7 @@ export default function GroupLeadersPage() {
     <section className="flex flex-col items-center text-2xl bg-[#291498] pt-16 pb-16">
       <div className="w-2/3 space-y-8">
         <h1 className="text-5xl leading-[1.5] font-semibold text-white">
-          Group Leader Guide for Using Real Talk AI with Young People
+          Group Leader Guide for Using Real Chat AI with Young People
         </h1>
         <p>This guide will help you lead young people through the process of using this tool to generate either text or
           images. As you go through the tool, you’ll support the group in thinking critically about generative AI. There
