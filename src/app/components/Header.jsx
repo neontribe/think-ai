@@ -5,14 +5,16 @@ import Link from 'next/link';
 const Header = ({ hideLinks = false }) => {
     return (
         <header role="banner" className="w-full bg-[#1C0080] text-white py-4 px-6 flex justify-between items-center">
+             <div className="flex-shrink-0">
             <Link href="/"
             className="focus:outline-none focus:ring-2 focus:ring-[#65E1F1]">
                 <h1 className="text-[28pt] font-semibold cursor-pointer leading-tight" id="site-title">
-                    Real Chat
-                    <br className="md:hidden" />
+                    <span className="block md:inline">Real Chat</span>
                     <span className="text-[#87E2D9] md:ml-2">AI</span>
                 </h1>
             </Link>
+            </div>
+           
 
             {/* Conditional rendering based on hideLinks prop */}
             {!hideLinks && (
