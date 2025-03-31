@@ -69,6 +69,7 @@ export default function Query() {
         </div>
 
         <div id="rightColumn">
+        <ContentBox bg="bg-transparent">
           <p className="text-2xl text-[22pt] mb-6">2. Describe your image</p>
           <PromptInput
          apiEndpoint="/api/image"
@@ -77,6 +78,7 @@ export default function Query() {
          buttonText="Make Image"
          onSubmit={() => router.push("/process/response/image-generation")}
        />
+       </ContentBox>
             </div>
       </TwoColLayout>
     </div>
