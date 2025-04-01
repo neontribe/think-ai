@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useId } from "react";
 
 const ExpandAccordion = ({
   text = "",
@@ -9,30 +9,33 @@ const ExpandAccordion = ({
   ...props
 }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const accordionId= useId();
 
   const handleToggle = () => {
     setIsOpen(!isOpen);
   };
 
 
-  const headerClasses = `flex items-center justify-between w-full py-3 px-4 text-left text-white bg-[#291498] focus:outline-none`;
+  const headerClasses = `flex items-center justify-between w-full py-3 px-4 text-left text-white bg-[#291498] 
+  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#65E1F1] rounded-full focus-visible:ring-offset-2`;
 
   const icon = isOpen ? "−" : "+";
 
   return (
-    <div className={`bg-[#291498] overflow-hidden transition-all rounded-md ${className}`} {...props}>
+    <div className={`bg-[#291498] overflow-visible transition-all rounded-md ${className}`} {...props}>
       <button
         type="button"
         onClick={handleToggle}
         aria-expanded={isOpen}
         className={headerClasses}
+        id={accordionId}
       >
         <span>{text}</span>
         <span className="ml-2 text-4xl leading-none text-[#65E1F1]">{icon}</span>
       </button>
 
       {isOpen && (
-        <div className="bg-[#291498] p-4">
+        <div aria-labelledby={accordionId} className="bg-[#291498] p-4">
           {children}
         </div>
       )}
