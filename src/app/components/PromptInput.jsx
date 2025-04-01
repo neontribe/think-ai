@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import RouteButton from './RouteButton';
 import {useGlobalState} from '@/app/contexts/GlobalStateProvider';
+import modal from "@/app/components/modal/Modal";
 
 export default function PromptInput({
   apiEndpoint,  // API route ('/api/summary', or 'api/image')
@@ -11,7 +12,7 @@ export default function PromptInput({
   buttonText,
   onSubmit,
 }) {
-  const { registerValue } = useGlobalState();
+  const { registerValue, modalVisible } = useGlobalState();
   const [prompt, setPrompt] = useState('');
   const [promptSubmitted, setPromptSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
@@ -22,13 +23,11 @@ export default function PromptInput({
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setPromptSubmitted(true);
     setErrorMessage('');
 
     // Prevent empty input
     if (!prompt.trim()) {
       setErrorMessage('Please enter a valid prompt.');
-      setPromptSubmitted(false);
       return;
     }
 
@@ -47,18 +46,20 @@ export default function PromptInput({
         body: requestBody,
       });
 
-      if (!response.ok) {
+      registerValue('modalVisible', false);
+
+      if (response.ok) {
         throw new Error(response.error || 'Network response was not ok');
       }
 
       const data = await response.json();
       registerValue('responseData', data);
+      onSubmit(e);
+
     } catch (error) {
       setErrorMessage(error.message || 'Something went wrong. Please try again later.');
-    } finally {
-      registerValue('modalVisible', false);
-      setPromptSubmitted(false);
-      onSubmit(e);
+      registerValue('modalMessage', error.message);
+      registerValue('modalVisible', true);
     }
   };
 
@@ -90,7 +91,7 @@ export default function PromptInput({
           type='submit'
           variant='primary'
           className='mt-4 text-[#1B1806] font-normal justify-center md:justify-left'
-          disabled={promptSubmitted}
+          disabled={ modalVisible }
         >
           {buttonText}
         </RouteButton>
