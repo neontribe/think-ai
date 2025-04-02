@@ -6,12 +6,11 @@ import {useGlobalState} from "@/app/contexts/GlobalStateProvider";
 import RouteButton from "@/app/components/RouteButton";
 
 const Modal = () => {
-  const {registerValue} = useGlobalState();
-  const {modalMessage} = useGlobalState();
+  const { registerValue, modalMessage } = useGlobalState();
 
   return modalMessage ?
     (<div className="fixed inset-0 flex items-center justify-center z-50">
-        <div className="absolute inset-0 bg-[#291 opacity-75"></div>
+        <div className="absolute inset-0 bg-[#291498] opacity-75"></div>
         <div className="relative bg-[#1C0080] rounded shadow-lg z-10 p-3 md:p-6 h-1/3 flex items-center">
           <TwoColLayout containerClass="flex-col-reverse" alignRows={true}>
             <div id="leftColumn" className="text-center">
@@ -35,7 +34,7 @@ const Modal = () => {
       </div>
     ) :
         (<div className="fixed inset-0 flex items-center justify-center z-50">
-            <div className="absolute inset-0 bg-[#291 opacity-75"></div>
+            <div className="absolute inset-0 bg-[#291498] opacity-75"></div>
             <div className="relative bg-[#1C0080] rounded shadow-lg z-10 p-3 md:p-6 h-1/3 flex items-center">
               <TwoColLayout containerClass="flex-col-reverse" alignRows={true}>
                 <div id="leftColumn" className="text-center">

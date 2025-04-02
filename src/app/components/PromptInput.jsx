@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import RouteButton from './RouteButton';
 import {useGlobalState} from '@/app/contexts/GlobalStateProvider';
-import modal from "@/app/components/modal/Modal";
 
 export default function PromptInput({
   apiEndpoint,  // API route ('/api/summary', or 'api/image')
@@ -14,7 +13,6 @@ export default function PromptInput({
 }) {
   const { registerValue, modalVisible } = useGlobalState();
   const [prompt, setPrompt] = useState('');
-  const [promptSubmitted, setPromptSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
 
   // Fixed models for text and image generation
