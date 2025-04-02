@@ -12,24 +12,19 @@ export default function ModalDemo() {
     // Start a timer to show the modal after 2 seconds
     const timer = setTimeout(() => {
       registerValue('modalVisible', true);
-      console.log('Modal enabled');
     }, 500);
 
     try {
       // Simulate API call (replace with your actual OpenAI API call)
       const simulatedResponse = await new Promise((resolve) => {
         setTimeout(() => {
-          console.log('resolving "request"');
           resolve('This is the response from OpenAI.');
         }, 5000);
       });
-      console.log(simulatedResponse);
     } catch (error) {
-      console.log('Error retrieving response.');
     } finally {
       clearTimeout(timer);
      registerValue('modalVisible', false);
-      console.log('Modal disabled');
     }
   };
 

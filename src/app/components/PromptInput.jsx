@@ -11,9 +11,8 @@ export default function PromptInput({
   buttonText,
   onSubmit,
 }) {
-  const { registerValue } = useGlobalState();
+  const { registerValue, modalVisible } = useGlobalState();
   const [prompt, setPrompt] = useState('');
-  const [promptSubmitted, setPromptSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
 
   // Fixed models for text and image generation
@@ -22,13 +21,11 @@ export default function PromptInput({
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setPromptSubmitted(true);
     setErrorMessage('');
 
     // Prevent empty input
     if (!prompt.trim()) {
       setErrorMessage('Please enter a valid prompt.');
-      setPromptSubmitted(false);
       return;
     }
 
@@ -51,14 +48,33 @@ export default function PromptInput({
         throw new Error(response.error || 'Network response was not ok');
       }
 
+      registerValue('modalVisible', false);
+
       const data = await response.json();
       registerValue('responseData', data);
-    } catch (error) {
-      setErrorMessage(error.message || 'Something went wrong. Please try again later.');
-    } finally {
-      registerValue('modalVisible', false);
-      setPromptSubmitted(false);
       onSubmit(e);
+
+    } catch (error) {
+      let message = '';
+      switch (error.code) {
+        case 400:
+        case 401:
+        case 402:
+        case 403:
+        case 404:
+        case 409:
+        case 422: message = "The AI couldn't work with that request. Please try again.";
+          break;
+        case 429:
+        case 500:
+        case 502:
+        case 503:
+        case 504: message = "The AI isn't available right now. Please try again later.";
+          break;
+        default: message = "Something went wrong. Please try again later."
+      }
+      setErrorMessage(message);
+      registerValue('modalMessage', message);
     }
   };
 
@@ -78,11 +94,6 @@ export default function PromptInput({
           ></textarea>
         </div>
 
-        {errorMessage && (
-          <p className='text-red-500 text-sm text-center mt-2'>
-            {errorMessage}
-          </p>
-        )}
 
         {/* Submit Button */}
         <div className="flex justify-center md:justify-start mt-4">
@@ -90,7 +101,7 @@ export default function PromptInput({
           type='submit'
           variant='primary'
           className='mt-4 text-[#1B1806] font-normal justify-center md:justify-left'
-          disabled={promptSubmitted}
+          disabled={ modalVisible }
         >
           {buttonText}
         </RouteButton>
