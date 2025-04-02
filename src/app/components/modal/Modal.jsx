@@ -9,7 +9,6 @@ const Modal = ({message = null}) => {
 
   const { registerValue } = useGlobalState();
 
-  console.log(message);
   return message ?
     (<div className="fixed inset-0 flex items-center justify-center z-50">
         <div className="absolute inset-0 bg-[#291498] opacity-75"></div>

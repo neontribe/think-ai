@@ -55,9 +55,26 @@ export default function PromptInput({
       onSubmit(e);
 
     } catch (error) {
-      console.log("error trigger");
-      setErrorMessage(error.message || 'Something went wrong. Please try again later.');
-      registerValue('modalMessage', error.message);
+      let message = '';
+      switch (error.code) {
+        case 400:
+        case 401:
+        case 402:
+        case 403:
+        case 404:
+        case 409:
+        case 422: message = "The AI couldn't work with that request. Please try again.";
+          break;
+        case 429:
+        case 500:
+        case 502:
+        case 503:
+        case 504: message = "The AI isn't available right now. Please try again later.";
+          break;
+        default: message = "Something went wrong. Please try again later."
+      }
+      setErrorMessage(message);
+      registerValue('modalMessage', message);
     }
   };
 
