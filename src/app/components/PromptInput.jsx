@@ -44,7 +44,7 @@ export default function PromptInput({
         body: requestBody,
       });
 
-      if (response.ok) {
+      if (!response.ok) {
         throw new Error(response.error || 'Network response was not ok');
       }
 
