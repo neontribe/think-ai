@@ -77,11 +77,6 @@ export default function PromptInput({
           ></textarea>
         </div>
 
-        {errorMessage && (
-          <p className='text-red-500 text-sm text-center mt-2'>
-            {errorMessage}
-          </p>
-        )}
 
         {/* Submit Button */}
         <div className="flex justify-center md:justify-start mt-4">
