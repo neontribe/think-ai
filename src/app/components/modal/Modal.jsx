@@ -5,16 +5,18 @@ import PulseStar from "@/app/components/PulseStar";
 import {useGlobalState} from "@/app/contexts/GlobalStateProvider";
 import RouteButton from "@/app/components/RouteButton";
 
-const Modal = () => {
-  const { registerValue, modalMessage } = useGlobalState();
+const Modal = ({message = null}) => {
 
-  return modalMessage ?
+  const { registerValue } = useGlobalState();
+
+  console.log(message);
+  return message ?
     (<div className="fixed inset-0 flex items-center justify-center z-50">
         <div className="absolute inset-0 bg-[#291498] opacity-75"></div>
         <div className="relative bg-[#1C0080] rounded shadow-lg z-10 p-3 md:p-6 h-1/3 flex items-center">
           <TwoColLayout containerClass="flex-col-reverse" alignRows={true}>
             <div id="leftColumn" className="text-center">
-              <p className="text-2xl md:text-5xl font-semibold leading-[1.5]">{modalMessage}</p>
+              <p className="text-2xl md:text-5xl font-semibold leading-[1.5]">{message}</p>
             </div>
             <div id="rightColumn">
               <div className="flex flex-col items-center">

@@ -6,7 +6,9 @@ const GlobalStateContext = createContext(undefined);
 
 export function GlobalStateProvider({ children }) {
   const [state, setState] = useState({
-    auth: false // we're not authed by default
+    auth: false, // we're not authed by default
+    modalMessage: null,
+    modalVisible: false,
   });
 
 

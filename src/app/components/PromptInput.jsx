@@ -44,20 +44,20 @@ export default function PromptInput({
         body: requestBody,
       });
 
-      registerValue('modalVisible', false);
-
       if (response.ok) {
         throw new Error(response.error || 'Network response was not ok');
       }
+
+      registerValue('modalVisible', false);
 
       const data = await response.json();
       registerValue('responseData', data);
       onSubmit(e);
 
     } catch (error) {
+      console.log("error trigger");
       setErrorMessage(error.message || 'Something went wrong. Please try again later.');
       registerValue('modalMessage', error.message);
-      registerValue('modalVisible', true);
     }
   };
 

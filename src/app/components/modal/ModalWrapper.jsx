@@ -9,7 +9,7 @@ export default function ModalWrapper({ children }) {
   return (
     <>
       {children}
-      {state.modalVisible && <Modal />}
+      {state.modalVisible && <Modal message={state.modalMessage} />}
     </>
   );
 }
