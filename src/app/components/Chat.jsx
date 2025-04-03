@@ -71,7 +71,7 @@ export default function Chat({ apiEndpoint, modelType }) {
               </select>
             )}
               <label htmlFor="prompt">
-                What would you like to ask Think AI today?
+                What would you like to ask Real Chat AI today?
               </label>
               <div className="input-button-container">
                 <textarea

@@ -33,7 +33,7 @@ export default function GroupLeadersPage() {
             <ul className="list-disc pl-6 space-y-2">
               <li>Why do you want to create this?</li>
               <li>What would you like to learn from it?</li>
-              <li>How do you think AI can help you create something new?</li>
+              <li>How do you Real Chat AI can help you create something new?</li>
             </ul>
           </li>
         </ul>

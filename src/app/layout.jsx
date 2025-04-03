@@ -14,7 +14,7 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: 'Think AI',
+  title: 'Real Chat AI',
   description: 'A platform that helps young people explore AI, and understand how to use it critically and safely.',
 };
 
