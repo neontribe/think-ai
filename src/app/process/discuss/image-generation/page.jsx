@@ -7,7 +7,7 @@ import Header from '@/app/components/Header';
 import Image from 'next/image';
 import ResponseCarousel from '@/app/components/ResponseCarousel';
 import ExpandAccordion from '@/app/components/Accordion';
-import Star from '../assets/Star.png';
+import Star from '@/app/assets/Star.png';
 import LearnBox from '@/app/components/LearnBox';
 import imageResultData from '@/app/data/imageResultData';
 import Link from 'next/link';

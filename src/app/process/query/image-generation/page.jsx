@@ -10,7 +10,7 @@ import TwoColLayout from '@/app/components/TwoColLayout';
 import ContentBox from '@/app/components/ContentBox';
 import ExpandAccordion from '@/app/components/Accordion';
 import Image from 'next/image';
-import exampleImage from '../assets/exampleImage.png';
+import exampleImage from '@/app/assets/exampleImage.png';
 
 export default function Query() {
   const router = useRouter();
