@@ -1,13 +1,12 @@
 'use client';
 
-import {useGlobalState} from '@/app/contexts/GlobalStateProvider';
+import { useGlobalState } from '@/app/contexts/GlobalStateProvider';
 
 export default function ModalDemo() {
-  const {registerValue} = useGlobalState();
+  const { registerValue } = useGlobalState();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
 
     // Start a timer to show the modal after 2 seconds
     const timer = setTimeout(() => {
@@ -24,16 +23,20 @@ export default function ModalDemo() {
     } catch (error) {
     } finally {
       clearTimeout(timer);
-     registerValue('modalVisible', false);
+      registerValue('modalVisible', false);
     }
   };
 
   return (
-    <div className='min-h-screen p-8'>
+    <div className="min-h-screen p-8">
       <p>press to test the modal behaviour</p>
-      <button type='button' onClick={(e) => {
-        return handleSubmit(e);
-      }} className='mt-4 bg-blue-500 text-white px-4 py-2 rounded'>
+      <button
+        type="button"
+        onClick={(e) => {
+          return handleSubmit(e);
+        }}
+        className="mt-4 rounded bg-blue-500 px-4 py-2 text-white"
+      >
         Submit
       </button>
     </div>

@@ -40,7 +40,7 @@ next dev
 
 ## Hosting
 
-This application was developed to be hosted on [Vercel](https://vercel.com/): 
+This application was developed to be hosted on [Vercel](https://vercel.com/):
 
 https://realchatai.vercel.app
 
@@ -59,7 +59,7 @@ This work is licensed under a
 
 ## Copyright
 
-This application was written by [Neontribe Ltd](https://www.neontribe.co.uk) for the National Citizen Service Trust. 
+This application was written by [Neontribe Ltd](https://www.neontribe.co.uk) for the National Citizen Service Trust.
 
 Copyright © 2025 NCS
 

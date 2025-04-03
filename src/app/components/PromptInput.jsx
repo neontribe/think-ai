@@ -2,10 +2,10 @@
 
 import { useState } from 'react';
 import RouteButton from './RouteButton';
-import {useGlobalState} from '@/app/contexts/GlobalStateProvider';
+import { useGlobalState } from '@/app/contexts/GlobalStateProvider';
 
 export default function PromptInput({
-  apiEndpoint,  // API route ('/api/summary', or 'api/image')
+  apiEndpoint, // API route ('/api/summary', or 'api/image')
   suggestedText,
   modelType, // 'image-generation' or 'summary'
   buttonText,
@@ -29,11 +29,11 @@ export default function PromptInput({
       return;
     }
 
-     const requestBody = JSON.stringify(
-       modelType === 'image-generation'
-         ? { prompt, imageModel } // DALL-e-3 for images
-         : { prompt, textModel } // gpt-4o for text summarisation
-     );
+    const requestBody = JSON.stringify(
+      modelType === 'image-generation'
+        ? { prompt, imageModel } // DALL-e-3 for images
+        : { prompt, textModel }, // gpt-4o for text summarisation
+    );
 
     try {
       registerValue('modalVisible', true);
@@ -53,7 +53,6 @@ export default function PromptInput({
       const data = await response.json();
       registerValue('responseData', data);
       onSubmit(e);
-
     } catch (error) {
       let message = '';
       switch (error.code) {
@@ -63,15 +62,18 @@ export default function PromptInput({
         case 403:
         case 404:
         case 409:
-        case 422: message = "The AI couldn't work with that request. Please try again.";
+        case 422:
+          message = "The AI couldn't work with that request. Please try again.";
           break;
         case 429:
         case 500:
         case 502:
         case 503:
-        case 504: message = "The AI isn't available right now. Please try again later.";
+        case 504:
+          message = "The AI isn't available right now. Please try again later.";
           break;
-        default: message = "Something went wrong. Please try again later."
+        default:
+          message = 'Something went wrong. Please try again later.';
       }
       setErrorMessage(message);
       registerValue('modalMessage', message);
@@ -79,39 +81,32 @@ export default function PromptInput({
   };
 
   return (
-      <form onSubmit={handleSubmit} className='relative w-full md:w-[530px]'>
-        {/* Input Box */}
-        <div className='bg-white rounded-2xl shadow-lg p-6 flex items-center relative'>
-          <textarea
-            id='prompt'
-            className='w-full text-gray-600 text-lg placeholder-gray-500 bg-transparent border-none focus:ring-0 outline-none resize-none'
-            placeholder={suggestedText}
-            maxLength={10000}
-            value={prompt}
-            onChange={(e) => setPrompt(e.target.value)}
-            rows={4}
-            required
-          ></textarea>
-        </div>
+    <form onSubmit={handleSubmit} className="relative w-full md:w-[530px]">
+      {/* Input Box */}
+      <div className="relative flex items-center rounded-2xl bg-white p-6 shadow-lg">
+        <textarea
+          id="prompt"
+          className="w-full resize-none border-none bg-transparent text-lg text-gray-600 placeholder-gray-500 outline-none focus:ring-0"
+          placeholder={suggestedText}
+          maxLength={10000}
+          value={prompt}
+          onChange={(e) => setPrompt(e.target.value)}
+          rows={4}
+          required
+        ></textarea>
+      </div>
 
-
-        {/* Submit Button */}
-        <div className="flex justify-center md:justify-start mt-4">
+      {/* Submit Button */}
+      <div className="mt-4 flex justify-center md:justify-start">
         <RouteButton
-          type='submit'
-          variant='primary'
-          className='mt-4 text-[#1B1806] font-normal justify-center md:justify-left'
-          disabled={ modalVisible }
+          type="submit"
+          variant="primary"
+          className="md:justify-left mt-4 justify-center font-normal text-[#1B1806]"
+          disabled={modalVisible}
         >
           {buttonText}
         </RouteButton>
-        </div>
-      </form>
+      </div>
+    </form>
   );
 }
-
-
-
-
-
-

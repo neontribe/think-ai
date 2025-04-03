@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier 'src/**/*.{js,ts,mjs,cjs,json}' --write .",
+    "format": "prettier --write .",
     "preinstall": "node -e \"if (!/yarn/.test(process.env.npm_execpath || '')) {console.error('\\n🚨 Use yarn to install dependencies\\n'); process.exit(1);}\""
   },
   "dependencies": {

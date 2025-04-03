@@ -11,20 +11,15 @@ export function GlobalStateProvider({ children }) {
     modalVisible: false,
   });
 
-
   // we can let other components register fresh state in the global context
   const registerValue = (key, value) => {
-    setState(( prevState ) => ({ ...prevState, [key]: value }));
+    setState((prevState) => ({ ...prevState, [key]: value }));
   };
 
   // prevents aggressive re-renders
   const value = useMemo(() => ({ state, setState, registerValue }), [state]);
 
-  return (
-    <GlobalStateContext.Provider value={value}>
-      {children}
-    </GlobalStateContext.Provider>
-  );
+  return <GlobalStateContext.Provider value={value}>{children}</GlobalStateContext.Provider>;
 }
 
 export function useGlobalState() {

@@ -17,9 +17,7 @@ const CustomImage = ({
   className = '',
   overlayText = '',
 }) => {
-  
   const isDecorative = !alt && !caption && !overlayText;
-
 
   const imageProps = {
     src,
@@ -29,7 +27,7 @@ const CustomImage = ({
     fill,
     sizes,
     style: {
-      borderRadius, 
+      borderRadius,
       objectFit: 'cover',
       ...style,
     },
@@ -38,22 +36,29 @@ const CustomImage = ({
     tabIndex: isDecorative ? -1 : 0,
   };
 
-  const ImageElement = link && !isDecorative ? (
-    <a href={link} target="_blank" rel="noopener noreferrer" aria-label={alt}>
+  const ImageElement =
+    link && !isDecorative ? (
+      <a href={link} target="_blank" rel="noopener noreferrer" aria-label={alt}>
+        <Image {...imageProps} />
+      </a>
+    ) : (
       <Image {...imageProps} />
-    </a>
-  ) : (
-    <Image {...imageProps} />
-  );
+    );
 
   return (
-    <figure className="relative mx-auto text-center w-full max-w-[75rem]">
+    <figure className="relative mx-auto w-full max-w-[75rem] text-center">
       {ImageElement}
 
       {caption && !isDecorative && (
-        <figcaption className="text-white mt-2 text-[16px] text-center max-w-[200px] break-words leading-[1.4]">
+        <figcaption className="mt-2 max-w-[200px] text-center text-[16px] leading-[1.4] break-words text-white">
           {link ? (
-            <a href={link} target="_blank" rel="noopener noreferrer" className="text-inherit" tabIndex="0">
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-inherit"
+              tabIndex="0"
+            >
               {caption}
             </a>
           ) : (
@@ -63,7 +68,7 @@ const CustomImage = ({
       )}
 
       {overlayText && !isDecorative && (
-        <div className="absolute inset-0 flex items-center justify-center text-white bg-black bg-opacity-30 text-base md:text-lg lg:text-xl font-bold">
+        <div className="bg-opacity-30 absolute inset-0 flex items-center justify-center bg-black text-base font-bold text-white md:text-lg lg:text-xl">
           {overlayText}
         </div>
       )}
