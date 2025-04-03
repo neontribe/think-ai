@@ -4,9 +4,10 @@ import {useEffect} from 'react';
 import {redirect} from 'next/navigation';
 import {useGlobalState} from '@/app/contexts/GlobalStateProvider';
 
-export default function ProcessGuard(Component, redirectTo = '/process/query') {
+export default function ProcessGuard(Component, redirectTo = '/') {
   return function Guard(...props) {
-    const { auth } = useGlobalState();
+    const { state } = useGlobalState();
+    const { auth } = state;
 
     // on render, useEffect will trigger, and we can check/redirect
     useEffect(() => {
