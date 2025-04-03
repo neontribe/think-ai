@@ -1,8 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import {useState} from 'react';
 import RouteButton from './RouteButton';
-import { useGlobalState } from '@/app/contexts/GlobalStateProvider';
+import {useGlobalState} from '@/app/contexts/GlobalStateProvider';
 
 export default function PromptInput({
   apiEndpoint, // API route ('/api/summary', or 'api/image')
@@ -13,7 +13,7 @@ export default function PromptInput({
 }) {
   const { registerValue, modalVisible } = useGlobalState();
   const [prompt, setPrompt] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
+  const [, setErrorMessage] = useState('');
 
   // Fixed models for text and image generation
   const textModel = 'gpt-4o';
@@ -32,7 +32,7 @@ export default function PromptInput({
     const requestBody = JSON.stringify(
       modelType === 'image-generation'
         ? { prompt, imageModel } // DALL-e-3 for images
-        : { prompt, textModel }, // gpt-4o for text summarisation
+        : { prompt, textModel }, // gpt-4o for text summary
     );
 
     try {
@@ -54,7 +54,7 @@ export default function PromptInput({
       registerValue('responseData', data);
       onSubmit(e);
     } catch (error) {
-      let message = '';
+      let message;
       switch (error.code) {
         case 400:
         case 401:

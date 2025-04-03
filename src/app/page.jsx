@@ -3,7 +3,7 @@
 import Header from './components/Header';
 import TwoColLayout from '@/app/components/TwoColLayout';
 import Image from 'next/image';
-import SplashImage from '@/app/assets/SplashImage.png';
+import SplashImage from '../assets/SplashImage.png';
 import RouteButton from '@/app/components/RouteButton';
 
 export default function Home() {

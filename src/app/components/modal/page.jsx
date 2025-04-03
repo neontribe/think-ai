@@ -1,6 +1,6 @@
 'use client';
 
-import { useGlobalState } from '@/app/contexts/GlobalStateProvider';
+import {useGlobalState} from '@/app/contexts/GlobalStateProvider';
 
 export default function ModalDemo() {
   const { registerValue } = useGlobalState();
@@ -15,12 +15,13 @@ export default function ModalDemo() {
 
     try {
       // Simulate API call (replace with your actual OpenAI API call)
-      const simulatedResponse = await new Promise((resolve) => {
+      await new Promise((resolve) => {
         setTimeout(() => {
           resolve('This is the response from OpenAI.');
         }, 5000);
       });
     } catch (error) {
+      console.log(error);
     } finally {
       clearTimeout(timer);
       registerValue('modalVisible', false);

@@ -1,10 +1,9 @@
 // server side component
 
 import './globals.css';
-import { GlobalStateProvider } from '@/app/contexts/GlobalStateProvider';
+import {GlobalStateProvider} from '@/app/contexts/GlobalStateProvider';
 import ModalWrapper from '@/app/components/modal/ModalWrapper';
-import Link from 'next/link';
-import { Poppins } from 'next/font/google';
+import {Poppins} from 'next/font/google';
 
 const poppins = Poppins({
   subsets: ['latin'],

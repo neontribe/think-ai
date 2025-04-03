@@ -1,13 +1,14 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
+import {useRouter} from 'next/navigation';
 import ProcessGuard from '@/app/components/ProcessGuard';
 import TwoColLayout from '@/app/components/TwoColLayout';
-import { useGlobalState } from '@/app/contexts/GlobalStateProvider';
+import {useGlobalState} from '@/app/contexts/GlobalStateProvider';
 import Header from '@/app/components/Header';
 import ButTypography from '@/app/components/ButTypography';
 import RouteButton from '@/app/components/RouteButton';
-import Accordian from '@/app/components/Accordian';
+import Accordion from '@/app/components/Accordion';
+import Image from 'next/image';
 
 const Response = () => {
   const router = useRouter();
@@ -25,7 +26,7 @@ const Response = () => {
           <p>Nice image!</p>
           <ButTypography className="mb-4 w-full text-left" />
           <p className="mb-4">What could the issues be with generating images in this way?</p>
-          <Accordian text="Think about these things" className="mb-6 w-full text-start">
+          <Accordion text="Think about these things" className="mb-6 w-full text-start">
             <p className="pb-2">1. could this image show a stereotype?</p>
             <p className="pb-2">
               2. could there be anywhere you shouldn’t use this image? Think about using it for
@@ -35,7 +36,7 @@ const Response = () => {
               3. could this image make anyone have the wrong idea about the places/people/things in
               it?
             </p>
-          </Accordian>
+          </Accordion>
 
           <RouteButton
             variant="third"
@@ -49,7 +50,7 @@ const Response = () => {
 
         <div className="flex w-full items-center justify-center p-4">
           {modelType === 'image-generation' && promptResponseContent && (
-            <img src={promptResponseContent} alt="Requested asset" width={702} height={702} />
+            <Image src={promptResponseContent} alt="Requested asset" width={702} height={702} />
           )}
         </div>
       </TwoColLayout>

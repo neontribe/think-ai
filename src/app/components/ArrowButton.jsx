@@ -1,13 +1,6 @@
 import React from 'react';
 
-const ArrowButton = ({
-  href = '',
-  direction = '',
-  children,
-  onClick,
-  className = '',
-  ariaLabel,
-}) => {
+const ArrowButton = ({ direction = '', children, onClick, className = '', ariaLabel }) => {
   const rotationMap = {
     up: 'rotate-0',
     down: 'rotate-180',
@@ -18,7 +11,6 @@ const ArrowButton = ({
   return (
     <button
       onClick={onClick}
-      target="_blank"
       rel="noopener noreferrer"
       className={`flex h-12 w-12 items-center justify-center rounded-full bg-[#3F4ADF] transition-transform hover:scale-110 focus:ring-2 focus:ring-white ${className} arial-label=Arrow pointing ${direction}`}
       aria-label={ariaLabel || children}

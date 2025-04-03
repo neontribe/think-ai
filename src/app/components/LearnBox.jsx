@@ -4,10 +4,10 @@ import React from 'react';
 import CustomImage from './CustomImage';
 import OffsiteLinkButton from './OffsiteLinkButton';
 
-const LearnBox = ({ src, alt, buttonText, buttonLink, caption, link }) => {
+const LearnBox = ({ src, alt, buttonText, caption, link }) => {
   return (
     <div className="relative mt-8 flex flex-col items-center justify-between rounded-2xl bg-[#291498]">
-      {/* Image componenet positions at the top with slight overflow */}
+      {/* Image component positions at the top with slight overflow */}
       <div className="relative -top-6">
         <CustomImage
           src={src}
@@ -21,7 +21,7 @@ const LearnBox = ({ src, alt, buttonText, buttonLink, caption, link }) => {
         />
       </div>
 
-      {/* Button componenet alignes to left */}
+      {/* Button component aligns to left */}
       <div className="mb-4 ml-4 w-[16rem] self-start pl-6 md:w-[16.8rem]">
         <OffsiteLinkButton
           text={buttonText}

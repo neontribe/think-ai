@@ -1,7 +1,5 @@
 'use client';
 
-import { useEffect } from 'react';
-
 const ContentBox = ({
   children,
   width = 'w-full md:w-[530px]',

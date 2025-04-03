@@ -39,10 +39,10 @@ const CustomImage = ({
   const ImageElement =
     link && !isDecorative ? (
       <a href={link} target="_blank" rel="noopener noreferrer" aria-label={alt}>
-        <Image {...imageProps} />
+        <Image {...imageProps} alt={alt} />
       </a>
     ) : (
-      <Image {...imageProps} />
+      <Image {...imageProps} alt={alt} />
     );
 
   return (

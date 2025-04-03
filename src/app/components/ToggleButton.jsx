@@ -1,11 +1,9 @@
 'use client';
 
-import React from 'react';
-import { useState } from 'react';
+import React, {useState} from 'react';
 
 const ToggleButton = ({
   initialState = false,
-  onChange,
   ariaLabel = 'Toggle switch',
   labelLeft = 'Individual',
   labelRight = 'Group',
@@ -41,7 +39,6 @@ const ToggleButton = ({
         onChange={handleToggle}
         aria-labelledby="toggle-left-label  toggle-right-label"
         aria-label={ariaLabel}
-        aria-pressed={isChecked}
         role="switch"
         aria-checked={isChecked}
         onKeyDown={handleKeyDown}

@@ -1,13 +1,13 @@
 'use client';
 
-import { useEffect } from 'react';
-import { redirect } from 'next/navigation';
-import { useGlobalState } from '@/app/contexts/GlobalStateProvider';
+import {useEffect} from 'react';
+import {redirect} from 'next/navigation';
+import {useGlobalState} from '@/app/contexts/GlobalStateProvider';
 
 export default function ProcessGuard(Component, redirectTo = '/process/query') {
   return function Guard(...props) {
-    const { state, useState } = useGlobalState();
-    const { auth } = state;
+    const { auth } = useGlobalState();
+
     // on render, useEffect will trigger, and we can check/redirect
     useEffect(() => {
       if (!auth) {

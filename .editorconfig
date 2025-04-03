@@ -16,31 +16,3 @@ indent_size = 2
 # Typically, do not trim trailing whitespace in Markdown
 trim_trailing_whitespace = false
 
-# Configure JSON files
-[*.json]
-indent_style = space
-indent_size = 2
-
-# Configure YAML and/or YAML-like files
-[*.yml]
-indent_style = space
-indent_size = 2
-
-# Specific overrides for TypeScript files
-[*.ts]
-indent_style = space
-indent_size = 2
-
-# Specific overrides for JavaScript files
-[*.js]
-indent_style = space
-indent_size = 2
-
-# Specific overrides for JSX/TSX (Next.js components/pages)
-[*.jsx]
-indent_style = space
-indent_size = 2
-
-[*.tsx]
-indent_style = space
-indent_size = 2

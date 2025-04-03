@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useId } from 'react';
+import React, {useId, useState} from 'react';
 
 const ExpandAccordion = ({ text = '', children, className = '', ...props }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,7 +10,7 @@ const ExpandAccordion = ({ text = '', children, className = '', ...props }) => {
     setIsOpen(!isOpen);
   };
 
-  const headerClasses = `flex items-center justify-between w-full py-3 px-4 text-left text-white bg-[#291498] 
+  const headerClasses = `flex items-center justify-between w-full py-3 px-4 text-left text-white bg-[#291498]
   focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#65E1F1] rounded-full focus-visible:ring-offset-2`;
 
   const icon = isOpen ? '−' : '+';

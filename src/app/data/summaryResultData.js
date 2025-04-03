@@ -1,11 +1,11 @@
-import aiSummay from '@/app/assets/aiSummary.png';
+import aiSummary from '@/app/assets/aiSummary.png';
 import CrashCourse from '@/app/assets/CrashCourse.png';
 import futureBrief from '@/app/assets/futureBrief.png';
 import LLMExplain from '@/app/assets/LLMExplain.png';
 
 const summaryResultData = [
   {
-    src: aiSummay,
+    src: aiSummary,
     alt: 'Papers collage',
     caption: 'The Future Will Be Brief',
     link: 'https://nymag.com/intelligencer/article/chatgpt-gmail-apple-intelligence-ai-summaries.html',

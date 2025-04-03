@@ -1,17 +1,17 @@
 'use client';
 
-import { useGlobalState } from '@/app/contexts/GlobalStateProvider';
+import {useGlobalState} from '@/app/contexts/GlobalStateProvider';
 import ProcessGuard from '@/app/components/ProcessGuard';
 import ThreeRowLayout from '@/app/components/ThreeRowLayout';
 import Header from '@/app/components/Header';
 import Image from 'next/image';
 import ResponseCarousel from '@/app/components/ResponseCarousel';
-import ExpandAccordion from '@/app/components/Accordian';
-import Star from '@/app/assets/Star.png';
+import ExpandAccordion from '@/app/components/Accordion';
+import Star from '../assets/Star.png';
 import LearnBox from '@/app/components/LearnBox';
 import summaryResultData from '@/app/data/summaryResultData';
 import Link from 'next/link';
-import { useRef } from 'react';
+import {useRef} from 'react';
 
 const Discuss = () => {
   const { state } = useGlobalState();
@@ -116,7 +116,7 @@ const Discuss = () => {
                       rel="noopener noreferrer"
                       className="text-[#65E1F1] hover:underline"
                     >
-                      Google’s Gemin
+                      Google’s Gemini
                     </a>{' '}
                     or&nbsp;
                     <a

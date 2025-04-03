@@ -1,5 +1,5 @@
 import DollImage from '@/app/assets/DollImage.png';
-import ClimatImpact from '@/app/assets/ClimatImpact.png';
+import ClimateImpact from '@/app/assets/ClimatImpact.png';
 import Planet from '@/app/assets/Planet.png';
 import SocialDoll from '@/app/assets/SocialDoll.png';
 
@@ -12,7 +12,7 @@ const imageResultData = [
     buttonText: 'video',
   },
   {
-    src: ClimatImpact,
+    src: ClimateImpact,
     alt: 'Climate impact illustration',
     caption: 'Climate Impact of Generative AI images',
     link: 'https://www.youtube.com/watch?v=FLUyLqGlW2s',
