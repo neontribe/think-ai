@@ -1,8 +1,8 @@
 'use client';
 
-import {useState} from 'react';
+import { useState } from 'react';
 import RouteButton from './RouteButton';
-import {useGlobalState} from '@/app/contexts/GlobalStateProvider';
+import { useGlobalState } from '@/app/contexts/GlobalStateProvider';
 
 export default function PromptInput({
   apiEndpoint, // API route ('/api/summary', or 'api/image')

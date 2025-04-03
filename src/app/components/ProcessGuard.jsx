@@ -1,8 +1,8 @@
 'use client';
 
-import {useEffect} from 'react';
-import {redirect} from 'next/navigation';
-import {useGlobalState} from '@/app/contexts/GlobalStateProvider';
+import { useEffect } from 'react';
+import { redirect } from 'next/navigation';
+import { useGlobalState } from '@/app/contexts/GlobalStateProvider';
 
 export default function ProcessGuard(Component, redirectTo = '/') {
   return function Guard(...props) {

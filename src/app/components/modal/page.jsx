@@ -1,6 +1,6 @@
 'use client';
 
-import {useGlobalState} from '@/app/contexts/GlobalStateProvider';
+import { useGlobalState } from '@/app/contexts/GlobalStateProvider';
 
 export default function ModalDemo() {
   const { registerValue } = useGlobalState();

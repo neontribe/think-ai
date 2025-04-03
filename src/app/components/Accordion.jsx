@@ -1,6 +1,6 @@
 'use client';
 
-import React, {useId, useState} from 'react';
+import React, { useId, useState } from 'react';
 
 const ExpandAccordion = ({ text = '', children, className = '', ...props }) => {
   const [isOpen, setIsOpen] = useState(false);

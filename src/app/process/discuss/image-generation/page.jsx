@@ -1,6 +1,6 @@
 'use client';
 
-import {useGlobalState} from '@/app/contexts/GlobalStateProvider';
+import { useGlobalState } from '@/app/contexts/GlobalStateProvider';
 import ProcessGuard from '@/app/components/ProcessGuard';
 import ThreeRowLayout from '@/app/components/ThreeRowLayout';
 import Header from '@/app/components/Header';
@@ -11,7 +11,7 @@ import Star from '@/app/assets/Star.png';
 import LearnBox from '@/app/components/LearnBox';
 import imageResultData from '@/app/data/imageResultData';
 import Link from 'next/link';
-import {useRef} from 'react';
+import { useRef } from 'react';
 
 const Discuss = () => {
   const { state } = useGlobalState();

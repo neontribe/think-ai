@@ -1,9 +1,9 @@
 'use client';
 
-import {useRouter} from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import ProcessGuard from '@/app/components/ProcessGuard';
 import TwoColLayout from '@/app/components/TwoColLayout';
-import {useGlobalState} from '@/app/contexts/GlobalStateProvider';
+import { useGlobalState } from '@/app/contexts/GlobalStateProvider';
 import Header from '@/app/components/Header';
 import ButTypography from '@/app/components/ButTypography';
 import RouteButton from '@/app/components/RouteButton';

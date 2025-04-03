@@ -1,8 +1,8 @@
 'use client';
 
-import {useRouter} from 'next/navigation';
-import {useGlobalState} from '@/app/contexts/GlobalStateProvider';
-import {useEffect} from 'react';
+import { useRouter } from 'next/navigation';
+import { useGlobalState } from '@/app/contexts/GlobalStateProvider';
+import { useEffect } from 'react';
 import PromptInput from '@/app/components/PromptInput';
 import ButTypography from '@/app/components/ButTypography';
 import Header from '@/app/components/Header';
