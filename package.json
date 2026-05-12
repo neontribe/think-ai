@@ -1,6 +1,6 @@
 {
   "name": "realchatai",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "license": "CC-BY-SA-4.0",
   "private": false,
   "scripts": {
@@ -12,23 +12,23 @@
     "preinstall": "node -e \"if (!/yarn/.test(process.env.npm_execpath || '')) {console.error('\\n🚨 Use yarn to install dependencies\\n'); process.exit(1);}\""
   },
   "dependencies": {
-    "@tailwindcss/postcss": "4.1.1",
-    "eslint-config-prettier": "^10.1.1",
-    "eslint-plugin-prettier": "^5.2.6",
-    "next": "15.2.4",
+    "@tailwindcss/postcss": "4.3.0",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-prettier": "5.2.6",
+    "next": "15.5.18",
     "openai": "4.91.1",
-    "postcss": "8.5.3",
+    "postcss": "8.5.14",
     "prettier": "^3.5.3",
-    "prettier-plugin-tailwindcss": "^0.6.11",
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
-    "tailwindcss": "4.1.1"
+    "prettier-plugin-tailwindcss": "0.8.0",
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
+    "tailwindcss": "4.3.0"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "3.3.1",
-    "eslint": "9.23.0",
-    "eslint-config-next": "15.1.0",
-    "typescript": "5.8.2"
+    "@eslint/eslintrc": "3.3.5",
+    "eslint": "9.39.4",
+    "eslint-config-next": "15.5.18",
+    "typescript": "5.8.3"
   },
   "engines": {
     "node": ">=22.0.0",
