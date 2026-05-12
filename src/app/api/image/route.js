@@ -13,12 +13,14 @@ export async function POST(request) {
       throw Error('No prompt provided');
     }
     const promptResponse = await openai.images.generate({
-      model: 'dall-e-3',
-      prompt: prompt,
+      model: 'gpt-image-1',
+      prompt,
       n: 1,
       size: '1024x1024',
     });
-    const promptResponseContent = promptResponse.data[0].url;
+    // gpt-image-1 returns base64, not a temporary image URL
+    const imageBase64 = promptResponse.data[0].b64_json;
+    const promptResponseContent = `data:image/png;base64,${imageBase64}`;
 
     const responseRisks = await openai.chat.completions.create({
       messages: [

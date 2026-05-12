@@ -14,9 +14,9 @@
   "dependencies": {
     "@tailwindcss/postcss": "4.3.0",
     "eslint-config-prettier": "10.1.8",
-    "eslint-plugin-prettier": "5.2.6",
+    "eslint-plugin-prettier": "5.5.5",
     "next": "15.5.18",
-    "openai": "4.91.1",
+    "openai": "6.37.0",
     "postcss": "8.5.14",
     "prettier": "3.8.3",
     "prettier-plugin-tailwindcss": "0.8.0",
